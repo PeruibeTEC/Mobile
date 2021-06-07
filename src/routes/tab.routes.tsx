@@ -1,0 +1,74 @@
+import React from 'react';
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import { Feather } from '@expo/vector-icons';
+
+import { SiginIn } from '../screens/SignIn';
+import { Profile } from '../screens/Profile';
+import { Restaurants } from '../screens/Restaurants';
+import { Points } from '../screens/Points';
+
+const Tab = createMaterialBottomTabNavigator();
+
+const AppRoutes: React.FC = () => {
+  
+  return(
+    <NavigationContainer independent={true}>
+      <Tab.Navigator
+        initialRouteName="Home"
+        activeColor="#2196F3"
+        inactiveColor="#AAB2AD"
+        barStyle={{
+          height: '8%',
+          backgroundColor: '#FFFFFF',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}
+      >
+        <Tab.Screen
+          name="Home"
+          component={SiginIn}
+          options={{
+            tabBarLabel: 'Home',
+            tabBarIcon: ({ color }) => (
+              <Feather name="home" color={color} size={26} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Profile"
+          component={Profile}
+          options={{
+            tabBarLabel: 'Perfil',
+            tabBarIcon: ({ color }) => (
+              <Feather name="user" color={color} size={26} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Restaurants"
+          component={Restaurants}
+          options={{
+            tabBarLabel: 'Restaurantes',
+            tabBarIcon: ({ color }) => (
+              <Feather name="coffee" color={color} size={26} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Points"
+          component={Points}
+          options={{
+            tabBarLabel: 'Points',
+            tabBarIcon: ({ color }) => (
+              <Feather name="map-pin" color={color} size={26} />
+            ),
+          }}
+        />
+      </Tab.Navigator>
+    </NavigationContainer>
+  )
+}
+
+export default AppRoutes;
