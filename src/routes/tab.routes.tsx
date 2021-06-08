@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { Feather } from '@expo/vector-icons';
 
-import { SiginIn } from '../screens/SignIn';
+import { Home } from '../screens/Home';
 import { Profile } from '../screens/Profile';
 import { Restaurants } from '../screens/Restaurants';
 import { Points } from '../screens/Points';
@@ -28,7 +28,7 @@ const AppRoutes: React.FC = () => {
       >
         <Tab.Screen
           name="Home"
-          component={SiginIn}
+          component={Home}
           options={{
             tabBarLabel: 'Home',
             tabBarIcon: ({ color }) => (

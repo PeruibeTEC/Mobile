@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native';
 
 import fonts from '../styles/fonts';
 
-export function SiginIn() {
+export function SignIn() {
   return (
     <SafeAreaView>
       <Text>Sigin</Text>
