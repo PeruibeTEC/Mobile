@@ -13,19 +13,13 @@ const AppRoutes: React.FC = () => (
     headerMode="none"
     screenOptions={{
       cardStyle: {
-        backgroundColor: colors.white
-      }
+        backgroundColor: colors.white,
+      },
     }}
   >
-    <StackRoutes.Screen 
-      name="SignIn"
-      component={SignIn}
-    />
-    <StackRoutes.Screen 
-      name="Home"
-      component={AuthRoutes}
-    />
+    <StackRoutes.Screen name="SignIn" component={SignIn} />
+    <StackRoutes.Screen name="Home" component={AuthRoutes} />
   </StackRoutes.Navigator>
-)
+);
 
 export default AppRoutes;

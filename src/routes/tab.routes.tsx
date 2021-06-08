@@ -12,8 +12,7 @@ import { Points } from '../screens/Points';
 const Tab = createMaterialBottomTabNavigator();
 
 const AppRoutes: React.FC = () => {
-  
-  return(
+  return (
     <NavigationContainer independent={true}>
       <Tab.Navigator
         initialRouteName="Home"
@@ -23,7 +22,7 @@ const AppRoutes: React.FC = () => {
           height: '8%',
           backgroundColor: '#FFFFFF',
           justifyContent: 'center',
-          alignItems: 'center'
+          alignItems: 'center',
         }}
       >
         <Tab.Screen
@@ -68,7 +67,7 @@ const AppRoutes: React.FC = () => {
         />
       </Tab.Navigator>
     </NavigationContainer>
-  )
-}
+  );
+};
 
 export default AppRoutes;
