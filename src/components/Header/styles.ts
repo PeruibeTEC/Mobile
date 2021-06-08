@@ -4,9 +4,11 @@ export const Container = styled.View`
   width: 100%;
   height: 60px;
   background: #ffff;
-  margin-top: 32px;
+  margin-top: 28px;
   justify-content: center;
   align-items: center;
+  border-color: #E0E5EB;
+  border-bottom-width: 1px;
 `;
 
 export const Text = styled.Text`

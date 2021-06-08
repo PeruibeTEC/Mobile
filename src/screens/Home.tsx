@@ -1,13 +1,19 @@
 import React from 'react';
-import { SafeAreaView } from 'react-native';
+import { ScrollView } from 'react-native';
 import { Header } from '../components/Header/Header';
+import { Post } from '../components/Post/Post';
 
 import fonts from '../styles/fonts';
 
 export function Home() {
   return (
-    <SafeAreaView style={{ backgroundColor: 'white' }}>
+    <ScrollView style={{ backgroundColor: 'white' }} stickyHeaderIndices={[0]}>
       <Header title="Home" />
-    </SafeAreaView>
+      <Post />
+      <Post />
+      <Post />
+      <Post />
+      <Post />
+    </ScrollView>
   );
 }
