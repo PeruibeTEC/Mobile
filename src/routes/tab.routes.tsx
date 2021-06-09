@@ -5,9 +5,10 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import { Feather } from '@expo/vector-icons';
 
 import { Home } from '../screens/Home';
-import { Profile } from '../screens/Profile';
+import Profile from '../screens/Profile';
 import { Restaurants } from '../screens/Restaurants';
 import { Points } from '../screens/Points';
+import { red100 } from 'react-native-paper/lib/typescript/styles/colors';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -23,6 +24,8 @@ const AppRoutes: React.FC = () => {
           backgroundColor: '#FFFFFF',
           justifyContent: 'center',
           alignItems: 'center',
+          borderColor: '#CCD2DB',
+          borderTopWidth: 0.5,
         }}
       >
         <Tab.Screen
