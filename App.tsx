@@ -1,4 +1,5 @@
 import React from 'react';
+import { StatusBar } from 'expo-status-bar';
 import {
   useFonts,
   Inter_600SemiBold,
@@ -22,5 +23,10 @@ export default function App() {
     return <AppLoading />;
   }
 
-  return <Routes />;
+  return (
+    <>
+      <StatusBar style="dark" backgroundColor="#FFF" translucent />
+      <Routes />
+    </>
+  );
 }
