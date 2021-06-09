@@ -25,5 +25,5 @@ export default {
   white1: '#FAFAFA',
   white2: '#E0E5EB',
   white3: '#D5DCE5',
-  white4: '#CCD2DB'
+  white4: '#CCD2DB',
 };

@@ -1,4 +1,4 @@
-import styled from "styled-components/native";
+import styled from 'styled-components/native';
 
 export const Container = styled.View`
   width: 100%;
@@ -17,7 +17,7 @@ export const ProfileImage = styled.Image`
   border-radius: 100px;
   margin-top: 10px;
   border-width: 4px;
-  border-color: #FFFFFF;
+  border-color: #ffffff;
 
   position: absolute;
   bottom: -30%;
