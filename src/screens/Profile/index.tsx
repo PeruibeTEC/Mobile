@@ -3,6 +3,7 @@ import { SafeAreaView } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
 import Header from './components/Header';
+import SwitchSelector from './components/SwitchSelector';
 
 import { Container, Name, Biography } from './styles';
 
@@ -27,6 +28,15 @@ const Profile: React.FC = () => {
           “Não devemos nos questionar porque algumas coisas nos acontecem e sim
           o que podemos fazer com o tempo que nos é dado.”
         </Biography>
+
+        <SwitchSelector
+          style={{ paddingHorizontal: 50, marginTop: 24 }}
+          options={[
+            { label: 'Posts', value: 'posts' },
+            { label: 'Fotos', value: 'fotos' },
+          ]}
+          onPress={() => {}}
+        />
       </SafeAreaView>
     </Container>
   );
