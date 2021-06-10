@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="logo-gobarber" src="https://res.cloudinary.com/hmartiins/image/upload/v1612458046/peruibetec_light_a6qaf8.png" width="200px">
+  <img alt="logo-peruibetec" src="https://res.cloudinary.com/hmartiins/image/upload/v1612458046/peruibetec_light_a6qaf8.png" width="200px">
 </h1>
 
 <h3 align="center">
@@ -82,8 +82,8 @@ The main technologies used in this API are:
 *Clone the project and access the folder*
 
 ```bash
-$ git clone https://github.com/hmartiins/plantmanager 
-$ cd plantmanager
+$ git clone https://github.com/PeruibeTEC/Mobile 
+$ cd Mobile
 ```
 
 *Follow the steps below*
@@ -99,7 +99,7 @@ $ cp .env.example .env
 # Finally, run the api service in a development environment :)
 $ yarn start
 
-# Well done, PlantManager is started!
+# Well done, PeruibeTec is started!
 ```
 <br>
 
