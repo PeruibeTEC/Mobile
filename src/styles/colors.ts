@@ -16,4 +16,14 @@ export default {
   blue_light: '#EBF6FF',
 
   red: '#E83F5B',
+
+  black1: '#202833',
+  black2: '#404B5A',
+  black3: '#6D7989',
+  black4: '#8B9FBA',
+  black5: '#929FB1',
+  white1: '#FAFAFA',
+  white2: '#E0E5EB',
+  white3: '#D5DCE5',
+  white4: '#CCD2DB',
 };

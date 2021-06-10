@@ -8,7 +8,7 @@ export const Container = styled.View`
   padding-left: 16px;
   font-family: 'Roboto_700Bold';
   color: #202833;
-  border-color: #E0E5EB;
+  border-color: #e0e5eb;
   border-bottom-width: 1px;
   font-size: 16px;
 
@@ -44,13 +44,13 @@ export const Name = styled.Text`
 
 export const TimeToPost = styled.Text`
   font-family: 'Roboto_400Regular';
-  color: #929FB1;
+  color: #929fb1;
   font-size: 15px;
 `;
 
 export const Legend = styled.Text`
   font-family: 'Roboto_400Regular';
-  color: #404B5A;
+  color: #404b5a;
   font-size: 15px;
   margin-top: 5px;
 `;

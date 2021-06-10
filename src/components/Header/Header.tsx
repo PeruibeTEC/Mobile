@@ -6,7 +6,7 @@ interface HeaderProps {
   title: string;
 }
 
-export function Header({ title }: HeaderProps){
+export function Header({ title }: HeaderProps) {
   return (
     <Container>
       <Text>{title}</Text>

@@ -8,6 +8,6 @@ const Routes = () => (
   <NavigationContainer>
     <AuthRoutes />
   </NavigationContainer>
-)
+);
 
 export default Routes;
