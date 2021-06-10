@@ -11,8 +11,7 @@ export const Title = styled.Text`
   font-size: 24px;
   color: #000000;
   margin-top: 20px;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 `;
 
 export const Image = styled.Image`
