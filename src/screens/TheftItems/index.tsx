@@ -4,6 +4,7 @@ import { View, Text, ScrollView } from 'react-native';
 import { Header } from '../../components/Header/Header';
 import { TitleImage } from '../../components/TitleImage';
 import { Content } from '../../components/Content';
+import { Items } from '../TheftItems/components/Items';
 import { Time, Border } from './styles';
 
 export function TheftItems() {
@@ -25,6 +26,9 @@ export function TheftItems() {
          de nós."
         />
        <Border/>
+       <Items></Items>
+       <Border/>
+       
     </ScrollView>
   );
 }
