@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import {ScrollView, LogBox } from 'react-native';
 
 import { Header } from '../../components/Header/Header';
 import { TitleImage } from '../../components/TitleImage';
@@ -8,15 +8,24 @@ import { Items } from '../TheftItems/components/Items';
 import {Button} from  '../../components/Button';
 import { Time, Border , Warning ,Container} from './styles';
 
-export function TheftItems() {
+LogBox.ignoreLogs([
+  'VirtualizedLists should never be nested',
+])
+
+interface TheftItemsProps {
+  time?:string;
+}
+
+export function TheftItems({time}:TheftItemsProps) {
+   time = '2 horas atrás';
   return (
-    <ScrollView style={{ backgroundColor: 'white' }}>
+    <ScrollView  style={{ backgroundColor: 'white' , }}>
       <Header title="Detalhes do Incidente" />
       <TitleImage
         title="Assalto a Mão Armada"
         image="https://static.lared.cl/wp-content/uploads/2019/09/05102425/20160927185301_740x3705509366827156214087-700x366.jpg"
        />
-       <Time>2 Horas Atrás</Time>
+       {time && <Time>{time}</Time>}
        <Content
          title="Assalto no Ribamar"
          street="R.Eduardo Linardi"
@@ -27,7 +36,7 @@ export function TheftItems() {
          de nós."
         />
        <Border/>
-       <Items></Items>
+       <Items/>
        <Border/>
        <Container>
          <Warning>Achou algum dos itens acima ?</Warning>
@@ -35,7 +44,8 @@ export function TheftItems() {
           title="Entrar em Contato"
          />
         </Container>
-
     </ScrollView>
+
+
   );
 }
