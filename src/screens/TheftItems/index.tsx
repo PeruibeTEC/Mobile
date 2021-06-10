@@ -5,7 +5,8 @@ import { Header } from '../../components/Header/Header';
 import { TitleImage } from '../../components/TitleImage';
 import { Content } from '../../components/Content';
 import { Items } from '../TheftItems/components/Items';
-import { Time, Border } from './styles';
+import {Button} from  '../../components/Button';
+import { Time, Border , Warning ,Container} from './styles';
 
 export function TheftItems() {
   return (
@@ -28,7 +29,13 @@ export function TheftItems() {
        <Border/>
        <Items></Items>
        <Border/>
-       
+       <Container>
+         <Warning>Achou algum dos itens acima ?</Warning>
+         <Button
+          title="Entrar em Contato"
+         />
+        </Container>
+
     </ScrollView>
   );
 }
