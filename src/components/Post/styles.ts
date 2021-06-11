@@ -48,7 +48,7 @@ export const TimeToPost = styled.Text`
   font-size: 15px;
 `;
 
-export const Legend = styled.Text`
+export const Caption = styled.Text`
   font-family: 'Roboto_400Regular';
   color: #404b5a;
   font-size: 15px;

@@ -9,7 +9,7 @@ import {
   TimeToPost,
   ProfilePhoto,
   ContentContainer,
-  Legend,
+  Caption,
   PostPhoto,
   IconsContainer,
 } from './styles';
@@ -18,7 +18,7 @@ interface HeaderProps {
   name: string;
   profile_image: string;
   hours: string;
-  legend?: string;
+  caption?: string;
   image?: string;
   comment: string;
   likes: string;
@@ -28,7 +28,7 @@ export function Post({
   name,
   profile_image,
   hours,
-  legend,
+  caption,
   image,
   comment,
   likes,
@@ -42,7 +42,7 @@ export function Post({
         <ContentContainer>
           <Name>{name} </Name>
           <TimeToPost>• {hours}h</TimeToPost>
-          {legend && <Legend>{legend}</Legend>}
+          {caption && <Caption>{caption}</Caption>}
           {image && <PostPhoto source={{ uri: `${image}` }} />}
           <IconsContainer>
             <TouchableOpacity>
