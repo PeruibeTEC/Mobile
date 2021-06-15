@@ -7,12 +7,12 @@ interface TitleImageProps {
   image: string;
 }
 
-export function TitleImage({title, image}:TitleImageProps) {
+export function TitleImage({ title, image }: TitleImageProps) {
   return (
     <Container>
       <Title>{title}</Title>
       <View>
-        <Image source={{ uri:`${image}`}}/>
+        <Image source={{ uri: `${image}` }} />
       </View>
     </Container>
   );

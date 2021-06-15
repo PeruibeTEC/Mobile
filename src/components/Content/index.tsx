@@ -9,11 +9,13 @@ interface ContentProps {
   description?: string;
 }
 
-export function Content({title, street, number, description}:ContentProps) {
+export function Content({ title, street, number, description }: ContentProps) {
   return (
     <Container>
       <Title>{title}</Title>
-      <Caption>{street} {number}</Caption>
+      <Caption>
+        {street} {number}
+      </Caption>
       <Description>{description}</Description>
     </Container>
   );

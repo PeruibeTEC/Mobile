@@ -8,8 +8,7 @@ import { Home } from '../screens/Home';
 import Profile from '../screens/Profile';
 import { Restaurants } from '../screens/Restaurants';
 import { Points } from '../screens/Points';
-import { TheftItems }  from '../screens/TheftItems';
-import { red100 } from 'react-native-paper/lib/typescript/styles/colors';
+import { TheftItems } from '../screens/TheftItems';
 
 const Tab = createMaterialBottomTabNavigator();
 
