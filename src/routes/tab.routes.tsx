@@ -8,7 +8,7 @@ import { Home } from '../screens/Home';
 import Profile from '../screens/Profile';
 import { Restaurants } from '../screens/Restaurants';
 import { Points } from '../screens/Points';
-import { red100 } from 'react-native-paper/lib/typescript/styles/colors';
+import { TheftItems } from '../screens/TheftItems';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -45,6 +45,16 @@ const AppRoutes: React.FC = () => {
             tabBarLabel: 'Perfil',
             tabBarIcon: ({ color }) => (
               <Feather name="user" color={color} size={26} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Incidents"
+          component={TheftItems}
+          options={{
+            tabBarLabel: 'Incidentes',
+            tabBarIcon: ({ color }) => (
+              <Feather name="alert-triangle" color={color} size={26} />
             ),
           }}
         />

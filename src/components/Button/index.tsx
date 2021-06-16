@@ -6,7 +6,7 @@ interface ButtonProps {
   title: string;
 }
 
-export function Button({ title, ...rest }: ButtonProps){
+export function Button({ title, ...rest }: ButtonProps) {
   return (
     <Container {...rest}>
       <Text>{title}</Text>
