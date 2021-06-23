@@ -18,7 +18,6 @@ const AppRoutes: React.FC = () => (
     }}
   >
     <StackRoutes.Screen name="SignIn" component={SignIn} />
-    <StackRoutes.Screen name="Home" component={AuthRoutes} />
   </StackRoutes.Navigator>
 );
 
