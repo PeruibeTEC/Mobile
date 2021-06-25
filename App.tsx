@@ -5,7 +5,11 @@ import {
   Inter_600SemiBold,
   Inter_500Medium,
 } from '@expo-google-fonts/inter';
-import { Roboto_700Bold, Roboto_400Regular } from '@expo-google-fonts/roboto';
+import {
+  Roboto_700Bold,
+  Roboto_500Medium,
+  Roboto_400Regular,
+} from '@expo-google-fonts/roboto';
 
 import AppLoading from 'expo-app-loading';
 
@@ -16,6 +20,7 @@ export default function App() {
     Inter_600SemiBold,
     Inter_500Medium,
     Roboto_700Bold,
+    Roboto_500Medium,
     Roboto_400Regular,
   });
 
