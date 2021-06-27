@@ -19,9 +19,9 @@ export function Content({ title, street,budget, number, description, starting, e
       <Caption>
         {street} {number}
       </Caption>
-      {budget && <Budget>{budget}</Budget> }
-      {starting && <Starting>{starting}</Starting> }
-      {ending && <Ending>{ending}</Ending> }
+      {budget && <Budget>Verba: {budget}</Budget> }
+      {starting && <Starting>Início: {starting}</Starting> }
+      {ending && <Ending>Prazo: {ending}</Ending> }
       <Description>{description}</Description>
     </Container>
   );

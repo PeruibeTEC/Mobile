@@ -26,13 +26,27 @@ export const Description = styled.Text`
   font-size: 16px;
   color: #666666;
   line-height: 19px;
-  margin-top: 10px;
+  margin-top: 12px;
   text-align: left;
 `;
 
 export const Budget = styled.Text`
   font-family: 'Inter_600SemiBold';
   color: #000000;
+  font-size: 16px;
+  margin-top: 1px;
+`;
+
+export const Starting = styled.Text`
+  font-family: 'Inter_600SemiBold';
+  color: #000000;
+  font-size: 16px;
+  margin-top: 1px;
+`;
+
+export const Ending = styled.Text`
+  font-family: 'Inter_600SemiBold';
+  color: #DD0505;
   font-size: 16px;
   margin-top: 1px;
 `;
