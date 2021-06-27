@@ -4,7 +4,7 @@ import { ScrollView } from 'react-native';
 import { Header } from '../../components/Header/Header';
 import { TitleImage } from '../../components/TitleImage';
 import { Content } from '../../components/Content';
-import { Border} from './styles';
+import { Border, TitleToComments} from './styles';
 
 export function Project() {
 
@@ -30,6 +30,7 @@ export function Project() {
         a população."
       />
       <Border/>
+      <TitleToComments>Comentários</TitleToComments>
     </ScrollView>
   );
 }
