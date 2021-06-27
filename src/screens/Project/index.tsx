@@ -33,13 +33,21 @@ export function Project() {
       <Border/>
       <TitleToComments>Comentários</TitleToComments>
       <Comment
-      name="Leticia Silverio"
+      name="Henrique Martins"
       profile_image="https://avatars.githubusercontent.com/u/51277667?v=4"
       hours="10min"
-      comment="Um desreespeito com a população de Peruíbe, como pode uma cidade demorar 6 nos para realizar um hospital !!"
+      comment="Um desrespeito com a população de Peruíbe, como pode
+      uma cidade demorar 6 nos para realizar um hospital !!"
       likes="312"
       />
-
+     <Comment
+      name="Leticia Silverio"
+      profile_image="https://i.pinimg.com/736x/e7/a0/18/e7a01869a1581393e8178c7d8ef0407c.jpg"
+      hours="20min"
+      comment="Moro perto da obra, nunca vejo ninguém trabalhando
+      nela e nenhum progresso foi feito desde o começo do ano."
+      likes="312"
+      />
     </ScrollView>
   );
 }

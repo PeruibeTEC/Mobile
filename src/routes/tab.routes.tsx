@@ -35,7 +35,7 @@ const AppRoutes: React.FC = () => {
           options={{
             tabBarLabel: 'Home',
             tabBarIcon: ({ color }) => (
-              <Feather name="home" color={color} size={26} />
+              <Feather name="home" color={color} size={24} />
             ),
           }}
         />
@@ -45,7 +45,7 @@ const AppRoutes: React.FC = () => {
           options={{
             tabBarLabel: 'Perfil',
             tabBarIcon: ({ color }) => (
-              <Feather name="user" color={color} size={26} />
+              <Feather name="user" color={color} size={24} />
             ),
           }}
         />
@@ -55,7 +55,7 @@ const AppRoutes: React.FC = () => {
           options={{
             tabBarLabel: 'Incidentes',
             tabBarIcon: ({ color }) => (
-              <Feather name="alert-triangle" color={color} size={26} />
+              <Feather name="alert-triangle" color={color} size={24} />
             ),
           }}
         />
@@ -63,9 +63,9 @@ const AppRoutes: React.FC = () => {
           name="Business"
           component={Restaurants}
           options={{
-            tabBarLabel: 'Comercios',
+            tabBarLabel: 'Comércios',
             tabBarIcon: ({ color }) => (
-              <Feather name="coffee" color={color} size={26} />
+              <Feather name="coffee" color={color} size={24} />
             ),
           }}
         />
@@ -75,7 +75,7 @@ const AppRoutes: React.FC = () => {
           options={{
             tabBarLabel: 'Pontos',
             tabBarIcon: ({ color }) => (
-              <Feather name="map-pin" color={color} size={26} />
+              <Feather name="map-pin" color={color} size={24} />
             ),
           }}
         />
@@ -85,7 +85,7 @@ const AppRoutes: React.FC = () => {
           options={{
             tabBarLabel: 'Obras',
             tabBarIcon: ({ color }) => (
-              <Feather name="map" color={color} size={26} />
+              <Feather name="map" color={color} size={24} />
             ),
           }}
         />
