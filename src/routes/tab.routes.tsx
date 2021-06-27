@@ -9,6 +9,7 @@ import Profile from '../screens/Profile';
 import { Restaurants } from '../screens/Restaurants';
 import { Points } from '../screens/Points';
 import { TheftItems } from '../screens/TheftItems';
+import { Project } from '../screens/Project';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -59,10 +60,10 @@ const AppRoutes: React.FC = () => {
           }}
         />
         <Tab.Screen
-          name="Restaurants"
+          name="Business"
           component={Restaurants}
           options={{
-            tabBarLabel: 'Restaurantes',
+            tabBarLabel: 'Comercios',
             tabBarIcon: ({ color }) => (
               <Feather name="coffee" color={color} size={26} />
             ),
@@ -72,9 +73,19 @@ const AppRoutes: React.FC = () => {
           name="Points"
           component={Points}
           options={{
-            tabBarLabel: 'Points',
+            tabBarLabel: 'Pontos',
             tabBarIcon: ({ color }) => (
               <Feather name="map-pin" color={color} size={26} />
+            ),
+          }}
+        />
+         <Tab.Screen
+          name="Construction"
+          component={Project}
+          options={{
+            tabBarLabel: 'Obras',
+            tabBarIcon: ({ color }) => (
+              <Feather name="map" color={color} size={26} />
             ),
           }}
         />

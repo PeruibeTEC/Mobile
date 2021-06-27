@@ -11,14 +11,14 @@ export const Title = styled.Text`
   font-family: 'Inter_500Medium';
   color: #000000;
   font-size: 24px;
-  margin-top: 5px;
+  margin-top: 10px;
 `;
 
 export const Caption = styled.Text`
   font-family: 'Inter_600SemiBold';
   color: #000000;
   font-size: 16px;
-  margin-top: 1px;
+  margin-top: 4px;
 `;
 
 export const Description = styled.Text`
@@ -28,4 +28,11 @@ export const Description = styled.Text`
   line-height: 19px;
   margin-top: 10px;
   text-align: left;
+`;
+
+export const Budget = styled.Text`
+  font-family: 'Inter_600SemiBold';
+  color: #000000;
+  font-size: 16px;
+  margin-top: 1px;
 `;
