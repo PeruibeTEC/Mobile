@@ -32,8 +32,14 @@ export function Project() {
       />
       <Border/>
       <TitleToComments>Comentários</TitleToComments>
-      <Comment/>
-      <Comment/>
+      <Comment
+      name="Leticia Silverio"
+      profile_image="https://avatars.githubusercontent.com/u/51277667?v=4"
+      hours="10min"
+      comment="Um desreespeito com a população de Peruíbe, como pode uma cidade demorar 6 nos para realizar um hospital !!"
+      likes="312"
+      />
+
     </ScrollView>
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, Title, Caption, Description,Budget,Starting,Ending } from './styles';
+import { Container, Title, Caption, Description, Text, Ending, View,} from './styles';
 
 interface ContentProps {
   title: string;
@@ -19,9 +19,12 @@ export function Content({ title, street,budget, number, description, starting, e
       <Caption>
         {street} {number}
       </Caption>
-      {budget && <Budget>Verba: {budget}</Budget> }
-      {starting && <Starting>Início: {starting}</Starting> }
-      {ending && <Ending>Prazo: {ending}</Ending> }
+        {budget && <Text>Verba: {budget}</Text> }
+        {starting && <Text>Início: {starting}</Text> }
+       <View>
+       {ending && <Text>Prazo:</Text> }
+       {ending && <Ending> {ending}</Ending> }
+       </View>
       <Description>{description}</Description>
     </Container>
   );

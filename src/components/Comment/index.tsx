@@ -12,22 +12,30 @@ import {
   IconsContainer,
   TimeToComment
 } from './styles';
+interface CommentProps {
+  name: string;
+  profile_image: string;
+  hours: string;
+  comment: string;
+  likes: string;
+}
 
-export function Comment() {
+
+export function Comment({profile_image,name,comment,hours,likes}:CommentProps) {
   return (
       <Container>
-        <View style={{ width: '20%' }}>
-          <ProfilePhoto source={{ uri: "https://i.pinimg.com/736x/e7/a0/18/e7a01869a1581393e8178c7d8ef0407c.jpg" }} />
+        <View style={{ width: '10%' }}>
+          <ProfilePhoto source={{ uri: `${profile_image}`  }} />
         </View>
         <ContentContainer>
-           <Name>Leticia Silverio</Name>
-           <Caption>Um desrespeito com a população de Peruibe, como pode uma cidade demorar 6 anos para realizar um hospital !!</Caption>
+           <Name>{name}</Name>
+           <Caption>{comment}</Caption>
         </ContentContainer>
         <IconsContainer>
-          <TimeToComment>10min</TimeToComment>
+          <TimeToComment>{hours}</TimeToComment>
           <TouchableOpacity>
-              <Feather name="heart" color={'#E82656'} size={13}>
-                ⠀{312}
+              <Feather name="heart" color={'#E82656'} size={11}>
+                ⠀{likes}
               </Feather>
            </TouchableOpacity>
         </IconsContainer>

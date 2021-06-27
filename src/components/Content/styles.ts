@@ -30,14 +30,7 @@ export const Description = styled.Text`
   text-align: left;
 `;
 
-export const Budget = styled.Text`
-  font-family: 'Inter_600SemiBold';
-  color: #000000;
-  font-size: 16px;
-  margin-top: 1px;
-`;
-
-export const Starting = styled.Text`
+export const Text = styled.Text`
   font-family: 'Inter_600SemiBold';
   color: #000000;
   font-size: 16px;
@@ -49,4 +42,8 @@ export const Ending = styled.Text`
   color: #DD0505;
   font-size: 16px;
   margin-top: 1px;
+`;
+
+export const View = styled.View`
+  flex-direction: row;
 `;
