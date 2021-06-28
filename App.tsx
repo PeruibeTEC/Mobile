@@ -4,6 +4,7 @@ import {
   useFonts,
   Inter_600SemiBold,
   Inter_500Medium,
+  Inter_400Regular
 } from '@expo-google-fonts/inter';
 import { Roboto_700Bold, Roboto_400Regular } from '@expo-google-fonts/roboto';
 
@@ -15,6 +16,7 @@ export default function App() {
   const [fontsLoaded] = useFonts({
     Inter_600SemiBold,
     Inter_500Medium,
+    Inter_400Regular,
     Roboto_700Bold,
     Roboto_400Regular,
   });
