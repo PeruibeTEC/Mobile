@@ -15,7 +15,7 @@ import {
 
 interface InputProps extends TextInputProps {
   name: string;
-  icon: string;
+  icon?: string;
   defaultValue: string;
 }
 
@@ -49,14 +49,17 @@ export const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = (
 
   return (
     <Container isFocused={isFocused}>
-      <Icon
-        name={icon}
-        size={20}
-        color={isFocused || isFilled ? '#2196F3' : '#BDBDBD'}
-      />
+      {icon && 
+        <Icon
+          name={icon}
+          size={20}
+          color={isFocused || isFilled ? '#2196F3' : '#BDBDBD'}
+        />
+      }
+
       <TextInput
         keyboardAppearance="dark"
-        placeholderTextColor="#666360"
+        placeholderTextColor="#BDBDBD"
         defaultValue={defaultValue}
         onFocus={handleInputFocus}
         onBlur={handleInputBlur}

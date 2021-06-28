@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { 
   Dimensions,
   KeyboardAvoidingView,
@@ -18,14 +18,11 @@ import {
   ContainerInputs,
   Terms,
 } from './styles';
-import { TextInput } from 'react-native';
 
 export function SignUp() {
   const [isChecked, setChecked] = useState(false);
   const navigation = useNavigation();
   
-  const emailInput = useRef();
-
   async function handleFinishSignUp() {
     navigation.navigate('FinishSignUp');
   }

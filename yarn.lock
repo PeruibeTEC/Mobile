@@ -4125,10 +4125,25 @@
   dependencies:
     "fontfaceobserver" "^2.1.0"
 
+"expo-image-picker@^10.1.4":
+  "integrity" "sha512-4U16RteJNWP5mC198fOIK/BgI3ZXRjqwslFK/gUrKiK5QKECXdvPCHrPwbXlo1DRQNhoPvWd+Cnhod0RsDnMkQ=="
+  "resolved" "https://registry.npmjs.org/expo-image-picker/-/expo-image-picker-10.1.4.tgz"
+  "version" "10.1.4"
+  dependencies:
+    "@expo/config-plugins" "^1.0.18"
+    "expo-permissions" "~12.0.1"
+    "unimodules-permissions-interface" "~6.1.0"
+    "uuid" "7.0.2"
+
 "expo-keep-awake@~9.1.2":
   "integrity" "sha512-CCuEOQUNLYtMA0rt0sQ9u5LlIMH7lDJG7dImoorfKMsP95yHXy8dl3oCdtaz2zbsPgggVYeom9gE+gQu+Ki4rQ=="
   "resolved" "https://registry.npmjs.org/expo-keep-awake/-/expo-keep-awake-9.1.2.tgz"
   "version" "9.1.2"
+
+"expo-permissions@~12.0.1":
+  "integrity" "sha512-TtypNPPLG4SdVEKBlrArLLZIyhlhE+3B4dhz2HaY1Mve2rcvKE0C7z/e1WoUVU8+LgcdKoNGwg/wRVeCkxeEhg=="
+  "resolved" "https://registry.npmjs.org/expo-permissions/-/expo-permissions-12.0.1.tgz"
+  "version" "12.0.1"
 
 "expo-splash-screen@~0.10.2":
   "integrity" "sha512-ngelW7g5yFqk3LWbyLDDxi3LYXEfgGFCJddL/Q8S/C1pMUc5foW2j9i/q+akK8i5mjYtSx3+Bk/qbyX92QIF/w=="
@@ -8428,6 +8443,11 @@
   "resolved" "https://registry.npmjs.org/unicode-property-aliases-ecmascript/-/unicode-property-aliases-ecmascript-1.1.0.tgz"
   "version" "1.1.0"
 
+"unimodules-permissions-interface@~6.1.0":
+  "integrity" "sha512-jeJx/y+Vn/Cp1/4su5XJ06UBul83MpXkYEqIOAb2jwaikhmj6tNwko7HpKy9OhfGfrhddCzwtedlro8xxZUk9A=="
+  "resolved" "https://registry.npmjs.org/unimodules-permissions-interface/-/unimodules-permissions-interface-6.1.0.tgz"
+  "version" "6.1.0"
+
 "union-value@^1.0.0":
   "integrity" "sha512-tJfXmxMeWYnczCVs7XAEvIV7ieppALdyepWMkHkwciRpZraG/xwT+s2JN8+pr1+8jCRf80FFzvr+MpQeeoF4Xg=="
   "resolved" "https://registry.npmjs.org/union-value/-/union-value-1.0.1.tgz"
@@ -8531,6 +8551,11 @@
   "integrity" "sha512-DPSke0pXhTZgoF/d+WSt2QaKMCFSfx7QegxEWT+JOuHF5aWrKEn0G+ztjuJg/gG8/ItK+rbPCD/yNv8yyih6Cg=="
   "resolved" "https://registry.npmjs.org/uuid/-/uuid-7.0.3.tgz"
   "version" "7.0.3"
+
+"uuid@7.0.2":
+  "integrity" "sha512-vy9V/+pKG+5ZTYKf+VcphF5Oc6EFiu3W8Nv3P3zIh0EqVI80ZxOzuPfe9EHjkFNvf8+xuTHVeei4Drydlx4zjw=="
+  "resolved" "https://registry.npmjs.org/uuid/-/uuid-7.0.2.tgz"
+  "version" "7.0.2"
 
 "v8-compile-cache@^2.0.3":
   "integrity" "sha512-l8lCEmLcLYZh4nbunNZvQCJc5pv7+RCwa8q/LdUx8u7lsWvPDKmpodJAJNwkAhJC//dFY48KuIEmjtd4RViDrA=="
