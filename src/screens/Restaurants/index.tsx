@@ -3,6 +3,7 @@ import { SafeAreaView } from 'react-native';
 import { MaterialIcons as Icon } from '@expo/vector-icons';
 
 import { Header } from '../../components/Header/Header';
+import { Session } from './components/Session';
 
 import {
   Container,
@@ -12,6 +13,7 @@ import {
   RestaurantAddress,
   ViewButtonContainer,
   ViewButtonText,
+  RestaurantSessions,
 } from './styles';
 
 const Restaurants: React.FC = () => {
@@ -42,6 +44,11 @@ const Restaurants: React.FC = () => {
             <Icon name="redo" size={20} color="#e0e5eb" />
           </ViewButtonContainer>
         </RestaurantCover>
+
+        <RestaurantSessions>
+          <Session sessionName="Pizzarias" />
+          <Session sessionName="Pizzarias" />
+        </RestaurantSessions>
       </SafeAreaView>
     </Container>
   );

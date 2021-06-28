@@ -52,3 +52,7 @@ export const ViewButtonText = styled.Text`
   color: #e0e5eb;
   margin-right: 4px;
 `;
+
+export const RestaurantSessions = styled.View`
+  flex: 1;
+`;
