@@ -1,5 +1,6 @@
 import React from 'react';
 import { 
+  Alert,
   Dimensions,
   KeyboardAvoidingView,
   SafeAreaView,
@@ -20,12 +21,38 @@ import {
   CreateAccount,
   CreateAccountContainer 
 } from './styles';
+import { useState } from 'react';
 
 export function SignIn() {
   const navigation = useNavigation();
   
+  const [email, setEmail] = useState<string>();
+  const [password, setPassword] = useState<string>();
+
   async function handleSignUp() {
     navigation.navigate('SignUp');
+  }
+
+  async function handleSignIn() {
+    const pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+
+    if(!email || !password) {
+      Alert.alert(
+        'Atenção !!',
+        'Preencha todos os campos 🧐'
+      );
+      return;
+    }
+
+    if (!pattern.test(email)) {
+      Alert.alert(
+        'Atenção !!',
+        'Coloque um email válido 🧐'
+      );
+      return;
+    } 
+
+    navigation.navigate('Home');
   }
 
   return (
@@ -40,9 +67,12 @@ export function SignIn() {
           <ContainerInputs>
             <Input 
               defaultValue=""
-              icon="user" 
-              name="user"
+              icon="at" 
+              name="at"
               placeholder="Email"
+              keyboardType="email-address"
+              onChangeText={setEmail}
+              value={email}
             />
             <View style={{
               marginTop: 16,
@@ -54,12 +84,14 @@ export function SignIn() {
                 name="lock"
                 placeholder="Senha"
                 secureTextEntry={true}
+                onChangeText={setPassword}
+                value={password}
               />
             </View>
           </ContainerInputs>
 
 
-          <Button onPress={() => {}} title="Entrar" />
+          <Button onPress={handleSignIn} title="Entrar" />
 
           <TouchableOpacity activeOpacity={0.5}>
             <ForgotPassword>

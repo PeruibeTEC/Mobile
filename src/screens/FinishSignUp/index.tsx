@@ -4,7 +4,6 @@ import React, {
 } from 'react';
 import { 
   Alert,
-  Image,
   KeyboardAvoidingView,
   Platform,
   SafeAreaView,
@@ -30,10 +29,28 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export function FinishSignUp() {
   const navigation = useNavigation();
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState<string>();
   
   async function handleNavigateToHome() {
-    navigation.navigate('Home');
+    if(!image) {
+      Alert.alert(
+        'Atenção !!',
+        'Você não fez o upload de nenhuma foto de perfil, caso queira prosseguir mesmo assim, você terá uma foto de perfil padrão 🧐',
+        [
+          {
+            text: "Cancelar",
+            onPress: () => { return; },
+            style: "cancel"
+          },
+          {
+            text: "Prosseguir",
+            onPress: () => navigation.navigate('Home')
+          },
+        ]
+      );
+    } else {
+      navigation.navigate('Home');
+    }
   }
 
   useEffect(() => {
