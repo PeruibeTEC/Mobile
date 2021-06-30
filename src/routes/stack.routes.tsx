@@ -3,7 +3,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import { SignIn } from '../screens/SignIn';
 import { SignUp } from '../screens/SignUp';
+import { ChooseYourType } from '../screens/ChooseYourType';
 import { FinishSignUp } from '../screens/FinishSignUp';
+import { ChooseYourCity } from '../screens/ChooseYourCity';
 
 import AuthRoutes from './tab.routes';
 import colors from '../styles/colors';
@@ -24,8 +26,16 @@ const AppRoutes: React.FC = () => (
       component={SignIn}
     />
     <StackRoutes.Screen 
+      name="ChooseYourType" 
+      component={ChooseYourType} 
+    />
+    <StackRoutes.Screen 
       name="SignUp" 
       component={SignUp} 
+    />
+    <StackRoutes.Screen 
+      name="ChooseYourCity" 
+      component={ChooseYourCity}
     />
     <StackRoutes.Screen 
       name="FinishSignUp" 

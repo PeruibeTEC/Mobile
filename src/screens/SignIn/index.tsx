@@ -30,7 +30,7 @@ export function SignIn() {
   const [password, setPassword] = useState<string>();
 
   async function handleSignUp() {
-    navigation.navigate('SignUp');
+    navigation.navigate('ChooseYourType');
   }
 
   async function handleSignIn() {

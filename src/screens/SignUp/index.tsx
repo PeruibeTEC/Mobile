@@ -19,6 +19,7 @@ import {
   ContainerInputs,
   Terms,
 } from './styles';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export function SignUp() {
   const navigation = useNavigation();
@@ -72,7 +73,14 @@ export function SignUp() {
       );
       return;
     }
-    navigation.navigate('FinishSignUp');
+
+    const isTourist = await AsyncStorage.getItem('@PeruibeTec:isTourist');
+
+    if(isTourist === 'false') {
+      navigation.navigate('FinishSignUp');
+    } else {
+      navigation.navigate('ChooseYourCity');
+    }
   }
 
   return (
