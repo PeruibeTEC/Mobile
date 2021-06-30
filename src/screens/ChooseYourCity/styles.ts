@@ -10,7 +10,7 @@ export const Content = styled.View`
 `;
 
 export const Title = styled.Text`
-  margin-bottom: 24px;
+  margin-bottom: 14px;
   color: black;
 
   font-family: 'Inter_600SemiBold';
@@ -19,11 +19,28 @@ export const Title = styled.Text`
   text-align: center;
 `;
 
+export const Subtitle = styled.Text`
+  color: #9c9c9c;
+
+  font-family: 'Inter_500Medium';
+  font-size: 16px;
+  text-align: center;
+`;
+
+export const Caption = styled.Text`
+  color: #9c9c9c;
+
+  font-family: 'Inter_500Medium';
+  font-size: 14px;
+  text-align: left;
+`;
+
 export const ContainerPicker = styled.View`
-  margin-top: 8px;
   margin-bottom: 24px;
   width: 85%;
+`;
 
+export const PickerStyle = styled.View`
   border: 2px #F6F6F6;
   border-radius: 8px;
   background-color: #E8E8E8;

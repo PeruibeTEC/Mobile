@@ -18,6 +18,9 @@ import {
   Title,
   Content,
   ContainerPicker,
+  Subtitle,
+  Caption,
+  PickerStyle,
 } from './styles';
 
 export function ChooseYourCity() {
@@ -65,49 +68,58 @@ export function ChooseYourCity() {
       <KeyboardAvoidingView>
         <Content>
           <Title>{`Continue\nse Cadastrando `}</Title>
+          <Subtitle>
+            {`Informe sua cidade\n Assim conseguimos ter um controle\nmaior sobre quem visita Peruíbe`}
+          </Subtitle>
 
-            <ContainerPicker style={{marginTop: 58}}>
-              <Picker
-                style={{
-                  marginRight: 8,
-                  color: 'black',
-                  fontWeight: 'bold'
-                }}
-                selectedValue={stateIndexSelected}
-                onValueChange={(itemValue, itemIndex: number) => {
-                  setStateIndexSelected(itemValue)
-                }}
-              >
-                {
-                  states && states.map((state: IStateProps, index: number) => (
-                    <Picker.Item
-                      label={state.nome}
-                      value={state.id}
-                      key={index}
-                    />
-                  ))
-                }
-              </Picker>
+            <ContainerPicker style={{ marginTop: 34 }}>
+              <Caption>Estado:</Caption>
+              <PickerStyle>
+                <Picker
+                  style={{
+                    marginRight: 8,
+                    color: 'black',
+                    fontWeight: 'bold'
+                  }}
+                  selectedValue={stateIndexSelected}
+                  onValueChange={(itemValue, itemIndex: number) => {
+                    setStateIndexSelected(itemValue)
+                  }}
+                >
+                  {
+                    states && states.map((state: IStateProps, index: number) => (
+                      <Picker.Item
+                        label={state.nome}
+                        value={state.id}
+                        key={index}
+                      />
+                    ))
+                  }
+                </Picker>
+              </PickerStyle>
             </ContainerPicker>
-
-            <ContainerPicker style={{marginBottom: 108}}>
-              <Picker
-                style={{marginRight: 8}}
-                selectedValue={citySelected}
-                onValueChange={(itemValue, itemIndex: number) => {
-                  setCitySelected(itemValue);
-                }}
-              >
-                {
-                  cities && cities.map((city: IStateProps, index: number) => (
-                    <Picker.Item
-                      label={city.nome}
-                      value={city.nome}
-                      key={index}
-                    />
-                  ))
-                }
-              </Picker>
+          
+            <ContainerPicker>
+              <Caption>Cidade:</Caption>
+              <PickerStyle style={{marginBottom: 34}}>
+                <Picker
+                  style={{marginRight: 8}}
+                  selectedValue={citySelected}
+                  onValueChange={(itemValue, itemIndex: number) => {
+                    setCitySelected(itemValue);
+                  }}
+                >
+                  {
+                    cities && cities.map((city: IStateProps, index: number) => (
+                      <Picker.Item
+                        label={city.nome}
+                        value={city.nome}
+                        key={index}
+                      />
+                    ))
+                  }
+                </Picker>
+              </PickerStyle>
             </ContainerPicker>
 
           <Button
