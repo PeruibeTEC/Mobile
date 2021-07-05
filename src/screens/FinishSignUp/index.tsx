@@ -124,7 +124,6 @@ export function FinishSignUp() {
                 defaultValue=""
                 name="lock"
                 placeholder="Escreva uma pequena bio"
-                secureTextEntry={true}
               />
             </View>
 
