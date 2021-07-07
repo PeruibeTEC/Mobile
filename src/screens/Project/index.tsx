@@ -1,12 +1,20 @@
 import React from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, View, TouchableOpacity } from 'react-native';
+
+import Feather from '@expo/vector-icons/Feather';
 
 import { Header } from '../../components/Header/Header';
 import { TitleImage } from '../../components/TitleImage';
 import { Content } from '../../components/Content';
 import { Comment } from '../../components/Comment';
 
-import { Border, TitleToComments } from './styles';
+import { 
+  Border, 
+  TitleToComments,
+  InputContainer,
+  InputText,
+  Input,
+} from './styles';
 
 export function Project() {
 
@@ -34,7 +42,32 @@ export function Project() {
       <Border/>
 
       <TitleToComments>Comentários</TitleToComments>
-
+      <InputContainer>
+        <InputText>Dê um feedback sobre a obra:</InputText>
+        <View style={{
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+          <Input
+            style={{
+              paddingLeft: 15
+            }}
+            placeholder="Digite aqui"
+          />
+          <TouchableOpacity>
+            <Feather 
+              style={{
+                marginLeft: 10
+              }}
+              name="arrow-right-circle" 
+              color={'#2196f3'} 
+              size={26} 
+            />
+          </TouchableOpacity>
+        </View>
+      </InputContainer>
       <Comment
         name="Henrique Martins"
         profile_image="https://avatars.githubusercontent.com/u/51277667?v=4"
