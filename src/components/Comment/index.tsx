@@ -12,6 +12,7 @@ import {
   IconsContainer,
   TimeToComment
 } from './styles';
+
 interface CommentProps {
   name: string;
   profile_image: string;
@@ -20,8 +21,13 @@ interface CommentProps {
   likes: string;
 }
 
-
-export function Comment({profile_image,name,comment,hours,likes}:CommentProps) {
+export function Comment({
+  profile_image, 
+  name, 
+  comment, 
+  hours, 
+  likes 
+}: CommentProps) {
   return (
       <Container>
         <View style={{ width: '10%' }}>
@@ -34,10 +40,10 @@ export function Comment({profile_image,name,comment,hours,likes}:CommentProps) {
         <IconsContainer>
           <TimeToComment>{hours}</TimeToComment>
           <TouchableOpacity>
-              <Feather name="heart" color={'#E82656'} size={11}>
-                ⠀{likes}
-              </Feather>
-           </TouchableOpacity>
+            <Feather name="heart" color={'#E82656'} size={14}>
+            ⠀{likes}
+            </Feather>
+          </TouchableOpacity>
         </IconsContainer>
       </Container>
   );

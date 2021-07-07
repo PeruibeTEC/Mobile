@@ -5,7 +5,8 @@ import { Header } from '../../components/Header/Header';
 import { TitleImage } from '../../components/TitleImage';
 import { Content } from '../../components/Content';
 import { Comment } from '../../components/Comment';
-import { Border, TitleToComments} from './styles';
+
+import { Border, TitleToComments } from './styles';
 
 export function Project() {
 
@@ -16,7 +17,7 @@ export function Project() {
         title="Hospital de Peruíbe"
         image="https://lh3.googleusercontent.com/proxy/vXe0ZeGYZRGfkelOQvJJzvBBWImpiiyPAmbnO9dgFxvMe-vYBaePfS__6CikWRGFkVu41LrXbemhREMoQ-TbjGMxVHI_vgF4t7UbaouclZA8Br569Mch5tqDKjJas2u_Tlmb5TF2FdKe"
       />
-       <Content
+      <Content
         title="Hospital de Peruibe"
         street="R. Ten. José Ignácio Monte Olivia"
         number="10"
@@ -31,22 +32,24 @@ export function Project() {
         a população."
       />
       <Border/>
+
       <TitleToComments>Comentários</TitleToComments>
+
       <Comment
-      name="Henrique Martins"
-      profile_image="https://avatars.githubusercontent.com/u/51277667?v=4"
-      hours="10min"
-      comment="Um desrespeito com a população de Peruíbe, como pode
-      uma cidade demorar 6 nos para realizar um hospital !!"
-      likes="312"
+        name="Henrique Martins"
+        profile_image="https://avatars.githubusercontent.com/u/51277667?v=4"
+        hours="10min"
+        comment="Um desrespeito com a população de Peruíbe, como pode
+        uma cidade demorar 6 nos para realizar um hospital !!"
+        likes="312"
       />
-     <Comment
-      name="Leticia Silverio"
-      profile_image="https://i.pinimg.com/736x/e7/a0/18/e7a01869a1581393e8178c7d8ef0407c.jpg"
-      hours="20min"
-      comment="Moro perto da obra, nunca vejo ninguém trabalhando
-      nela e nenhum progresso foi feito desde o começo do ano."
-      likes="312"
+      <Comment
+        name="Leticia Silverio"
+        profile_image="https://i.pinimg.com/736x/e7/a0/18/e7a01869a1581393e8178c7d8ef0407c.jpg"
+        hours="20min"
+        comment="Moro perto da obra, nunca vejo ninguém trabalhando
+        nela e nenhum progresso foi feito desde o começo do ano."
+        likes="312"
       />
     </ScrollView>
   );
