@@ -4,7 +4,7 @@ import { Container, Title, Caption, Description } from './styles';
 
 interface ContentProps {
   title: string;
-  street: string;
+  street?: string;
   number?: string;
   description?: string;
 }

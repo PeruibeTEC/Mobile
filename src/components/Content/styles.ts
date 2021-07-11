@@ -11,7 +11,6 @@ export const Title = styled.Text`
   font-family: 'Inter_500Medium';
   color: #000000;
   font-size: 24px;
-  margin-top: 5px;
 `;
 
 export const Caption = styled.Text`
@@ -26,6 +25,6 @@ export const Description = styled.Text`
   font-size: 16px;
   color: #666666;
   line-height: 19px;
-  margin-top: 10px;
+  margin-top: 8px;
   text-align: left;
 `;

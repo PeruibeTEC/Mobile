@@ -7,8 +7,8 @@ import { Feather } from '@expo/vector-icons';
 import { Home } from '../screens/Home';
 import Profile from '../screens/Profile';
 import { Restaurants } from '../screens/Restaurants';
-import { Points } from '../screens/Points';
 import { TheftItems } from '../screens/TheftItems';
+import { TouristSpot } from '../screens/TouristSpot';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -70,7 +70,7 @@ const AppRoutes: React.FC = () => {
         />
         <Tab.Screen
           name="Points"
-          component={Points}
+          component={TouristSpot}
           options={{
             tabBarLabel: 'Points',
             tabBarIcon: ({ color }) => (
