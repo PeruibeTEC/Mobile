@@ -52,8 +52,11 @@ export function Project() {
         }}>
           <Input
             style={{
-              paddingLeft: 15
+              paddingLeft: 15,
+              paddingRight: 15
             }}
+            multiline={true}
+            numberOfLines={8}
             placeholder="Digite aqui"
           />
           <TouchableOpacity>
