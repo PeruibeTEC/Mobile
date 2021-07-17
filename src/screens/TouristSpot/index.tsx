@@ -1,13 +1,12 @@
 import React from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, View } from 'react-native';
 
 import { Header } from '../../components/Header/Header';
 import { TitleImage } from '../../components/TitleImage';
 import { Content } from '../../components/Content';
-import { Button } from '../../components/Button';
-import { Border, View, Text,} from './styles'
+import { Border, Button, ViewContainer, Text, Label} from './styles'
 
-import Feather from '@expo/vector-icons/FontAwesome5';
+import Feather from '@expo/vector-icons/Feather';
 
 export function TouristSpot() {
 
@@ -28,11 +27,28 @@ export function TouristSpot() {
         seja praticando esportes ou apreciando a vista."
       />
       <Border />
-      <View>
+      <ViewContainer>
       <Text>Ficou interessado?</Text>
       <Text style={{marginBottom:20}}>Verifique as rotas para esse ponto turístico !!</Text>
-      <Button title="Rotas" />
+      </ViewContainer>
+
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignItems:  'center',
+          marginBottom: 20 }}
+      >
+        <Button>
+        <Label>Rotas</Label>
+          <Feather
+            name="navigation"
+            color={'#FFFFFF'}
+            size={18}
+          />
+        </Button>
       </View>
+
     </ScrollView>
   );
 }
