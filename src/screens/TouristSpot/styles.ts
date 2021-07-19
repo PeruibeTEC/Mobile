@@ -22,7 +22,6 @@ export const Text = styled.Text`
 export const Button = styled.View`
   flex-direction: row;
   align-items: center;
-  justify-content:space-around;
   width: 90%;
   height: 54px;
   background: #2196f3;
@@ -33,4 +32,5 @@ export const Label = styled.Text`
   font-family: 'Roboto_700Bold';
   color: #fff;
   font-size: 18px;
+  margin-left:40%;
 `;
