@@ -9,11 +9,11 @@ export const ViewContainer = styled.View`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top:20px;
+  margin-top: 20px;
 `;
 
 export const Text = styled.Text`
-  font-family:Roboto_700Bold;
+  font-family: Roboto_700Bold;
   font-size: 19px;
   line-height: 23px;
   text-align: center;
@@ -32,5 +32,5 @@ export const Label = styled.Text`
   font-family: 'Roboto_700Bold';
   color: #fff;
   font-size: 18px;
-  margin-left:40%;
+  margin-left: 40%;
 `;

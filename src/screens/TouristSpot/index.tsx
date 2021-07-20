@@ -4,12 +4,11 @@ import { ScrollView, View } from 'react-native';
 import { Header } from '../../components/Header/Header';
 import { TitleImage } from '../../components/TitleImage';
 import { Content } from '../TouristSpot/components/Content';
-import { Border, Button, ViewContainer, Text, Label} from './styles'
+import { Border, Button, ViewContainer, Text, Label } from './styles';
 
 import Feather from '@expo/vector-icons/Feather';
 
 export function TouristSpot() {
-
   return (
     <ScrollView style={{ backgroundColor: 'white' }}>
       <Header title="Pontos Turísticos" />
@@ -28,20 +27,23 @@ export function TouristSpot() {
       />
       <Border />
       <ViewContainer>
-      <Text>Ficou interessado?</Text>
-      <Text style={{marginBottom:20}}>Verifique as rotas para esse ponto turístico !!</Text>
+        <Text>Ficou interessado?</Text>
+        <Text style={{ marginBottom: 20 }}>
+          Verifique as rotas para esse ponto turístico !!
+        </Text>
       </ViewContainer>
 
       <View
         style={{
-          alignItems:  'center',
-          marginBottom: 20 }}
+          alignItems: 'center',
+          marginBottom: 20,
+        }}
       >
         <Button>
-        <Label>Rotas</Label>
+          <Label>Rotas</Label>
           <Feather
             style={{
-              marginLeft:10
+              marginLeft: 10,
             }}
             name="navigation"
             color={'#FFFFFF'}
@@ -49,9 +51,6 @@ export function TouristSpot() {
           />
         </Button>
       </View>
-
     </ScrollView>
   );
 }
-
-
