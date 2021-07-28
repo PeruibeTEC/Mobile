@@ -4,7 +4,8 @@ import { ScrollView, View } from 'react-native';
 import { Header } from '../../components/Header/Header';
 import { TitleImage } from '../../components/TitleImage';
 import { Content } from '../TouristSpot/components/Content';
-import { Border, Button, ViewContainer, Text, Label } from './styles';
+import { Button } from '../../components/Button';
+import { Border, ViewContainer, Text } from './styles';
 
 import Feather from '@expo/vector-icons/Feather';
 
@@ -39,11 +40,10 @@ export function TouristSpot() {
           marginBottom: 20,
         }}
       >
-        <Button>
-          <Label>Rotas</Label>
+        <Button title="Rotas">
           <Feather
             style={{
-              marginLeft: 10,
+              marginLeft: 5,
             }}
             name="navigation"
             color={'#FFFFFF'}
