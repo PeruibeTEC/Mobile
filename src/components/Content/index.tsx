@@ -4,7 +4,7 @@ import { Container, Title, Caption, Description, Text, Ending, View,} from './st
 
 interface ContentProps {
   title: string;
-  street: string;
+  street?: string;
   number?: string;
   description?: string;
   budget?: string;
