@@ -8,6 +8,7 @@ import { Home } from '../screens/Home';
 import Profile from '../screens/Profile';
 import { Restaurants } from '../screens/Restaurants';
 import { TheftItems } from '../screens/TheftItems';
+
 import { TouristSpot } from '../screens/TouristSpot';
 
 const Tab = createMaterialBottomTabNavigator();
@@ -34,7 +35,7 @@ const AppRoutes: React.FC = () => {
           options={{
             tabBarLabel: 'Home',
             tabBarIcon: ({ color }) => (
-              <Feather name="home" color={color} size={26} />
+              <Feather name="home" color={color} size={24} />
             ),
           }}
         />
@@ -44,7 +45,7 @@ const AppRoutes: React.FC = () => {
           options={{
             tabBarLabel: 'Perfil',
             tabBarIcon: ({ color }) => (
-              <Feather name="user" color={color} size={26} />
+              <Feather name="user" color={color} size={24} />
             ),
           }}
         />
@@ -54,17 +55,17 @@ const AppRoutes: React.FC = () => {
           options={{
             tabBarLabel: 'Incidentes',
             tabBarIcon: ({ color }) => (
-              <Feather name="alert-triangle" color={color} size={26} />
+              <Feather name="alert-triangle" color={color} size={24} />
             ),
           }}
         />
         <Tab.Screen
-          name="Restaurants"
+          name="Business"
           component={Restaurants}
           options={{
-            tabBarLabel: 'Restaurantes',
+            tabBarLabel: 'Comércios',
             tabBarIcon: ({ color }) => (
-              <Feather name="coffee" color={color} size={26} />
+              <Feather name="coffee" color={color} size={24} />
             ),
           }}
         />
@@ -72,9 +73,19 @@ const AppRoutes: React.FC = () => {
           name="Points"
           component={TouristSpot}
           options={{
-            tabBarLabel: 'Points',
+            tabBarLabel: 'Pontos',
             tabBarIcon: ({ color }) => (
-              <Feather name="map-pin" color={color} size={26} />
+              <Feather name="map-pin" color={color} size={24} />
+            ),
+          }}
+        />
+         <Tab.Screen
+          name="Construction"
+          component={Project}
+          options={{
+            tabBarLabel: 'Obras',
+            tabBarIcon: ({ color }) => (
+              <Feather name="map" color={color} size={24} />
             ),
           }}
         />
