@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, View } from 'react-native';
+import { ScrollView, View,Platform, Linking } from 'react-native';
 
 import { Header } from '../../components/Header/Header';
 import { TitleImage } from '../../components/TitleImage';
@@ -10,6 +10,18 @@ import { Border, ViewContainer, Text } from './styles';
 import Feather from '@expo/vector-icons/Feather';
 
 export function TouristSpot() {
+  function handleOpenMaps(lat: number, lng: number) {
+    const scheme = Platform.select({ ios: 'maps:0,0?q=', android: 'geo:0,0?q=' });
+    const latLng = `${lat},${lng}`;
+    const label = 'Label';
+    const url = Platform.select({
+      ios: `${scheme}${label}@${latLng}`,
+      android: `${scheme}${latLng}(${label})`
+    }) || '';
+
+    Linking.openURL(url); 
+  }
+
   return (
     <ScrollView style={{ backgroundColor: 'white' }}>
       <Header title="Pontos Turísticos" />
@@ -40,7 +52,10 @@ export function TouristSpot() {
           marginBottom: 20,
         }}
       >
-        <Button title="Rotas">
+        <Button 
+          title="Rotas" 
+          onPress={handleOpenMaps(-24.300955, -46.974007)}
+        >
           <Feather
             style={{
               marginLeft: 5,
