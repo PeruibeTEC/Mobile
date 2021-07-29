@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
-import { Container, Title, Caption, Description, Text, Ending, View,} from './styles';
+import {
+  Container,
+  Title,
+  Caption,
+  Description,
+  Text,
+  Ending,
+  View,
+} from './styles';
 
 interface ContentProps {
   title: string;
@@ -8,23 +16,31 @@ interface ContentProps {
   number?: string;
   description?: string;
   budget?: string;
-  starting?:string;
-  ending?:string;
+  starting?: string;
+  ending?: string;
 }
 
-export function Content({ title, street,budget, number, description, starting, ending}: ContentProps) {
+export function Content({
+  title,
+  street,
+  budget,
+  number,
+  description,
+  starting,
+  ending,
+}: ContentProps): ReactElement {
   return (
     <Container>
       <Title>{title}</Title>
       <Caption>
         {street} {number}
       </Caption>
-        {budget && <Text>Verba: {budget}</Text> }
-        {starting && <Text>Início: {starting}</Text> }
-       <View>
-       {ending && <Text>Prazo:</Text> }
-       {ending && <Ending> {ending}</Ending> }
-       </View>
+      {budget && <Text>Verba: {budget}</Text>}
+      {starting && <Text>Início: {starting}</Text>}
+      <View>
+        {ending && <Text>Prazo:</Text>}
+        {ending && <Ending> {ending}</Ending>}
+      </View>
       <Description>{description}</Description>
     </Container>
   );

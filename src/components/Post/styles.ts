@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import Feather from '@expo/vector-icons/FontAwesome5';
 
 export const Container = styled.View`
   width: 100%;

@@ -15,7 +15,7 @@ const Tab = createMaterialBottomTabNavigator();
 
 const AppRoutes: React.FC = () => {
   return (
-    <NavigationContainer independent={true}>
+    <NavigationContainer independent>
       <Tab.Navigator
         initialRouteName="Home"
         activeColor="#2196F3"
@@ -79,7 +79,7 @@ const AppRoutes: React.FC = () => {
             ),
           }}
         />
-         <Tab.Screen
+        <Tab.Screen
           name="Construction"
           component={Project}
           options={{

@@ -21,30 +21,12 @@ const AppRoutes: React.FC = () => (
       },
     }}
   >
-    <StackRoutes.Screen 
-      name="SignIn" 
-      component={SignIn}
-    />
-    <StackRoutes.Screen 
-      name="ChooseYourType" 
-      component={ChooseYourType} 
-    />
-    <StackRoutes.Screen 
-      name="SignUp" 
-      component={SignUp} 
-    />
-    <StackRoutes.Screen 
-      name="ChooseYourCity" 
-      component={ChooseYourCity}
-    />
-    <StackRoutes.Screen 
-      name="FinishSignUp" 
-      component={FinishSignUp} 
-    />
-    <StackRoutes.Screen 
-      name="Home" 
-      component={AuthRoutes} 
-    />
+    <StackRoutes.Screen name="SignIn" component={SignIn} />
+    <StackRoutes.Screen name="ChooseYourType" component={ChooseYourType} />
+    <StackRoutes.Screen name="SignUp" component={SignUp} />
+    <StackRoutes.Screen name="ChooseYourCity" component={ChooseYourCity} />
+    <StackRoutes.Screen name="FinishSignUp" component={FinishSignUp} />
+    <StackRoutes.Screen name="Home" component={AuthRoutes} />
   </StackRoutes.Navigator>
 );
 

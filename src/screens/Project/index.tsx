@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { ScrollView, View, TouchableOpacity } from 'react-native';
 
 import Feather from '@expo/vector-icons/Feather';
@@ -8,16 +8,15 @@ import { TitleImage } from '../../components/TitleImage';
 import { Content } from '../../components/Content';
 import { Comment } from '../../components/Comment';
 
-import { 
-  Border, 
+import {
+  Border,
   TitleToComments,
   InputContainer,
   InputText,
   Input,
 } from './styles';
 
-export function Project() {
-
+export function Project(): ReactElement {
   return (
     <ScrollView style={{ backgroundColor: 'white' }}>
       <Header title="Obras da Cidade" />
@@ -39,34 +38,36 @@ export function Project() {
         Especialidades (AME) e da Unidade de Pronto Atendimento (UPA), ao todo serão 54 leitos para atender
         a população."
       />
-      <Border/>
+      <Border />
 
       <TitleToComments>Comentários</TitleToComments>
       <InputContainer>
         <InputText>Dê um feedback sobre a obra:</InputText>
-        <View style={{
-          flexDirection: 'row',
-          flexWrap: 'wrap',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
+        <View
+          style={{
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
           <Input
             style={{
               paddingLeft: 15,
-              paddingRight: 15
+              paddingRight: 15,
             }}
-            multiline={true}
+            multiline
             numberOfLines={8}
             placeholder="Digite aqui"
           />
           <TouchableOpacity>
-            <Feather 
+            <Feather
               style={{
-                marginLeft: 10
+                marginLeft: 10,
               }}
-              name="arrow-right-circle" 
-              color={'#2196f3'} 
-              size={26} 
+              name="arrow-right-circle"
+              color="#2196f3"
+              size={26}
             />
           </TouchableOpacity>
         </View>
@@ -90,4 +91,3 @@ export function Project() {
     </ScrollView>
   );
 }
-

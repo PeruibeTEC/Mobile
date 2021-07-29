@@ -41,7 +41,7 @@ export const ContainerPicker = styled.View`
 `;
 
 export const PickerStyle = styled.View`
-  border: 2px #F6F6F6;
+  border: 2px #f6f6f6;
   border-radius: 8px;
-  background-color: #E8E8E8;
+  background-color: #e8e8e8;
 `;

@@ -38,7 +38,7 @@ export const Text = styled.Text`
 
 export const Ending = styled.Text`
   font-family: 'Inter_600SemiBold';
-  color: #DD0505;
+  color: #dd0505;
   font-size: 16px;
   margin-top: 1px;
 `;

@@ -1,17 +1,8 @@
-import React, { 
-  forwardRef,
-  useCallback,
-  useRef,
-  useState 
-} from 'react';
+import React, { forwardRef, useCallback, useRef, useState } from 'react';
 
 import { TextInputProps } from 'react-native';
 
-import {
-  Container,
-  Icon,
-  TextInput
-} from './styles';
+import { Container, Icon, TextInput } from './styles';
 
 interface InputProps extends TextInputProps {
   name: string;
@@ -46,16 +37,15 @@ export const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = (
     setIsFilled(!!inputValueRef.current.value);
   }, []);
 
-
   return (
     <Container isFocused={isFocused}>
-      {icon && 
+      {icon && (
         <Icon
           name={icon}
           size={20}
           color={isFocused || isFilled ? '#2196F3' : '#BDBDBD'}
         />
-      }
+      )}
 
       <TextInput
         keyboardAppearance="dark"
@@ -63,13 +53,13 @@ export const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = (
         defaultValue={defaultValue}
         onFocus={handleInputFocus}
         onBlur={handleInputBlur}
-        onChangeText={(value) => {
+        onChangeText={value => {
           inputValueRef.current.value = value;
         }}
         {...rest}
       />
     </Container>
   );
-}
+};
 
 export default forwardRef(Input);

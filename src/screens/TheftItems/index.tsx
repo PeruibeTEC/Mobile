@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { ScrollView, LogBox } from 'react-native';
 
 import { Header } from '../../components/Header/Header';
 import { TitleImage } from '../../components/TitleImage';
 import { Content } from '../../components/Content';
-import { Items } from '../TheftItems/components/Items';
+import { Items } from './components/Items';
 import { Button } from '../../components/Button';
 import { Time, Border, Warning, Container } from './styles';
 
@@ -14,7 +14,7 @@ interface TheftItemsProps {
   time?: string;
 }
 
-export function TheftItems({ time }: TheftItemsProps) {
+export function TheftItems({ time }: TheftItemsProps): ReactElement {
   time = '2 horas atrás';
   return (
     <ScrollView style={{ backgroundColor: 'white' }}>
@@ -38,7 +38,8 @@ export function TheftItems({ time }: TheftItemsProps) {
       <Border />
       <Container>
         <Warning>Achou algum dos itens acima ?</Warning>
-        <Button title="Entrar em Contato" />
+        {/* TODO: create a function to open cellphone */}
+        <Button title="Entrar em Contato" onPress={() => {}} />
       </Container>
     </ScrollView>
   );

@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 import { FlatList } from 'react-native';
 import { Container, Title, Description } from './styles';
 
-export function Items() {
+export function Items(): ReactElement {
   return (
     <Container>
       <Title>Itens Roubados:</Title>

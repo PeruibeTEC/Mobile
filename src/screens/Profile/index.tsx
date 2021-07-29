@@ -3,6 +3,7 @@ import { SafeAreaView } from 'react-native';
 
 import Header from './components/Header';
 import SwitchSelector from './components/SwitchSelector';
+
 import { Post } from '../../components/Post/Post';
 
 import { Container, Name, Biography } from './styles';
@@ -28,6 +29,7 @@ const Profile: React.FC = () => {
             { label: 'Posts', value: 'posts' },
             { label: 'Fotos', value: 'fotos' },
           ]}
+          // TODO: add function to switch filter
           onPress={() => {}}
         />
 

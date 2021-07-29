@@ -30,8 +30,8 @@ export const ImagePickerGallery = styled.View`
   height: 160px;
   width: 160px;
   border-radius: 80px;
-  background: #E9E9E9;
-  border: 5px #D9D8D8;
+  background: #e9e9e9;
+  border: 5px #d9d8d8;
   align-items: center;
   justify-content: center;
 `;
@@ -40,5 +40,5 @@ export const ImageProfile = styled.Image`
   width: 160px;
   height: 160px;
   border-radius: 80px;
-  border: 5px #D9D8D8;
+  border: 5px #d9d8d8;
 `;

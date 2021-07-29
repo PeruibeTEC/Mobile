@@ -60,4 +60,3 @@ export const TimeToComment = styled.Text`
   font-size: 14px;
   margin-right: 12px;
 `;
-

@@ -1,25 +1,28 @@
-import React from 'react';
-import { ScrollView, View,Platform, Linking } from 'react-native';
+import React, { ReactElement } from 'react';
+import { ScrollView, View, Platform, Linking } from 'react-native';
 
+import Feather from '@expo/vector-icons/Feather';
 import { Header } from '../../components/Header/Header';
 import { TitleImage } from '../../components/TitleImage';
-import { Content } from '../TouristSpot/components/Content';
+import { Content } from './components/Content';
 import { Button } from '../../components/Button';
 import { Border, ViewContainer, Text } from './styles';
 
-import Feather from '@expo/vector-icons/Feather';
-
-export function TouristSpot() {
+export function TouristSpot(): ReactElement {
   function handleOpenMaps(lat: number, lng: number) {
-    const scheme = Platform.select({ ios: 'maps:0,0?q=', android: 'geo:0,0?q=' });
+    const scheme = Platform.select({
+      ios: 'maps:0,0?q=',
+      android: 'geo:0,0?q=',
+    });
     const latLng = `${lat},${lng}`;
     const label = 'Label';
-    const url = Platform.select({
-      ios: `${scheme}${label}@${latLng}`,
-      android: `${scheme}${latLng}(${label})`
-    }) || '';
+    const url =
+      Platform.select({
+        ios: `${scheme}${label}@${latLng}`,
+        android: `${scheme}${latLng}(${label})`,
+      }) || '';
 
-    Linking.openURL(url); 
+    Linking.openURL(url);
   }
 
   return (
@@ -52,16 +55,13 @@ export function TouristSpot() {
           marginBottom: 20,
         }}
       >
-        <Button 
-          title="Rotas" 
-          onPress={handleOpenMaps(-24.300955, -46.974007)}
-        >
+        <Button title="Rotas" onPress={handleOpenMaps(-24.300955, -46.974007)}>
           <Feather
             style={{
               marginLeft: 5,
             }}
             name="navigation"
-            color={'#FFFFFF'}
+            color="#FFFFFF"
             size={18}
           />
         </Button>

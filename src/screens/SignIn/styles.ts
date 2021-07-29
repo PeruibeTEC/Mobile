@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import Input from '../../components/Input';
 
 export const Content = styled.View`
   display: flex;
@@ -9,7 +8,6 @@ export const Content = styled.View`
 
   height: 94%;
 `;
-
 
 export const Title = styled.Text`
   margin-bottom: 72px;
@@ -27,7 +25,7 @@ export const ContainerInputs = styled.View`
 
 export const ForgotPassword = styled.Text`
   margin-top: 24px;
-  color: #404B5A;
+  color: #404b5a;
 
   font-family: 'Inter_600SemiBold';
   font-size: 16px;
@@ -39,11 +37,11 @@ export const CreateAccountContainer = styled.View`
   align-items: center;
 
   border-top-width: 1px;
-  border-color: #8B9FBA;
+  border-color: #8b9fba;
 `;
 
 export const CreateAccount = styled.Text`
   font-size: 18px;
   font-family: 'Inter_600SemiBold';
-  color: #2196F3;
+  color: #2196f3;
 `;

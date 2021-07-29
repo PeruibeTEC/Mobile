@@ -25,7 +25,7 @@ export const ContainerInputs = styled.View`
 
 export const ForgotPassword = styled.Text`
   margin-top: 24px;
-  color: #404B5A;
+  color: #404b5a;
 
   font-family: 'Inter_600SemiBold';
   font-size: 16px;

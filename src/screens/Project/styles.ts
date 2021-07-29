@@ -36,10 +36,10 @@ export const InputText = styled.Text`
 export const Input = styled.TextInput`
   margin-top: 28px;
   height: 40px;
-  
-  background-color: #F6F6F6;
+
+  background-color: #f6f6f6;
   width: 75%;
-  border-color: #E8E8E8;
+  border-color: #e8e8e8;
   border-width: 1.3px;
   border-radius: 15px;
 `;

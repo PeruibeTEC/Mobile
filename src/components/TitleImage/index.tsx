@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { View } from 'react-native';
 import { Container, Title, Image } from './styles';
 
@@ -7,7 +7,7 @@ interface TitleImageProps {
   image: string;
 }
 
-export function TitleImage({ title, image }: TitleImageProps) {
+export function TitleImage({ title, image }: TitleImageProps): ReactElement {
   return (
     <Container>
       <Title>{title}</Title>

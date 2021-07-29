@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { View, TouchableOpacity } from 'react-native';
 
 import Feather from '@expo/vector-icons/FontAwesome5';
@@ -32,7 +32,7 @@ export function Post({
   image,
   comment,
   likes,
-}: HeaderProps) {
+}: HeaderProps): ReactElement {
   return (
     <>
       <Container>
@@ -49,14 +49,14 @@ export function Post({
               <Feather
                 iconStyle={{ padding: 10 }}
                 name="comment"
-                color={'#404B5A'}
+                color="#404B5A"
                 size={15}
               >
                 ⠀{comment}
               </Feather>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Feather name="heart" color={'#404B5A'} size={15}>
+              <Feather name="heart" color="#404B5A" size={15}>
                 ⠀{likes}
               </Feather>
             </TouchableOpacity>

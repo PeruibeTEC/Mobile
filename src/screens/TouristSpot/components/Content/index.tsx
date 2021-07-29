@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 import { Container, Title, Description } from './styles';
 
@@ -7,7 +7,7 @@ interface ContentProps {
   description: string;
 }
 
-export function Content({ title, description }: ContentProps) {
+export function Content({ title, description }: ContentProps): ReactElement {
   return (
     <Container>
       <Title>{title}</Title>

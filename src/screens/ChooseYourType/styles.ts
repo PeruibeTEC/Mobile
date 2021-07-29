@@ -21,7 +21,7 @@ export const Title = styled.Text`
 
 export const Description = styled.Text`
   width: 90%;
-  
+
   margin-bottom: 24px;
   color: #595959;
 
@@ -32,5 +32,5 @@ export const Description = styled.Text`
 `;
 
 export const Ilustration = styled.Image`
-  height: 38%
+  height: 38%;
 `;

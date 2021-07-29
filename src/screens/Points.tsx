@@ -1,9 +1,7 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { Text, SafeAreaView } from 'react-native';
 
-import fonts from '../styles/fonts';
-
-export function Points() {
+export function Points(): ReactElement {
   return (
     <SafeAreaView>
       <Text>Points</Text>
