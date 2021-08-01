@@ -10,6 +10,7 @@ import { Restaurants } from '../screens/Restaurants';
 import { TheftItems } from '../screens/TheftItems';
 
 import { TouristSpot } from '../screens/TouristSpot';
+import { DangerPoints } from '../screens/DangerPoints';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -71,7 +72,7 @@ const AppRoutes: React.FC = () => {
         />
         <Tab.Screen
           name="Points"
-          component={TouristSpot}
+          component={DangerPoints}
           options={{
             tabBarLabel: 'Pontos',
             tabBarIcon: ({ color }) => (
@@ -79,7 +80,7 @@ const AppRoutes: React.FC = () => {
             ),
           }}
         />
-        <Tab.Screen
+        {/* <Tab.Screen
           name="Construction"
           component={Project}
           options={{
@@ -88,7 +89,7 @@ const AppRoutes: React.FC = () => {
               <Feather name="map" color={color} size={24} />
             ),
           }}
-        />
+        /> */}
       </Tab.Navigator>
     </NavigationContainer>
   );
