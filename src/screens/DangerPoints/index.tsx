@@ -4,11 +4,15 @@ import { Feather } from '@expo/vector-icons';
 
 import MapView, { Marker, MapViewProps } from 'react-native-maps';
 
+import { useNavigation } from '@react-navigation/native';
 import { Header } from '../../components/Header/Header';
 import { CircleAttuation, MarkerStylized } from './styles';
 
 export function DangerPoints(): ReactElement {
+  const navigation = useNavigation();
+
   const refMap = useRef<MapViewProps>(null);
+
   const [borderColorMarker, setBorderColorMarker] =
     useState<string>('transparent');
   const [backgroundColorMarker, setBackgroundColorMarker] =
@@ -17,13 +21,17 @@ export function DangerPoints(): ReactElement {
   async function onMapChange() {
     const zoom = refMap.current.__lastRegion.longitudeDelta;
 
-    if (zoom && zoom <= 0.00984538346529007) {
-      setBackgroundColorMarker('#2195f373');
-      setBorderColorMarker('#2196f3');
+    if (zoom && zoom <= 0.00984538356529007) {
+      setBackgroundColorMarker('#ff3c0060');
+      setBorderColorMarker('#ff2600');
     } else {
       setBackgroundColorMarker('transparent');
       setBorderColorMarker('transparent');
     }
+  }
+
+  function handlePressPoint() {
+    navigation.navigate('Incidents');
   }
 
   return (
@@ -32,9 +40,8 @@ export function DangerPoints(): ReactElement {
 
       <View
         style={{
-          marginTop: '7%',
-          height: '88%',
-          width: '88%',
+          height: '100%',
+          width: '100%',
           borderRadius: 50,
         }}
       >
@@ -50,11 +57,12 @@ export function DangerPoints(): ReactElement {
           style={{
             width: '100%',
             height: '100%',
-            borderRadius: 50,
           }}
         >
           <Marker
-            // onPress={() => {}}
+            onPress={() => {
+              handlePressPoint();
+            }}
             coordinate={{
               latitude: -24.31213,
               longitude: -46.988206,
@@ -70,7 +78,7 @@ export function DangerPoints(): ReactElement {
                 <Feather
                   style={{ transform: [{ rotate: '-225deg' }] }}
                   name="alert-triangle"
-                  color="#daf108"
+                  color="#ffff"
                   size={18}
                 />
               </MarkerStylized>

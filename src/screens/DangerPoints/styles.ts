@@ -3,8 +3,8 @@ import { View } from 'react-native';
 
 export const CircleAttuation = styled.View`
   border-width: 3;
-  border-color: #2196f3;
-  background-color: #2195f373;
+  border-color: #ff2600;
+  background-color: #ff3c007d;
   height: 100px;
   width: 100px;
   border-radius: 100000;
@@ -13,7 +13,7 @@ export const CircleAttuation = styled.View`
 `;
 
 export const MarkerStylized = styled(View)`
-  background-color: #2196f3;
+  background-color: #ff2600;
   height: 34px;
   width: 34px;
   border-top-left-radius: 0;
