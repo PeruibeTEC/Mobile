@@ -20,3 +20,21 @@ export const Photo = styled.Image`
   margin-bottom: 12px;
   border-radius: 6px;
 `;
+
+export const Name = styled.Text`
+  font-size: 14px;
+  font-family: Roboto_700Bold;
+  line-height: 16px;
+  margin-top: 24px;
+`;
+
+export const Budget = styled.Text`
+  font-size: 16px;
+  line-height: 20px;
+  font-fa
+`;
+
+export const ContentContainer = styled.View`
+  flex-direction: column;
+  width: 50%;
+`;
