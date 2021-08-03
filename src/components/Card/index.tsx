@@ -4,19 +4,21 @@ import Feather from '@expo/vector-icons/Feather';
 
 import { Container, Photo, Name, Budget, ContentContainer } from './styles';
 
-export function Card(): ReactElement {
+interface CardProps {
+  name: string;
+  image: string;
+  budget: string;
+}
+
+export function Card({ name, image, budget }: CardProps): ReactElement {
   return (
     <Container>
       <View style={{ width: '30%' }}>
-        <Photo
-          source={{
-            uri: 'https://lh3.googleusercontent.com/proxy/vXe0ZeGYZRGfkelOQvJJzvBBWImpiiyPAmbnO9dgFxvMe-vYBaePfS__6CikWRGFkVu41LrXbemhREMoQ-TbjGMxVHI_vgF4t7UbaouclZA8Br569Mch5tqDKjJas2u_Tlmb5TF2FdKe',
-          }}
-        />
+        <Photo source={{ uri: `${image}` }} />
       </View>
       <ContentContainer>
-        <Name>Hospital de Peruíbe</Name>
-        <Budget>R$ 22.000.000,00</Budget>
+        <Name>{name}</Name>
+        <Budget>R$ {budget}</Budget>
       </ContentContainer>
       <View style={{ marginTop: 40 }}>
         <TouchableOpacity>
