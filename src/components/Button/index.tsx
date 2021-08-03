@@ -8,11 +8,7 @@ interface Props extends ButtonProps {
   children?: React.ReactNode;
 }
 
-export function Button({
-  title,
-  children,
-  ...rest
-}: ButtonProps): ReactElement {
+export function Button({ title, children, ...rest }: Props): ReactElement {
   return (
     <Container {...rest}>
       <Text>{title}</Text>

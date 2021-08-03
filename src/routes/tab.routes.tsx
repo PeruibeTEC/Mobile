@@ -13,7 +13,7 @@ import { TheftItems } from '../screens/TheftItems';
 
 import { TouristSpot } from '../screens/TouristSpot';
 import { DangerPoints } from '../screens/DangerPoints';
-import { Project } from '../screens/Project';
+import { ProjectList } from '../screens/ProjectList';
 
 const Tab = createMaterialBottomTabNavigator();
 const StackRoutes = createStackNavigator();
@@ -75,7 +75,7 @@ function HomeTabs() {
       />
       <Tab.Screen
         name="Construction"
-        component={Project}
+        component={ProjectList}
         options={{
           tabBarLabel: 'Obras',
           tabBarIcon: ({ color }) => (
