@@ -18,7 +18,7 @@ export function TheftItems({ time }: TheftItemsProps): ReactElement {
   time = '2 horas atrás';
   return (
     <ScrollView style={{ backgroundColor: 'white' }}>
-      <Header title="Detalhes do Incidente" />
+      <Header onBackScreen title="Detalhes do Incidente" />
       <TitleImage
         title="Assalto a Mão Armada"
         image="https://static.lared.cl/wp-content/uploads/2019/09/05102425/20160927185301_740x3705509366827156214087-700x366.jpg"

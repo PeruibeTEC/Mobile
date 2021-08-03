@@ -4,7 +4,7 @@ import {
   useFonts,
   Inter_600SemiBold,
   Inter_500Medium,
-  Inter_400Regular
+  Inter_400Regular,
 } from '@expo-google-fonts/inter';
 import { Roboto_700Bold, Roboto_400Regular } from '@expo-google-fonts/roboto';
 
