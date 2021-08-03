@@ -11,6 +11,12 @@ export function ProjectList(): ReactElement {
     <ScrollView style={{ backgroundColor: 'white' }}>
       <Header title="Obras da Cidade" />
       <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
     </ScrollView>
   );
 }

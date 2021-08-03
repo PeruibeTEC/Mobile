@@ -21,20 +21,24 @@ export const Photo = styled.Image`
   border-radius: 6px;
 `;
 
-export const Name = styled.Text`
-  font-size: 14px;
-  font-family: Roboto_700Bold;
-  line-height: 16px;
-  margin-top: 24px;
-`;
-
-export const Budget = styled.Text`
-  font-size: 16px;
-  line-height: 20px;
-  font-fa
-`;
-
 export const ContentContainer = styled.View`
   flex-direction: column;
   width: 50%;
+  margin-left: 20px;
+`;
+
+export const Name = styled.Text`
+  font-size: 16px;
+  font-family: Roboto_700Bold;
+  line-height: 16px;
+  margin-top: 24px;
+  color: #202833;
+`;
+
+export const Budget = styled.Text`
+  font-size: 14px;
+  line-height: 20px;
+  font-family: Inter_500Medium;
+  color: #404b5a;
+  margin-top: 8px;
 `;
