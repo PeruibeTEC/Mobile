@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { ScrollView } from 'react-native';
 import { Header } from '../components/Header/Header';
 import { Post } from '../components/Post/Post';
 
-export function Home() {
+export function Home(): ReactElement {
   return (
     <ScrollView style={{ backgroundColor: 'white' }}>
       <Header title="Home" />

@@ -4,6 +4,7 @@ import {
   useFonts,
   Inter_600SemiBold,
   Inter_500Medium,
+  Inter_400Regular,
 } from '@expo-google-fonts/inter';
 import {
   Roboto_700Bold,
@@ -19,6 +20,7 @@ export default function App() {
   const [fontsLoaded] = useFonts({
     Inter_600SemiBold,
     Inter_500Medium,
+    Inter_400Regular,
     Roboto_700Bold,
     Roboto_500Medium,
     Roboto_400Regular,
@@ -30,7 +32,7 @@ export default function App() {
 
   return (
     <>
-      <StatusBar style="dark" backgroundColor="#FFF" translucent />
+      <StatusBar style="dark" backgroundColor="transparent" translucent />
       <Routes />
     </>
   );
