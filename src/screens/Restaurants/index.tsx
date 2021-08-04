@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { SafeAreaView } from 'react-native';
 import { MaterialIcons as Icon } from '@expo/vector-icons';
 
@@ -16,7 +16,7 @@ import {
   RestaurantSessions,
 } from './styles';
 
-const Restaurants: React.FC = () => {
+export default function Restaurants(): ReactElement {
   return (
     <Container>
       <SafeAreaView style={{ flex: 1 }}>
@@ -52,6 +52,4 @@ const Restaurants: React.FC = () => {
       </SafeAreaView>
     </Container>
   );
-};
-
-export default Restaurants;
+}

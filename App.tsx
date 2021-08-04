@@ -12,9 +12,8 @@ import {
   Roboto_400Regular,
 } from '@expo-google-fonts/roboto';
 
-import AppLoading from 'expo-app-loading';
-
 import Routes from './src/routes';
+import { Load } from './src/components/Load';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -27,7 +26,7 @@ export default function App() {
   });
 
   if (!fontsLoaded) {
-    return <AppLoading />;
+    return <Load />;
   }
 
   return (

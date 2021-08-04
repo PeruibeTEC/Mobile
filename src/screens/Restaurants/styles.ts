@@ -16,7 +16,7 @@ export const FeaturedRestaurant = styled.Image`
   height: 140px;
   margin: 24px 0 16px 0;
 
-  border: 1px solid #fafafa;
+  /* border: 1px solid #fafafa; */
   border-radius: 100px;
 `;
 

@@ -7,7 +7,7 @@ import { Feather } from '@expo/vector-icons';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Profile from '../screens/Profile';
-import { Restaurants } from '../screens/Restaurants';
+import Restaurants from '../screens/Restaurants';
 import { Home } from '../screens/Home';
 
 import { TheftItems } from '../screens/TheftItems';
