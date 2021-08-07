@@ -16,7 +16,6 @@ export const FeaturedRestaurant = styled.Image`
   height: 140px;
   margin: 24px 0 16px 0;
 
-  /* border: 1px solid #fafafa; */
   border-radius: 100px;
 `;
 
@@ -37,7 +36,7 @@ export const RestaurantAddress = styled.Text`
 
 export const ViewButtonContainer = styled.TouchableOpacity`
   background-color: #42a5f5;
-  padding: 8px 16px;
+  padding: 8px 32px;
   margin: 16px 0;
   border-radius: 50px;
 
@@ -49,7 +48,7 @@ export const ViewButtonContainer = styled.TouchableOpacity`
 export const ViewButtonText = styled.Text`
   font-family: 'Roboto_400Regular';
   font-size: 16px;
-  color: #e0e5eb;
+  color: #ffff;
   margin-right: 4px;
 `;
 

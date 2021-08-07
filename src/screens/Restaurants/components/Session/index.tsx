@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, View } from 'react-native';
+import { FlatList, View } from 'react-native';
 import { Feather as Icon } from '@expo/vector-icons';
 
 import { RestaurantCard } from '../RestaurantCard';
@@ -11,6 +11,32 @@ interface SessionProps {
 }
 
 const Session: React.FC<SessionProps> = ({ sessionName }) => {
+  const fakeData = [
+    {
+      key: 1,
+      title: 'Pizza Hut',
+      image:
+        'https://1.bp.blogspot.com/-mhR8kkBYld0/X4fDBqsAtJI/AAAAAAAB1AU/IkaOj4MUb8MiQiCAiD7sRsY_QukQs4FbwCLcBGAsYHQ/s16000/pizza%2Blogo%2B1.jpg',
+    },
+    {
+      key: 2,
+      title: 'Pizza Hut com nome muito grandeee',
+      image:
+        'https://1.bp.blogspot.com/-mhR8kkBYld0/X4fDBqsAtJI/AAAAAAAB1AU/IkaOj4MUb8MiQiCAiD7sRsY_QukQs4FbwCLcBGAsYHQ/s16000/pizza%2Blogo%2B1.jpg',
+    },
+    {
+      key: 3,
+      title: 'Pizza Hut',
+      image:
+        'https://1.bp.blogspot.com/-mhR8kkBYld0/X4fDBqsAtJI/AAAAAAAB1AU/IkaOj4MUb8MiQiCAiD7sRsY_QukQs4FbwCLcBGAsYHQ/s16000/pizza%2Blogo%2B1.jpg',
+    },
+    {
+      key: 4,
+      title: 'Pizza Hut',
+      image:
+        'https://1.bp.blogspot.com/-mhR8kkBYld0/X4fDBqsAtJI/AAAAAAAB1AU/IkaOj4MUb8MiQiCAiD7sRsY_QukQs4FbwCLcBGAsYHQ/s16000/pizza%2Blogo%2B1.jpg',
+    },
+  ];
   return (
     <Container>
       <SessionHeader>
@@ -22,33 +48,20 @@ const Session: React.FC<SessionProps> = ({ sessionName }) => {
             alignItems: 'baseline',
           }}
         >
-          <SeeAllItems>Ver tudo</SeeAllItems>
+          <SeeAllItems>Ver todas Pizzarias</SeeAllItems>
           <Icon name="chevron-right" size={16} color="#929fb1" />
         </View>
       </SessionHeader>
 
-      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        <RestaurantCard
-          restaurantName="Pizza Hut"
-          imageUrl="https://1.bp.blogspot.com/-mhR8kkBYld0/X4fDBqsAtJI/AAAAAAAB1AU/IkaOj4MUb8MiQiCAiD7sRsY_QukQs4FbwCLcBGAsYHQ/s16000/pizza%2Blogo%2B1.jpg"
-        />
-        <RestaurantCard
-          restaurantName="Um nome qualquer grande"
-          imageUrl="https://1.bp.blogspot.com/-mhR8kkBYld0/X4fDBqsAtJI/AAAAAAAB1AU/IkaOj4MUb8MiQiCAiD7sRsY_QukQs4FbwCLcBGAsYHQ/s16000/pizza%2Blogo%2B1.jpg"
-        />
-        <RestaurantCard
-          restaurantName="Pizza Hut"
-          imageUrl="https://1.bp.blogspot.com/-mhR8kkBYld0/X4fDBqsAtJI/AAAAAAAB1AU/IkaOj4MUb8MiQiCAiD7sRsY_QukQs4FbwCLcBGAsYHQ/s16000/pizza%2Blogo%2B1.jpg"
-        />
-        <RestaurantCard
-          restaurantName="Pizza Hut"
-          imageUrl="https://1.bp.blogspot.com/-mhR8kkBYld0/X4fDBqsAtJI/AAAAAAAB1AU/IkaOj4MUb8MiQiCAiD7sRsY_QukQs4FbwCLcBGAsYHQ/s16000/pizza%2Blogo%2B1.jpg"
-        />
-        <RestaurantCard
-          restaurantName="Pizza Hut"
-          imageUrl="https://1.bp.blogspot.com/-mhR8kkBYld0/X4fDBqsAtJI/AAAAAAAB1AU/IkaOj4MUb8MiQiCAiD7sRsY_QukQs4FbwCLcBGAsYHQ/s16000/pizza%2Blogo%2B1.jpg"
-        />
-      </ScrollView>
+      <FlatList
+        data={fakeData}
+        keyExtractor={item => String(item.key)}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        renderItem={({ item }) => (
+          <RestaurantCard restaurantName={item.title} imageUrl={item.image} />
+        )}
+      />
     </Container>
   );
 };

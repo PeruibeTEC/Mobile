@@ -20,5 +20,4 @@ export const RestaurantName = styled.Text`
   padding: 0 8px;
   font-family: 'Roboto_700Bold';
   font-size: 16px;
-  color: #6d7989;
 `;

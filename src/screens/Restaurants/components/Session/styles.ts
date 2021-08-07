@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
-  padding: 40px 0 24px 24px;
+  padding: 28px 0 24px 24px;
   border-color: #f6f6f6;
   border-bottom-width: 1px;
 `;
@@ -17,7 +17,7 @@ export const SessionHeader = styled.View`
 export const SessionName = styled.Text`
   font-family: 'Roboto_700Bold';
   font-size: 18px;
-  color: #6d7989;
+  color: black;
 `;
 
 export const SeeAllItems = styled.Text`

@@ -41,13 +41,13 @@ export default function Restaurants(): ReactElement {
 
           <ViewButtonContainer>
             <ViewButtonText>Visualizar</ViewButtonText>
-            <Icon name="redo" size={20} color="#e0e5eb" />
+            <Icon name="redo" size={20} color="#ffff" />
           </ViewButtonContainer>
         </RestaurantCover>
 
         <RestaurantSessions>
           <Session sessionName="Pizzarias" />
-          <Session sessionName="Pizzarias" />
+          <Session sessionName="CoffeShop" />
         </RestaurantSessions>
       </SafeAreaView>
     </Container>
