@@ -1,9 +1,9 @@
 import React from 'react';
-import { View } from 'react-native';
+import { TouchableOpacityProps, View } from 'react-native';
 
 import { Container, RestaurantImage, RestaurantName } from './styles';
 
-interface RestaurantCardProps {
+interface RestaurantCardProps extends TouchableOpacityProps {
   restaurantName: string;
   imageUrl: string;
 }

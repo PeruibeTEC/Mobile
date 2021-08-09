@@ -2,6 +2,7 @@ import React, { ReactElement } from 'react';
 import { SafeAreaView } from 'react-native';
 import { MaterialIcons as Icon } from '@expo/vector-icons';
 
+import { useNavigation } from '@react-navigation/native';
 import { Header } from '../../components/Header/Header';
 import { Session } from './components/Session';
 
@@ -17,6 +18,12 @@ import {
 } from './styles';
 
 export default function Restaurants(): ReactElement {
+  const navigation = useNavigation();
+
+  function handleNavigateToDetailRestaurant() {
+    navigation.navigate('DetailRestaurant');
+  }
+
   return (
     <Container>
       <SafeAreaView style={{ flex: 1 }}>
@@ -39,7 +46,7 @@ export default function Restaurants(): ReactElement {
             Av. Padre Anchieta 800 - Jangada
           </RestaurantAddress>
 
-          <ViewButtonContainer>
+          <ViewButtonContainer onPress={handleNavigateToDetailRestaurant}>
             <ViewButtonText>Visualizar</ViewButtonText>
             <Icon name="redo" size={20} color="#ffff" />
           </ViewButtonContainer>

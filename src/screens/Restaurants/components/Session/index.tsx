@@ -2,6 +2,7 @@ import React from 'react';
 import { FlatList, View } from 'react-native';
 import { Feather as Icon } from '@expo/vector-icons';
 
+import { useNavigation } from '@react-navigation/native';
 import { RestaurantCard } from '../RestaurantCard';
 
 import { Container, SessionHeader, SessionName, SeeAllItems } from './styles';
@@ -11,6 +12,11 @@ interface SessionProps {
 }
 
 const Session: React.FC<SessionProps> = ({ sessionName }) => {
+  const navigation = useNavigation();
+  function handleNavigateToDetailRestaurant() {
+    navigation.navigate('DetailRestaurant');
+  }
+
   const fakeData = [
     {
       key: 1,
@@ -59,7 +65,11 @@ const Session: React.FC<SessionProps> = ({ sessionName }) => {
         horizontal
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => (
-          <RestaurantCard restaurantName={item.title} imageUrl={item.image} />
+          <RestaurantCard
+            onPress={handleNavigateToDetailRestaurant}
+            restaurantName={item.title}
+            imageUrl={item.image}
+          />
         )}
       />
     </Container>
