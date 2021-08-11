@@ -11,8 +11,11 @@ import {
   RestaurantPhoto,
   ContainerCover,
   RestaurantLocation,
+  Content,
 } from './styles';
+
 import { Header } from '../../components/Header/Header';
+import { AvaliationCard } from './components/AvaliationCard';
 
 export function DetailRestaurant(): ReactElement {
   return (
@@ -39,6 +42,9 @@ export function DetailRestaurant(): ReactElement {
           </RestaurantLocation>
         </BackgroundPhoto>
       </ContainerCover>
+      <Content>
+        <AvaliationCard />
+      </Content>
     </SafeAreaView>
   );
 }

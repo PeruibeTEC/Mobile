@@ -34,3 +34,7 @@ export const RestaurantLocation = styled.Text`
   margin-top: 10px;
   left: 30px;
 `;
+
+export const Content = styled.View`
+  align-items: center;
+`;
