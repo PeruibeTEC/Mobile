@@ -1,7 +1,5 @@
 import React, { ReactElement } from 'react';
-import { ScrollView, View, TouchableOpacity } from 'react-native';
-
-import Feather from '@expo/vector-icons/Feather';
+import { ScrollView } from 'react-native';
 
 import { Header } from '../../components/Header/Header';
 import { Card } from '../../components/Card';
@@ -11,7 +9,7 @@ export function ProjectList(): ReactElement {
   return (
     <ScrollView style={{ backgroundColor: 'white' }}>
       <Header title="Obras da Cidade" />
-      <FilterInput title="Filtro de Pesquisa" />
+      <FilterInput />
       <Card
         name="Hospital de Peruíbe"
         image="https://lh3.googleusercontent.com/proxy/vXe0ZeGYZRGfkelOQvJJzvBBWImpiiyPAmbnO9dgFxvMe-vYBaePfS__6CikWRGFkVu41LrXbemhREMoQ-TbjGMxVHI_vgF4t7UbaouclZA8Br569Mch5tqDKjJas2u_Tlmb5TF2FdKe"
