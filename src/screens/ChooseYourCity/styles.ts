@@ -27,6 +27,13 @@ export const Subtitle = styled.Text`
   text-align: center;
 `;
 
+export const Caption = styled.Text`
+  color: #9c9c9c;
+
+  font-family: 'Inter_500Medium';
+  font-size: 14px;
+`;
+
 export const ContainerPicker = styled.View`
   margin-bottom: 24px;
   width: 85%;
