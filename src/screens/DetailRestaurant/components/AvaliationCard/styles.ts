@@ -45,3 +45,16 @@ export const AvaliationText = styled.Text`
   font-size: 14px;
   color: #a5d4ef;
 `;
+
+export const FooterContainer = styled.View`
+  top: 15%;
+  left: 16px;
+  flex-direction: row;
+`;
+
+export const AvaliationNow = styled.Text`
+  font-family: 'Roboto_500Medium';
+  font-size: 14px;
+  color: #d4f5ff;
+  margin-right: 9px;
+`;

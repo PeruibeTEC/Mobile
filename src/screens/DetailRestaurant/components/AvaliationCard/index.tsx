@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import { SafeAreaView, View } from 'react-native';
+import { SafeAreaView, View, Text } from 'react-native';
 
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
@@ -10,6 +10,8 @@ import {
   RatingText,
   AvalaiationContainer,
   AvaliationText,
+  AvaliationNow,
+  FooterContainer,
 } from './styles';
 
 export function AvaliationCard(): ReactElement {
@@ -30,11 +32,21 @@ export function AvaliationCard(): ReactElement {
         </View>
         <View
           style={{
-            top: '30%',
+            top: '20%',
             borderBottomColor: '#F0F0F0',
             borderBottomWidth: 1,
           }}
         />
+        <FooterContainer>
+          <AvaliationNow>Avalie agora!</AvaliationNow>
+          <Text style={{ marginRight: 9, color: '#fff' }}>•</Text>
+
+          <MaterialIcons name="star-border" color="#D4F5FF" size={18} />
+          <MaterialIcons name="star-border" color="#D4F5FF" size={18} />
+          <MaterialIcons name="star-border" color="#D4F5FF" size={18} />
+          <MaterialIcons name="star-border" color="#D4F5FF" size={18} />
+          <MaterialIcons name="star-border" color="#D4F5FF" size={18} />
+        </FooterContainer>
       </ContainerCard>
     </SafeAreaView>
   );
