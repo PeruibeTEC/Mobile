@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useState } from 'react';
+import React, { ReactElement, useState } from 'react';
 import { SafeAreaView } from 'react-native';
 
 import { Picker } from '@react-native-community/picker';
@@ -11,35 +11,30 @@ interface FilterInputProps {
   items: Array<string>;
 }
 
-interface IStateProps {
-  label: string;
+interface IFilterProps {
+  nome: string;
   id: number;
 }
 
 export function FilterInput({ title, items }: FilterInputProps): ReactElement {
   const [stateIndexSelected, setStateIndexSelected] = useState<ItemValue>();
 
-  const [label, setLabel] = useState(items);
+  const [label, setLabels] = useState(items);
 
   return (
     <SafeAreaView>
-      <ContainerPicker>
-        <Title>{title}:</Title>
+      <ContainerPicker style={{ marginTop: 20 }}>
         <PickerStyle>
+          <Title> {title} </Title>
           <Picker
-            style={{
-              marginRight: 8,
-              color: 'black',
-              fontWeight: 'bold',
-            }}
             selectedValue={stateIndexSelected}
             onValueChange={(itemValue, itemIndex) => {
               setStateIndexSelected(itemValue);
             }}
           >
             {label &&
-              label.map((state: IStateProps, index: number) => (
-                <Picker.Item label={state.label} value={state.id} key={index} />
+              label.map((state: IFilterProps, index: number) => (
+                <Picker.Item label={state.nome} value={state.id} key={index} />
               ))}
           </Picker>
         </PickerStyle>
