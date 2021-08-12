@@ -12,11 +12,14 @@ import {
   Content,
   Divider,
   Description,
+  ActionButtonsContainer,
 } from './styles';
 
 import { Header } from '../../components/Header/Header';
 import { AvaliationCard } from './components/AvaliationCard';
 import { TimeSession } from './components/TimeSession';
+import { Button } from '../../components/Button';
+import { ActionButton } from './components/ActionButton';
 
 export function DetailRestaurant(): ReactElement {
   return (
@@ -44,7 +47,7 @@ export function DetailRestaurant(): ReactElement {
         </BackgroundPhoto>
       </ContainerCover>
 
-      <Content>
+      <Content style={{ marginBottom: 16 }}>
         <AvaliationCard numberOfStars={4.7} totalAvaliations={148} />
         <Divider />
         <View style={{ width: 315, alignItems: 'center' }}>
@@ -56,8 +59,34 @@ export function DetailRestaurant(): ReactElement {
             família comerem bem.
           </Description>
         </View>
+
         <Divider />
         <TimeSession closeTime={21} openTime={8} />
+        <Divider style={{ marginBottom: 16 }} />
+
+        <ActionButtonsContainer>
+          <ActionButton
+            iconName="whatsapp"
+            text="Whatsapp"
+            borderColor="#14C255"
+            backgroundColor="#25D366"
+          />
+          <ActionButton
+            iconName="phone"
+            text="Ligar"
+            borderColor="#188AE8"
+            backgroundColor="#42A4F5"
+          />
+          <ActionButton
+            iconName="map-marker"
+            text="Rotas"
+            borderColor="#C21437"
+            backgroundColor="#F5365C"
+          />
+        </ActionButtonsContainer>
+
+        <Divider style={{ marginBottom: 16 }} />
+        <Button title="Ver Cardápio" onPress={() => {}} />
       </Content>
     </ScrollView>
   );

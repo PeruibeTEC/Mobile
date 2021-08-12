@@ -52,3 +52,8 @@ export const Description = styled.Text`
   font-family: 'Roboto_400Regular';
   font-size: 18px;
 `;
+
+export const ActionButtonsContainer = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+`;
