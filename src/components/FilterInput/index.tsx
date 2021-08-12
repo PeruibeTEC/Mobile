@@ -3,44 +3,47 @@ import { SafeAreaView } from 'react-native';
 
 import { Picker } from '@react-native-community/picker';
 import { ItemValue } from '@react-native-community/picker/typings/Picker';
+
 import { ContainerPicker, PickerStyle } from './styles';
 
 interface IFilterProps {
-  nome: string;
   id: number;
+  name: string;
 }
 
 export function FilterInput(): ReactElement {
-  const [stateIndexSelected, setStateIndexSelected] = useState<ItemValue>();
+  const [typeSelected, setTypeSelected] = useState<ItemValue>();
 
-  const [label, setLabels] = useState([{}]);
-
-  const constructionTypes = [
+  const constructionTypes: IFilterProps[] = [
     {
       id: 1,
-      nome: 'Reforma',
+      name: 'Reforma',
     },
     {
       id: 2,
-      nome: 'Construção',
+      name: 'Construção',
     },
   ];
-
-  setLabels(constructionTypes);
 
   return (
     <SafeAreaView>
       <ContainerPicker style={{ marginTop: 20 }}>
         <PickerStyle>
           <Picker
-            selectedValue={stateIndexSelected}
+            selectedValue={typeSelected}
             onValueChange={(itemValue, itemIndex) => {
-              setStateIndexSelected(itemValue);
+              setTypeSelected(itemValue);
             }}
           >
-            {label &&
-              label.map((state: IFilterProps, index: number) => (
-                <Picker.Item label={state.nome} value={state.id} key={index} />
+            <Picker.Item label="Filtro de Pesquisa" value={0} />
+
+            {constructionTypes &&
+              constructionTypes.map((constructionType: IFilterProps) => (
+                <Picker.Item
+                  label={constructionType.name}
+                  value={constructionType.id}
+                  key={constructionType.id}
+                />
               ))}
           </Picker>
         </PickerStyle>
