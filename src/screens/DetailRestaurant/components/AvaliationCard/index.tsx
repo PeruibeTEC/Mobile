@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import { SafeAreaView, View, Text } from 'react-native';
+import { SafeAreaView, View, Text, TouchableOpacity } from 'react-native';
 
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
@@ -14,19 +14,22 @@ import {
   FooterContainer,
 } from './styles';
 
-export function AvaliationCard(): ReactElement {
+export function AvaliationCard({
+  numberOfStars,
+  totalAvaliations,
+}): ReactElement {
   return (
     <SafeAreaView>
       <ContainerCard>
         <View style={{ flexDirection: 'row' }}>
           <BoxRating>
-            <Rating>4.5</Rating>
+            <Rating>{numberOfStars}</Rating>
             <MaterialIcons name="star" color="#fff" size={24} />
           </BoxRating>
           <AvalaiationContainer>
             <RatingText>4.5 de 5 estrelas</RatingText>
             <AvaliationText style={{ textDecorationLine: 'underline' }}>
-              (217 Avaliações)
+              {`(${totalAvaliations} Avaliações)`}
             </AvaliationText>
           </AvalaiationContainer>
         </View>
@@ -38,14 +41,19 @@ export function AvaliationCard(): ReactElement {
           }}
         />
         <FooterContainer>
-          <AvaliationNow>Avalie agora!</AvaliationNow>
-          <Text style={{ marginRight: 9, color: '#fff' }}>•</Text>
+          <TouchableOpacity
+            activeOpacity={0.6}
+            style={{ flexDirection: 'row' }}
+          >
+            <AvaliationNow>Avalie agora!</AvaliationNow>
+            <Text style={{ marginRight: 9, color: '#fff' }}>•</Text>
 
-          <MaterialIcons name="star-border" color="#D4F5FF" size={18} />
-          <MaterialIcons name="star-border" color="#D4F5FF" size={18} />
-          <MaterialIcons name="star-border" color="#D4F5FF" size={18} />
-          <MaterialIcons name="star-border" color="#D4F5FF" size={18} />
-          <MaterialIcons name="star-border" color="#D4F5FF" size={18} />
+            <MaterialIcons name="star-border" color="#D4F5FF" size={18} />
+            <MaterialIcons name="star-border" color="#D4F5FF" size={18} />
+            <MaterialIcons name="star-border" color="#D4F5FF" size={18} />
+            <MaterialIcons name="star-border" color="#D4F5FF" size={18} />
+            <MaterialIcons name="star-border" color="#D4F5FF" size={18} />
+          </TouchableOpacity>
         </FooterContainer>
       </ContainerCard>
     </SafeAreaView>

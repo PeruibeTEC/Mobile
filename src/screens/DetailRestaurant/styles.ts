@@ -38,3 +38,17 @@ export const RestaurantLocation = styled.Text`
 export const Content = styled.View`
   align-items: center;
 `;
+
+export const Divider = styled.View`
+  margin-top: 16px;
+  height: 1px;
+  width: 100%;
+  background-color: #e8e8e8;
+`;
+
+export const Description = styled.Text`
+  margin-top: 16px;
+  color: #5f5f5f;
+  font-family: 'Roboto_400Regular';
+  font-size: 18px;
+`;

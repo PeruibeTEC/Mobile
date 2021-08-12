@@ -1,9 +1,7 @@
 import React, { ReactElement } from 'react';
-import { SafeAreaView, View } from 'react-native';
+import { ScrollView, View, Text } from 'react-native';
 
 import Feather from '@expo/vector-icons/Feather';
-
-import { Button } from '../../components/Button';
 
 import {
   BackgroundPhoto,
@@ -12,14 +10,17 @@ import {
   ContainerCover,
   RestaurantLocation,
   Content,
+  Divider,
+  Description,
 } from './styles';
 
 import { Header } from '../../components/Header/Header';
 import { AvaliationCard } from './components/AvaliationCard';
+import { TimeSession } from './components/TimeSession';
 
 export function DetailRestaurant(): ReactElement {
   return (
-    <SafeAreaView>
+    <ScrollView>
       <Header title="Primi Piatti" onBackScreen />
       <ContainerCover>
         <BackgroundPhoto
@@ -42,9 +43,22 @@ export function DetailRestaurant(): ReactElement {
           </RestaurantLocation>
         </BackgroundPhoto>
       </ContainerCover>
+
       <Content>
-        <AvaliationCard />
+        <AvaliationCard numberOfStars={4.7} totalAvaliations={148} />
+        <Divider />
+        <View style={{ width: 315, alignItems: 'center' }}>
+          <Description>
+            <Text style={{ fontFamily: 'Roboto_500Medium' }}>Descrição:</Text>{' '}
+            Pizzaria altamente conhecida por sua variedade de produtos. Possuem
+            rodízios de pizzas de variados sabores, além de um espaço moderno
+            com músicas de altíssima qualidade. Um local para você, amigos e
+            família comerem bem.
+          </Description>
+        </View>
+        <Divider />
+        <TimeSession closeTime={21} openTime={8} />
       </Content>
-    </SafeAreaView>
+    </ScrollView>
   );
 }
