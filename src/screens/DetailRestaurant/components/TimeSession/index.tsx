@@ -1,5 +1,5 @@
-import React, { ReactElement, useState } from 'react';
-import { SafeAreaView } from 'react-native';
+import React, { ReactElement, useEffect, useState } from 'react';
+import { SafeAreaView, TouchableOpacity } from 'react-native';
 
 import {
   ContainerSession,
@@ -11,15 +11,22 @@ import {
   ClockIcon,
 } from './styles';
 
-export function TimeSession({ openTime, closeTime }): ReactElement {
+interface IProps {
+  openTime: number;
+  closeTime: number;
+}
+
+export function TimeSession({ openTime, closeTime }: IProps): ReactElement {
   const date = new Date();
   const hours = date.getHours();
 
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
-  if (hours <= openTime && hours >= closeTime) {
-    setIsOpen(true);
-  }
+  useEffect(() => {
+    if (hours >= openTime && hours <= closeTime) {
+      setIsOpen(true);
+    }
+  }, [hours, openTime, closeTime]);
 
   return (
     <SafeAreaView>
@@ -36,7 +43,9 @@ export function TimeSession({ openTime, closeTime }): ReactElement {
           </OpenHours>
         </TimeInfo>
         <Divider />
-        <Events>Eventos</Events>
+        <TouchableOpacity activeOpacity={0.6}>
+          <Events>Eventos</Events>
+        </TouchableOpacity>
       </ContainerSession>
     </SafeAreaView>
   );

@@ -14,10 +14,15 @@ import {
   FooterContainer,
 } from './styles';
 
+interface IProps {
+  numberOfStars: number;
+  totalAvaliations: number;
+}
+
 export function AvaliationCard({
   numberOfStars,
   totalAvaliations,
-}): ReactElement {
+}: IProps): ReactElement {
   return (
     <SafeAreaView>
       <ContainerCard>
