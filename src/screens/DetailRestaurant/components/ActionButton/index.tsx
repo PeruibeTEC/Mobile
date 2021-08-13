@@ -1,12 +1,15 @@
 import React, { ReactElement } from 'react';
-import { SafeAreaView, TouchableOpacity } from 'react-native';
+import {
+  SafeAreaView,
+  TouchableOpacity,
+  TouchableOpacityProps,
+} from 'react-native';
 
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 import { ContainerBox, Text } from './styles';
 
-interface IProps {
+interface IProps extends TouchableOpacityProps {
   backgroundColor: string;
   borderColor: string;
   iconName: string | any;
@@ -18,10 +21,11 @@ export function ActionButton({
   borderColor,
   iconName,
   text,
+  ...rest
 }: IProps): ReactElement {
   return (
     <SafeAreaView style={{ paddingHorizontal: 12 }}>
-      <TouchableOpacity activeOpacity={0.6}>
+      <TouchableOpacity activeOpacity={0.6} {...rest}>
         <ContainerBox borderColor={borderColor} bgc={backgroundColor}>
           <FontAwesome name={iconName} size={30} color="#fff" />
           <Text>{text}</Text>

@@ -25,6 +25,8 @@ export function TimeSession({ openTime, closeTime }: IProps): ReactElement {
   useEffect(() => {
     if (hours >= openTime && hours <= closeTime) {
       setIsOpen(true);
+    } else {
+      setIsOpen(false);
     }
   }, [hours, openTime, closeTime]);
 

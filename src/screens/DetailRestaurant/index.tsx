@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import { ScrollView, View, Text } from 'react-native';
+import { ScrollView, View, Text, Linking, Platform } from 'react-native';
 
 import Feather from '@expo/vector-icons/Feather';
 
@@ -22,6 +22,40 @@ import { Button } from '../../components/Button';
 import { ActionButton } from './components/ActionButton';
 
 export function DetailRestaurant(): ReactElement {
+  const fakeData = [
+    {
+      id: 1,
+      phone: 5513996670465,
+      lat: -24.311261,
+      lng: -46.983566,
+    },
+  ];
+
+  function handleOpenWhatsApp(phoneNumber: number) {
+    Linking.openURL(`whatsapp://send?text=Olá!&phone=${phoneNumber}`);
+  }
+
+  function handleOpenPhone(phoneNumber: number) {
+    Linking.openURL(`tel:${phoneNumber}`);
+  }
+
+  // TODO: add this block in utils functions
+  function handleOpenMaps(lat: number, lng: number) {
+    const scheme = Platform.select({
+      ios: 'maps:0,0?q=',
+      android: 'geo:0,0?q=',
+    });
+    const latLng = `${lat},${lng}`;
+    const label = 'Label';
+    const url =
+      Platform.select({
+        ios: `${scheme}${label}@${latLng}`,
+        android: `${scheme}${latLng}(${label})`,
+      }) || '';
+
+    Linking.openURL(url);
+  }
+
   return (
     <ScrollView>
       <Header title="Primi Piatti" onBackScreen />
@@ -66,18 +100,21 @@ export function DetailRestaurant(): ReactElement {
 
         <ActionButtonsContainer>
           <ActionButton
+            onPress={() => handleOpenWhatsApp(fakeData[0].phone)}
             iconName="whatsapp"
             text="Whatsapp"
             borderColor="#14C255"
             backgroundColor="#25D366"
           />
           <ActionButton
+            onPress={() => handleOpenPhone(fakeData[0].phone)}
             iconName="phone"
             text="Ligar"
             borderColor="#188AE8"
             backgroundColor="#42A4F5"
           />
           <ActionButton
+            onPress={() => handleOpenMaps(fakeData[0].lat, fakeData[0].lng)}
             iconName="map-marker"
             text="Rotas"
             borderColor="#C21437"
