@@ -3,7 +3,6 @@ import { SafeAreaView } from 'react-native';
 
 import { Picker } from '@react-native-community/picker';
 import { ItemValue } from '@react-native-community/picker/typings/Picker';
-
 import { ContainerPicker, PickerStyle } from './styles';
 
 interface IFilterProps {
