@@ -11,9 +11,10 @@ interface RestaurantCardProps extends TouchableOpacityProps {
 const RestaurantCard: React.FC<RestaurantCardProps> = ({
   restaurantName,
   imageUrl,
+  ...rest
 }) => {
   return (
-    <Container>
+    <Container {...rest}>
       <RestaurantImage
         source={{
           uri: imageUrl,

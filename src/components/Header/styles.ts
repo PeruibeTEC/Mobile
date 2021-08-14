@@ -13,7 +13,7 @@ export const Container = styled.View`
 `;
 
 export const IconContainer = styled.TouchableOpacity`
-  right: 200%;
+  right: 50px;
 `;
 
 export const Text = styled.Text`

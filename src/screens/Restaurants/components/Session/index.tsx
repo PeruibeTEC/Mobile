@@ -66,7 +66,7 @@ const Session: React.FC<SessionProps> = ({ sessionName }) => {
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => (
           <RestaurantCard
-            onPress={handleNavigateToDetailRestaurant}
+            onPress={() => handleNavigateToDetailRestaurant()}
             restaurantName={item.title}
             imageUrl={item.image}
           />
