@@ -10,19 +10,13 @@ interface CardProps {
   name: string;
   image: string;
   budget: string;
-  nameScreen: string;
 }
 
-export function Card({
-  name,
-  image,
-  budget,
-  nameScreen,
-}: CardProps): ReactElement {
+export function Card({ name, image, budget }: CardProps): ReactElement {
   const navigation = useNavigation();
 
   function handleNavigateToProject() {
-    navigation.navigate(`${nameScreen}`);
+    navigation.navigate('Project');
   }
 
   return (
