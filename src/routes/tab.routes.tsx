@@ -14,6 +14,7 @@ import { TheftItems } from '../screens/TheftItems';
 import { TouristSpot } from '../screens/TouristSpot';
 import { DangerPoints } from '../screens/DangerPoints';
 import { ProjectList } from '../screens/ProjectList';
+import { Project } from '../screens/Project';
 
 const Tab = createMaterialBottomTabNavigator();
 const StackRoutes = createStackNavigator();
@@ -100,6 +101,7 @@ const AppRoutes: React.FC = () => {
       >
         <StackRoutes.Screen name="HomeTabs" component={HomeTabs} />
         <StackRoutes.Screen name="Incidents" component={TheftItems} />
+        <StackRoutes.Screen name="Project" component={Project} />
       </StackRoutes.Navigator>
     </NavigationContainer>
   );
