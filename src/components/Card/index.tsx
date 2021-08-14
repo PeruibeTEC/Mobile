@@ -35,13 +35,8 @@ export function Card({
         <Budget>R$ {budget}</Budget>
       </ContentContainer>
       <View style={{ marginTop: 40 }}>
-        <TouchableOpacity>
-          <Feather
-            onPress={handleNavigateToProject}
-            name="arrow-right"
-            color="#000000"
-            size={28}
-          />
+        <TouchableOpacity onPress={handleNavigateToProject}>
+          <Feather name="arrow-right" color="#000000" size={28} />
         </TouchableOpacity>
       </View>
     </Container>
