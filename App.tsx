@@ -6,11 +6,14 @@ import {
   Inter_500Medium,
   Inter_400Regular,
 } from '@expo-google-fonts/inter';
-import { Roboto_700Bold, Roboto_400Regular } from '@expo-google-fonts/roboto';
-
-import AppLoading from 'expo-app-loading';
+import {
+  Roboto_700Bold,
+  Roboto_500Medium,
+  Roboto_400Regular,
+} from '@expo-google-fonts/roboto';
 
 import Routes from './src/routes';
+import { Load } from './src/components/Load';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -18,11 +21,12 @@ export default function App() {
     Inter_500Medium,
     Inter_400Regular,
     Roboto_700Bold,
+    Roboto_500Medium,
     Roboto_400Regular,
   });
 
   if (!fontsLoaded) {
-    return <AppLoading />;
+    return <Load />;
   }
 
   return (

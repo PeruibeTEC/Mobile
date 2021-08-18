@@ -31,7 +31,7 @@ export function ChooseYourCity(): ReactElement {
   const [states, setStates] = useState();
   const [cities, setCities] = useState();
 
-  async function handleNavigateToSignUp() {
+  function handleNavigateToSignUp() {
     navigation.navigate('SignUp');
   }
 
