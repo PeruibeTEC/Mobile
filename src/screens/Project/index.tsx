@@ -60,7 +60,7 @@ export function Project(): ReactElement {
             numberOfLines={8}
             placeholder="Digite aqui"
           />
-          <TouchableOpacity>
+          <TouchableOpacity activeOpacity={0.6}>
             <Feather
               style={{
                 marginLeft: 10,

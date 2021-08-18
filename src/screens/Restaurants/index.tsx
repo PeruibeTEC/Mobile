@@ -46,7 +46,10 @@ export default function Restaurants(): ReactElement {
             Av. Padre Anchieta 800 - Jangada
           </RestaurantAddress>
 
-          <ViewButtonContainer onPress={handleNavigateToDetailRestaurant}>
+          <ViewButtonContainer
+            activeOpacity={0.6}
+            onPress={handleNavigateToDetailRestaurant}
+          >
             <ViewButtonText>Visualizar</ViewButtonText>
             <Icon name="redo" size={20} color="#ffff" />
           </ViewButtonContainer>

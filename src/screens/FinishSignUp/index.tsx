@@ -88,7 +88,7 @@ export function FinishSignUp(): ReactElement {
           <TextSelect>Escolha uma foto para o seu perfil</TextSelect>
           <TouchableOpacity
             onPress={handlePickImageFromGallery}
-            activeOpacity={0.5}
+            activeOpacity={0.6}
           >
             <ImagePickerGallery>
               {!image ? (

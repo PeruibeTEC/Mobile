@@ -45,7 +45,7 @@ export function Post({
           {caption && <Caption>{caption}</Caption>}
           {image && <PostPhoto source={{ uri: `${image}` }} />}
           <IconsContainer>
-            <TouchableOpacity>
+            <TouchableOpacity activeOpacity={0.6}>
               <Feather
                 iconStyle={{ padding: 10 }}
                 name="comment"
@@ -55,7 +55,7 @@ export function Post({
                 ⠀{comment}
               </Feather>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity activeOpacity={0.6}>
               <Feather name="heart" color="#404B5A" size={15}>
                 ⠀{likes}
               </Feather>

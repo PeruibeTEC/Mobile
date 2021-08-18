@@ -14,7 +14,7 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({
   ...rest
 }) => {
   return (
-    <Container {...rest}>
+    <Container activeOpacity={0.6} {...rest}>
       <RestaurantImage
         source={{
           uri: imageUrl,
