@@ -8,11 +8,11 @@ import { Container, Photo, Name, Budget, ContentContainer } from './styles';
 
 interface CardProps {
   name: string;
-  image: string;
+  imageURL: string;
   budget: string;
 }
 
-export function Card({ name, image, budget }: CardProps): ReactElement {
+export function Card({ name, imageURL, budget }: CardProps): ReactElement {
   const navigation = useNavigation();
 
   function handleNavigateToProject() {
@@ -22,14 +22,14 @@ export function Card({ name, image, budget }: CardProps): ReactElement {
   return (
     <Container>
       <View style={{ width: '30%' }}>
-        <Photo source={{ uri: `${image}` }} />
+        <Photo source={{ uri: `${imageURL}` }} />
       </View>
       <ContentContainer>
         <Name>{name}</Name>
         <Budget>R$ {budget}</Budget>
       </ContentContainer>
       <View style={{ marginTop: 40 }}>
-        <TouchableOpacity onPress={handleNavigateToProject}>
+        <TouchableOpacity onPress={handleNavigateToProject} activeOpacity={0.6}>
           <Feather name="arrow-right" color="#000000" size={28} />
         </TouchableOpacity>
       </View>

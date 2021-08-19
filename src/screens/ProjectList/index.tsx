@@ -3,9 +3,20 @@ import { FlatList, ScrollView } from 'react-native';
 
 import { Header } from '../../components/Header/Header';
 import { Card } from '../../components/Card';
-import { FilterInput } from '../../components/FilterInput';
+import { FilterInput, IFilterProps } from '../../components/FilterInput';
 
 export function ProjectList(): ReactElement {
+  const constructionTypes: IFilterProps[] = [
+    {
+      id: 1,
+      name: 'Reforma',
+    },
+    {
+      id: 2,
+      name: 'Construção',
+    },
+  ];
+
   const fakeData = [
     {
       key: 1,
@@ -53,12 +64,12 @@ export function ProjectList(): ReactElement {
   return (
     <ScrollView style={{ backgroundColor: 'white' }}>
       <Header title="Obras da Cidade" />
-      <FilterInput />
+      <FilterInput data={constructionTypes} />
       <FlatList
         data={fakeData}
         keyExtractor={item => String(item.key)}
         renderItem={({ item }) => (
-          <Card name={item.name} image={item.image} budget={item.budget} />
+          <Card name={item.name} imageURL={item.image} budget={item.budget} />
         )}
       />
     </ScrollView>
