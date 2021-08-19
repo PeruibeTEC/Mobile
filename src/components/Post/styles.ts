@@ -3,8 +3,7 @@ import styled from 'styled-components/native';
 export const Container = styled.View`
   width: 100%;
   background: #ffff;
-  margin-top: 12px;
-  padding-left: 16px;
+  margin-top: 16px;
   font-family: 'Roboto_700Bold';
   color: #202833;
   border-color: #e0e5eb;
@@ -24,6 +23,12 @@ export const ProfilePhoto = styled.Image`
   border-color: #d5dce5;
 `;
 
+export const HeadContainer = styled.View`
+  padding-left: 20px;
+  padding-right: 20px;
+  justify-content: space-around;
+`;
+
 export const ContentContainer = styled.View`
   width: 80%;
   font-family: 'Roboto_700Bold';
@@ -31,27 +36,25 @@ export const ContentContainer = styled.View`
   font-size: 16px;
   flex-direction: row;
   flex-wrap: wrap;
-  padding-right: 20px;
-  padding-bottom: 13px;
 `;
 
 export const Name = styled.Text`
-  font-family: 'Roboto_700Bold';
-  color: #202833;
-  font-size: 16px;
+  font-family: 'Roboto_500Medium';
+  color: #516270;
+  font-size: 14px;
 `;
 
 export const TimeToPost = styled.Text`
   font-family: 'Roboto_400Regular';
-  color: #929fb1;
-  font-size: 15px;
+  color: #bccbd6;
+  font-size: 14px;
 `;
 
 export const Caption = styled.Text`
   font-family: 'Roboto_400Regular';
-  color: #404b5a;
+  color: #27333d;
   font-size: 15px;
-  margin-top: 5px;
+  margin-top: 8px;
 `;
 
 export const Column = styled.View`
@@ -62,18 +65,16 @@ export const Column = styled.View`
 `;
 
 export const PostPhoto = styled.Image`
-  height: 131px;
+  height: 244px;
   width: 100%;
-  border-radius: 7px;
   margin-top: 13px;
 `;
 
 export const IconsContainer = styled.View`
   width: 100%;
-  margin-top: 12px;
+  margin-top: 16px;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-  padding-right: 33px;
   padding-left: 30px;
+  margin-bottom: 16px;
 `;
