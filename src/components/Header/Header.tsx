@@ -17,7 +17,7 @@ export function Header({ title, onBackScreen }: HeaderProps): ReactElement {
   return (
     <Container>
       {onBackScreen && (
-        <IconContainer onPress={handleNavigateToBackScreen}>
+        <IconContainer activeOpacity={0.6} onPress={handleNavigateToBackScreen}>
           <Feather color="#2196f3" name="arrow-left" size={21} />
         </IconContainer>
       )}

@@ -10,7 +10,7 @@ interface Props extends ButtonProps {
 
 export function Button({ title, children, ...rest }: Props): ReactElement {
   return (
-    <Container {...rest}>
+    <Container activeOpacity={0.6} {...rest}>
       <Text>{title}</Text>
       {children}
     </Container>

@@ -39,7 +39,7 @@ export function Comment({
       </ContentContainer>
       <IconsContainer>
         <TimeToComment>{hours}</TimeToComment>
-        <TouchableOpacity>
+        <TouchableOpacity activeOpacity={0.6}>
           <Feather name="heart" color="#E82656" size={14}>
             ⠀{likes}
           </Feather>

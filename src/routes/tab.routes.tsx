@@ -7,14 +7,15 @@ import { Feather } from '@expo/vector-icons';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Profile from '../screens/Profile';
+import Restaurants from '../screens/Restaurants';
 import { Home } from '../screens/Home';
-import { Restaurants } from '../screens/Restaurants';
+
 import { TheftItems } from '../screens/TheftItems';
 
-import { TouristSpot } from '../screens/TouristSpot';
 import { DangerPoints } from '../screens/DangerPoints';
 import { ProjectList } from '../screens/ProjectList';
 import { Project } from '../screens/Project';
+import { DetailRestaurant } from '../screens/DetailRestaurant';
 
 const Tab = createMaterialBottomTabNavigator();
 const StackRoutes = createStackNavigator();
@@ -102,6 +103,10 @@ const AppRoutes: React.FC = () => {
         <StackRoutes.Screen name="HomeTabs" component={HomeTabs} />
         <StackRoutes.Screen name="Incidents" component={TheftItems} />
         <StackRoutes.Screen name="Project" component={Project} />
+        <StackRoutes.Screen
+          name="DetailRestaurant"
+          component={DetailRestaurant}
+        />
       </StackRoutes.Navigator>
     </NavigationContainer>
   );

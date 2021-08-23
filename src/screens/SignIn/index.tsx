@@ -89,13 +89,13 @@ export function SignIn(): ReactElement {
 
           <Button onPress={handleSignIn} title="Entrar" />
 
-          <TouchableOpacity activeOpacity={0.5}>
+          <TouchableOpacity activeOpacity={0.6}>
             <ForgotPassword>Esqueci minha senha</ForgotPassword>
           </TouchableOpacity>
         </Content>
 
         <CreateAccountContainer>
-          <TouchableOpacity onPress={handleSignUp} activeOpacity={0.5}>
+          <TouchableOpacity onPress={handleSignUp} activeOpacity={0.6}>
             <CreateAccount>Criar sua Conta</CreateAccount>
           </TouchableOpacity>
         </CreateAccountContainer>
