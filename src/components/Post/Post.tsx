@@ -25,16 +25,6 @@ interface HeaderProps {
   likes: string;
 }
 
-function Head({ profile_image, name, hours }) {
-  return (
-    <>
-      <ProfilePhoto source={{ uri: `${profile_image}` }} />
-      <Name>{name} </Name>
-      <TimeToPost>• {hours}h</TimeToPost>
-    </>
-  );
-}
-
 export function Post({
   name,
   profile_image,
@@ -51,22 +41,39 @@ export function Post({
           <View
             style={{
               flexDirection: 'row',
-              alignItems: 'center',
               justifyContent: 'space-between',
+              alignItems: 'center',
             }}
           >
-            <Head hours={hours} name={name} profile_image={profile_image} />
             <View
               style={{
-                justifyContent: 'space-between',
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'flex-start',
               }}
             >
-              <Feather name="more-vertical" color="#6D808F" size={24} />
+              <ProfilePhoto source={{ uri: `${profile_image}` }} />
+              <Name>{name} </Name>
+              <TimeToPost>• {hours}h</TimeToPost>
             </View>
+
+            <TouchableOpacity activeOpacity={0.6}>
+              <Feather
+                style={{
+                  justifyContent: 'flex-end',
+                  alignItems: 'center',
+                }}
+                name="more-vertical"
+                color="#6D808F"
+                size={24}
+              />
+            </TouchableOpacity>
           </View>
           {caption && <Caption>{caption}</Caption>}
         </HeadContainer>
+
         {image && <PostPhoto source={{ uri: `${image}` }} />}
+
         <ContentContainer>
           <IconsContainer>
             <TouchableOpacity activeOpacity={0.6}>
@@ -74,6 +81,7 @@ export function Post({
                 ⠀{likes}
               </Feather>
             </TouchableOpacity>
+
             <TouchableOpacity style={{ left: 24 }} activeOpacity={0.6}>
               <Feather
                 iconStyle={{ padding: 10 }}

@@ -26,7 +26,6 @@ export const ProfilePhoto = styled.Image`
 export const HeadContainer = styled.View`
   padding-left: 20px;
   padding-right: 20px;
-  justify-content: space-around;
 `;
 
 export const ContentContainer = styled.View`
