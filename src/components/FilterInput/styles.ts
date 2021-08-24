@@ -1,20 +1,17 @@
 import styled from 'styled-components/native';
 
-export const Title = styled.Text`
-  color: #9c9c9c;
-
-  font-family: 'Inter_500Medium';
-  font-size: 14px;
-  text-align: left;
-`;
-
 export const ContainerPicker = styled.View`
-  margin-bottom: 24px;
-  width: 85%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
 `;
 
 export const PickerStyle = styled.View`
-  border: 2px #f6f6f6;
-  border-radius: 8px;
-  background-color: #e8e8e8;
+  width: 95%;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #f6f6f6;
+  border: 1px solid #e8e8e8;
+  margin-left: 24px;
 `;
