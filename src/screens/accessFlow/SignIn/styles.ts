@@ -5,18 +5,19 @@ import fonts from '../../../styles/fonts';
 
 export const Container = styled.SafeAreaView`
   flex: 1;
-  padding-top: ${Constants.statusBarHeight}px;
+  padding: ${Constants.statusBarHeight + 8}px 30px 40px 30px;
+`;
+
+export const KeyboardAvoidingView = styled.KeyboardAvoidingView`
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export const Header = styled.View`
-  padding: 16px 30px 40px 30px;
+  margin-bottom: 8px;
   align-items: center;
   justify-content: center;
-`;
-
-export const Form = styled.View`
-  flex: 1;
-  padding: 0 30px;
 `;
 
 export const Divider = styled.View`
@@ -42,12 +43,23 @@ export const DividerText = styled.Text`
   color: ${colors.light.gray400};
 `;
 
+export const InputGroup = styled.View`
+  width: 100%;
+  justify-content: space-between;
+`;
+
 export const ForgotPassword = styled.Text`
   font-family: ${fonts.robotoRegular};
   font-size: 14px;
   color: ${colors.light.gray500};
   text-decoration-line: underline;
-  margin: 16px 0 40px auto;
+  margin: 16px 0 0 auto;
+`;
+
+export const ButtonGroup = styled.View`
+  width: 100%;
+  margin-top: 8px;
+  justify-content: space-between;
 `;
 
 export const CreateNewAccount = styled.View`
@@ -57,7 +69,7 @@ export const CreateNewAccount = styled.View`
 export const Label = styled.Text`
   color: ${colors.light.gray400};
   font-size: 16px;
-  margin: 40px 0 0 0;
+  margin: 24px 0 0 0;
 `;
 
 export const NewAccount = styled.Text`

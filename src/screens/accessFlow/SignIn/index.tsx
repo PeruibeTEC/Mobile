@@ -1,20 +1,22 @@
 import React from 'react';
-import { KeyboardAvoidingView, Platform, TouchableOpacity } from 'react-native';
+import { Platform, TouchableOpacity } from 'react-native';
 
 import GoogleButton from '../components/GoogleButton';
 import Input from '../components/Input';
 import Button from '../../../components/Button';
 import {
+  ButtonGroup,
   Container,
   Divider,
   DividerText,
-  Form,
+  InputGroup,
   Header,
   Line,
   ForgotPassword,
   CreateNewAccount,
   Label,
   NewAccount,
+  KeyboardAvoidingView,
 } from './styles';
 
 import Logo from '../../../assets/logo.svg';
@@ -24,20 +26,20 @@ const SignIn: React.FC = () => {
     <Container>
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-        style={{ flex: 1 }}
       >
         <Header>
           <Logo width={212} />
         </Header>
-        <Form>
-          <GoogleButton text="Login com Google" />
 
-          <Divider>
-            <Line />
-            <DividerText>OU FAÇA LOGIN</DividerText>
-            <Line />
-          </Divider>
+        <GoogleButton text="Login com Google" />
 
+        <Divider>
+          <Line />
+          <DividerText>OU FAÇA LOGIN</DividerText>
+          <Line />
+        </Divider>
+
+        <InputGroup>
           <Input
             label="E-mail"
             keyboardType="email-address"
@@ -48,7 +50,9 @@ const SignIn: React.FC = () => {
           <TouchableOpacity activeOpacity={0.3}>
             <ForgotPassword>Esqueci minha senha</ForgotPassword>
           </TouchableOpacity>
+        </InputGroup>
 
+        <ButtonGroup>
           <Button title="Entrar" />
 
           <CreateNewAccount>
@@ -57,7 +61,7 @@ const SignIn: React.FC = () => {
               <NewAccount>Crie uma conta</NewAccount>
             </TouchableOpacity>
           </CreateNewAccount>
-        </Form>
+        </ButtonGroup>
       </KeyboardAvoidingView>
     </Container>
   );
