@@ -11,8 +11,8 @@ import Checkbox from 'expo-checkbox';
 import { useNavigation } from '@react-navigation/native';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Button } from '../../components/Button';
-import { Input } from '../../components/Input';
+import { Button } from '../../../components/Button';
+import { Input } from '../../../components/Input';
 
 import { Title, Content, ContainerInputs, Terms } from './styles';
 

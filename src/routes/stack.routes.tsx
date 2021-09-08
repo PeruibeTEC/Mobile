@@ -1,8 +1,8 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import SignIn from '../screens/SignIn';
-import { SignUp } from '../screens/SignUp';
+import SignIn from '../screens/accessFlow/SignIn';
+import { SignUp } from '../screens/accessFlow/SignUp';
 import { ChooseYourType } from '../screens/ChooseYourType';
 import { FinishSignUp } from '../screens/FinishSignUp';
 import { ChooseYourCity } from '../screens/ChooseYourCity';
