@@ -2,6 +2,7 @@ import React from 'react';
 import { KeyboardAvoidingView, Platform, Text, View } from 'react-native';
 
 import GoogleButton from '../components/GoogleButton';
+import Input from '../components/Input';
 import { Container, Divider, DividerText, Form, Header, Line } from './styles';
 
 import Logo from '../../../assets/logo.svg';
@@ -24,6 +25,9 @@ const SignIn: React.FC = () => {
             <DividerText>OU FAÇA LOGIN</DividerText>
             <Line />
           </Divider>
+
+          <Input label="E-mail" keyboardType="email-address" />
+          <Input returnKeyType="done" label="Senha" secureTextEntry />
         </Form>
       </KeyboardAvoidingView>
     </Container>
