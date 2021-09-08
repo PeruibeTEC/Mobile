@@ -38,7 +38,11 @@ const SignIn: React.FC = () => {
             <Line />
           </Divider>
 
-          <Input label="E-mail" keyboardType="email-address" />
+          <Input
+            label="E-mail"
+            keyboardType="email-address"
+            style={{ marginBottom: 20 }}
+          />
           <Input returnKeyType="done" label="Senha" secureTextEntry />
 
           <TouchableOpacity activeOpacity={0.3}>

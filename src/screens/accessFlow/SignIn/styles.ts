@@ -47,7 +47,7 @@ export const ForgotPassword = styled.Text`
   font-size: 14px;
   color: ${colors.light.gray500};
   text-decoration-line: underline;
-  margin: 16px 0 40px 165px;
+  margin: 16px 0 40px auto;
 `;
 
 export const CreateNewAccount = styled.View`
