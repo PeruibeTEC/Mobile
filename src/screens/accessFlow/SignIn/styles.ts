@@ -41,3 +41,27 @@ export const DividerText = styled.Text`
   text-transform: uppercase;
   color: ${colors.light.gray400};
 `;
+
+export const ForgotPassword = styled.Text`
+  font-family: ${fonts.robotoRegular};
+  font-size: 14px;
+  color: ${colors.light.gray500};
+  text-decoration-line: underline;
+  margin: 0 0 20px 165px;
+`;
+
+export const CreateNewAccount = styled.View`
+  align-items: center;
+`;
+
+export const Label = styled.Text`
+  color: ${colors.light.gray400};
+  font-size: 16px;
+  margin: 30px 0 0 0;
+`;
+
+export const NewAccount = styled.Text`
+  color: ${colors.light.gray500};
+  font-size: 16px;
+  text-decoration-line: underline;
+`;
