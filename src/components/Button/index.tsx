@@ -1,18 +1,21 @@
-import React, { ReactElement } from 'react';
-import { ButtonProps } from 'react-native';
+import React from 'react';
+import { RectButtonProps } from 'react-native-gesture-handler';
+import { ButtonText, Container, Text } from './styles';
 
-import { Container, Text } from './styles';
-
-interface Props extends ButtonProps {
+interface IProps extends RectButtonProps {
   title: string;
   children?: React.ReactNode;
 }
 
-export function Button({ title, children, ...rest }: Props): ReactElement {
+const Button: React.FC<IProps> = ({ title, children, ...props }) => {
   return (
-    <Container activeOpacity={0.6} {...rest}>
-      <Text>{title}</Text>
-      {children}
+    <Container>
+      <ButtonText {...props}>
+        <Text>{title}</Text>
+        {children}
+      </ButtonText>
     </Container>
   );
-}
+};
+
+export default Button;
