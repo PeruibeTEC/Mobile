@@ -1,8 +1,9 @@
 import React from 'react';
-import { KeyboardAvoidingView, Platform, Text, View } from 'react-native';
+import { KeyboardAvoidingView, Platform } from 'react-native';
 
 import GoogleButton from '../components/GoogleButton';
 import Input from '../components/Input';
+import Button from '../../../components/Button';
 import { Container, Divider, DividerText, Form, Header, Line } from './styles';
 
 import Logo from '../../../assets/logo.svg';
@@ -28,6 +29,8 @@ const SignIn: React.FC = () => {
 
           <Input label="E-mail" keyboardType="email-address" />
           <Input returnKeyType="done" label="Senha" secureTextEntry />
+
+          <Button title="Entrar" />
         </Form>
       </KeyboardAvoidingView>
     </Container>

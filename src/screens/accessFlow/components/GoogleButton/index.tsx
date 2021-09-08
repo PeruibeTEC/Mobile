@@ -1,6 +1,5 @@
 import React from 'react';
 import { RectButtonProps } from 'react-native-gesture-handler';
-import { Text, View } from 'react-native';
 
 import { Button, ButtonText, Container } from './styles';
 
