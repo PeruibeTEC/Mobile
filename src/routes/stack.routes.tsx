@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import { SignIn } from '../screens/SignIn';
+import SignIn from '../screens/SignIn';
 import { SignUp } from '../screens/SignUp';
 import { ChooseYourType } from '../screens/ChooseYourType';
 import { FinishSignUp } from '../screens/FinishSignUp';
@@ -17,7 +17,7 @@ const AppRoutes: React.FC = () => (
     headerMode="none"
     screenOptions={{
       cardStyle: {
-        backgroundColor: colors.white,
+        backgroundColor: colors.light.background,
       },
     }}
   >

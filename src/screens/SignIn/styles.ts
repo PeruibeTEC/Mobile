@@ -1,47 +1,43 @@
 import styled from 'styled-components/native';
+import Constants from 'expo-constants';
+import colors from '../../styles/colors';
+import fonts from '../../styles/fonts';
 
-export const Content = styled.View`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+export const Container = styled.SafeAreaView`
+  flex: 1;
+  padding-top: ${Constants.statusBarHeight}px;
+`;
+
+export const Header = styled.View`
+  padding: 16px 30px 40px 30px;
   align-items: center;
-
-  height: 94%;
-`;
-
-export const Title = styled.Text`
-  margin-bottom: 72px;
-  color: black;
-
-  font-family: 'Inter_600SemiBold';
-  font-weight: 600;
-  font-size: 32px;
-`;
-
-export const ContainerInputs = styled.View`
-  padding-left: 16px;
-  padding-right: 16px;
-`;
-
-export const ForgotPassword = styled.Text`
-  margin-top: 24px;
-  color: #404b5a;
-
-  font-family: 'Inter_600SemiBold';
-  font-size: 16px;
-`;
-
-export const CreateAccountContainer = styled.View`
-  height: 5%;
   justify-content: center;
-  align-items: center;
-
-  border-top-width: 1px;
-  border-color: #8b9fba;
 `;
 
-export const CreateAccount = styled.Text`
-  font-size: 18px;
-  font-family: 'Inter_600SemiBold';
-  color: #2196f3;
+export const Form = styled.View`
+  flex: 1;
+  padding: 0 30px;
+`;
+
+export const Divider = styled.View`
+  width: 100%;
+  margin: 24px 0 24px 0;
+
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const Line = styled.View`
+  width: 56px;
+  height: 1px;
+  margin: 0 16px 0 16px;
+  background-color: ${colors.light.gray400};
+`;
+
+export const DividerText = styled.Text`
+  font-size: 12px;
+  font-family: ${fonts.robotoRegular};
+  text-transform: uppercase;
+  color: ${colors.light.gray400};
 `;
