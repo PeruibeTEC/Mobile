@@ -47,7 +47,7 @@ export const ForgotPassword = styled.Text`
   font-size: 14px;
   color: ${colors.light.gray500};
   text-decoration-line: underline;
-  margin: 0 0 20px 165px;
+  margin: 16px 0 40px 165px;
 `;
 
 export const CreateNewAccount = styled.View`
@@ -57,11 +57,12 @@ export const CreateNewAccount = styled.View`
 export const Label = styled.Text`
   color: ${colors.light.gray400};
   font-size: 16px;
-  margin: 30px 0 0 0;
+  margin: 40px 0 0 0;
 `;
 
 export const NewAccount = styled.Text`
   color: ${colors.light.gray500};
   font-size: 16px;
   text-decoration-line: underline;
+  margin: 4px 0 0 0;
 `;
