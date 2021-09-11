@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useState } from 'react';
 import { View, TouchableOpacity } from 'react-native';
 
 import Feather from '@expo/vector-icons/Feather';
@@ -34,6 +34,8 @@ export function Post({
   comment,
   likes,
 }: HeaderProps): ReactElement {
+  const [isLiked, setIsLiked] = useState(false);
+
   return (
     <>
       <Container>
@@ -76,8 +78,15 @@ export function Post({
 
         <ContentContainer>
           <IconsContainer>
-            <TouchableOpacity activeOpacity={0.6}>
-              <Feather name="heart" color="#6D808F" size={16}>
+            <TouchableOpacity
+              onPress={() => (isLiked ? setIsLiked(false) : setIsLiked(true))}
+              activeOpacity={0.6}
+            >
+              <Feather
+                name="heart"
+                color={isLiked ? 'red' : '#6D808F'}
+                size={16}
+              >
                 ⠀{likes}
               </Feather>
             </TouchableOpacity>
