@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import SignIn from '../screens/accessFlow/SignIn';
 import { SignUp } from '../screens/accessFlow/SignUp';
 import { ChooseYourType } from '../screens/ChooseYourType';
+import ChooseYourProfile from '../screens/accessFlow/ChooseYourProfile';
 import { FinishSignUp } from '../screens/FinishSignUp';
 import { ChooseYourCity } from '../screens/ChooseYourCity';
 
@@ -22,6 +23,10 @@ const AppRoutes: React.FC = () => (
     }}
   >
     <StackRoutes.Screen name="SignIn" component={SignIn} />
+    <StackRoutes.Screen
+      name="ChooseYourProfile"
+      component={ChooseYourProfile}
+    />
     <StackRoutes.Screen name="ChooseYourType" component={ChooseYourType} />
     <StackRoutes.Screen name="SignUp" component={SignUp} />
     <StackRoutes.Screen name="ChooseYourCity" component={ChooseYourCity} />

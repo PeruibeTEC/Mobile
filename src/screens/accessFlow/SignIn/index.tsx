@@ -1,6 +1,7 @@
 import React from 'react';
 import { Platform, TouchableOpacity } from 'react-native';
 
+import { useNavigation } from '@react-navigation/native';
 import GoogleButton from '../components/GoogleButton';
 import Input from '../components/Input';
 import Button from '../../../components/Button';
@@ -22,6 +23,12 @@ import {
 import Logo from '../../../assets/logo.svg';
 
 const SignIn: React.FC = () => {
+  const navigation = useNavigation();
+
+  async function handleChooseYourProfile() {
+    navigation.navigate('ChooseYourProfile');
+  }
+
   return (
     <Container>
       <KeyboardAvoidingView
@@ -53,7 +60,7 @@ const SignIn: React.FC = () => {
         </InputGroup>
 
         <ButtonGroup>
-          <Button title="Entrar" />
+          <Button title="Entrar" onPress={handleChooseYourProfile} />
 
           <CreateNewAccount>
             <Label>Ainda não tem cadastro?</Label>

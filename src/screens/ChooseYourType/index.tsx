@@ -4,7 +4,7 @@ import { KeyboardAvoidingView, SafeAreaView, View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 
-import { Button } from '../../components/Button';
+import Button from '../../components/Button';
 
 import { Title, Content, Description, Ilustration } from './styles';
 import ImageChoice from './assets/choice.png';
