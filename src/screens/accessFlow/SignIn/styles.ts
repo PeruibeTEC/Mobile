@@ -2,10 +2,14 @@ import styled from 'styled-components/native';
 import Constants from 'expo-constants';
 import colors from '../../../styles/colors';
 import fonts from '../../../styles/fonts';
+import { sizes } from '../../../utils/predefinedSizes';
+import percentageToDP from '../../../utils/percentageToDP';
+import normalize from '../../../utils/normalizeFont';
 
 export const Container = styled.SafeAreaView`
   flex: 1;
-  padding: ${Constants.statusBarHeight + 8}px 30px 40px 30px;
+  padding: ${Constants.statusBarHeight + sizes.height.dp8}px
+    ${sizes.width.dp30}px ${sizes.height.dp40}px ${sizes.width.dp30}px;
 `;
 
 export const KeyboardAvoidingView = styled.KeyboardAvoidingView`
@@ -15,14 +19,14 @@ export const KeyboardAvoidingView = styled.KeyboardAvoidingView`
 `;
 
 export const Header = styled.View`
-  margin-bottom: 8px;
+  margin-bottom: ${sizes.height.dp8}px;
   align-items: center;
   justify-content: center;
 `;
 
 export const Divider = styled.View`
   width: 100%;
-  margin: 24px 0 24px 0;
+  margin: ${sizes.height.dp24}px 0 ${sizes.height.dp24}px 0;
 
   flex-direction: row;
   align-items: center;
@@ -30,9 +34,9 @@ export const Divider = styled.View`
 `;
 
 export const Line = styled.View`
-  width: 56px;
+  width: ${percentageToDP.width('20%')}px;
   height: 1px;
-  margin: 0 16px 0 16px;
+  margin: 0 ${sizes.height.dp8}px 0 ${sizes.height.dp8}px;
   background-color: ${colors.light.gray400};
 `;
 
@@ -53,12 +57,12 @@ export const ForgotPassword = styled.Text`
   font-size: 14px;
   color: ${colors.light.gray500};
   text-decoration-line: underline;
-  margin: 16px 0 0 auto;
+  margin: ${sizes.height.dp16}px 0 0 auto;
 `;
 
 export const ButtonGroup = styled.View`
   width: 100%;
-  margin-top: 8px;
+  margin-top: ${sizes.height.dp8}px;
   justify-content: space-between;
 `;
 
@@ -69,12 +73,12 @@ export const CreateNewAccount = styled.View`
 export const Label = styled.Text`
   color: ${colors.light.gray400};
   font-size: 16px;
-  margin: 24px 0 0 0;
+  margin: ${sizes.height.dp24}px 0 0 0;
 `;
 
 export const NewAccount = styled.Text`
   color: ${colors.light.gray500};
   font-size: 16px;
   text-decoration-line: underline;
-  margin: 4px 0 0 0;
+  margin: ${sizes.height.dp4}px 0 0 0;
 `;
