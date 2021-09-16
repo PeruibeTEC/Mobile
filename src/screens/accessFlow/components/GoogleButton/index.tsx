@@ -7,14 +7,15 @@ import GoogleIcon from '../../../../assets/iconGoogleLogo.svg';
 
 interface IProps extends RectButtonProps {
   text: string;
+  background?: string;
 }
 
-const GoogleButton: React.FC<IProps> = ({ text, ...props }) => {
+const GoogleButton: React.FC<IProps> = ({ text, background, ...props }) => {
   return (
     <Container>
       <Button {...props}>
         <GoogleIcon width={24} height={24} />
-        <ButtonText>{text}</ButtonText>
+        <ButtonText bg={background}>{text}</ButtonText>
       </Button>
     </Container>
   );
