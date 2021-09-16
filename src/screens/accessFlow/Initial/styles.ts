@@ -1,36 +1,25 @@
 import styled from 'styled-components/native';
 import { RectButton } from 'react-native-gesture-handler';
 import Constants from 'expo-constants';
-import { Dimensions, PixelRatio } from 'react-native';
+import percentageToDP from '../../../utils/percentageToDP';
+import { sizes } from '../../../utils/predefinedSizes';
+import normalize from '../../../utils/normalizeSize';
 import fonts from '../../../styles/fonts';
 import colors from '../../../styles/colors';
 
 import mapSvg from '../../../assets/mapSvg.svg';
 
-const widthPercentageToDP = (widthPercent: string): number => {
-  const screenWidth = Dimensions.get('window').width;
-  return PixelRatio.roundToNearestPixel(
-    (screenWidth * parseFloat(widthPercent)) / 100,
-  );
-};
-
-const heightPercentageToDP = (heightPercent: string): number => {
-  const screenHeight = Dimensions.get('window').height;
-  return PixelRatio.roundToNearestPixel(
-    (screenHeight * parseFloat(heightPercent)) / 100,
-  );
-};
-
 export const Container = styled.SafeAreaView`
   flex: 1;
   align-items: center;
   justify-content: space-between;
-  padding: ${Constants.statusBarHeight + 16}px 30px 16px 30px;
+  padding: ${Constants.statusBarHeight + sizes.height.dp8}px
+    ${sizes.width.dp30}px ${sizes.height.dp16}px ${sizes.width.dp30}px;
 `;
 
 export const MapSvg = styled(mapSvg)`
-  width: ${widthPercentageToDP('80%')};
-  height: ${heightPercentageToDP('30%')};
+  width: ${percentageToDP.width('74.6%')}px;
+  height: ${percentageToDP.height('38%')}px;
 `;
 
 export const TextGroup = styled.View`
@@ -40,17 +29,17 @@ export const TextGroup = styled.View`
 `;
 
 export const Title = styled.Text`
-  font-size: 32px;
+  font-size: ${normalize(32)}px;
   font-family: ${fonts.robotoBold};
   text-align: center;
   color: ${colors.light.gray900};
 `;
 
 export const Description = styled.Text`
-  margin-top: 16px;
-  font-size: 18px;
+  margin-top: ${sizes.height.dp12}px;
+  font-size: ${normalize(18)}px;
   font-family: ${fonts.robotoMedium};
-  line-height: 24px;
+  line-height: ${normalize(24)}px;
   text-align: center;
   color: ${colors.light.gray700};
 `;
@@ -61,14 +50,14 @@ export const ButtonGroup = styled.View`
 
 export const PrimaryButton = styled(RectButton)`
   width: 100%;
-  height: 56px;
+  height: ${percentageToDP.height('8.3%')}px;
 
   flex-direction: row;
   align-items: center;
   justify-content: center;
 
   background-color: ${colors.light.primary700};
-  border-radius: 8px;
+  border-radius: ${normalize(8)}px;
 `;
 
 export const ContentButton = styled.View`
@@ -79,9 +68,41 @@ export const ContentButton = styled.View`
 `;
 
 export const ButtonText = styled.Text`
-  margin-left: 12px;
+  margin-left: ${sizes.width.dp12}px;
 
-  font-size: 18px;
+  font-size: ${normalize(18)}px;
   font-family: ${fonts.robotoMedium};
   color: ${colors.light.gray600};
+`;
+
+export const SecondaryActions = styled.View`
+  width: 100%;
+  margin-top: ${sizes.height.dp8}px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const SecondaryButtonContainer = styled.View`
+  flex: 1;
+  height: ${percentageToDP.height('8.3%')}px;
+
+  border: 1px solid ${colors.light.gray300};
+  border-radius: ${normalize(8)}px;
+`;
+
+export const SecondaryButton = styled(RectButton)`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: ${normalize(8)}px;
+`;
+
+export const SecondaryButtonText = styled.Text`
+  font-size: ${normalize(18)}px;
+  font-family: ${fonts.robotoMedium};
+  color: ${colors.light.gray500};
 `;
