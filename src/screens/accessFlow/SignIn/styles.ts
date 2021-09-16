@@ -4,7 +4,7 @@ import colors from '../../../styles/colors';
 import fonts from '../../../styles/fonts';
 import { sizes } from '../../../utils/predefinedSizes';
 import percentageToDP from '../../../utils/percentageToDP';
-import normalize from '../../../utils/normalizeFont';
+import normalize from '../../../utils/normalizeSize';
 
 export const Container = styled.SafeAreaView`
   flex: 1;

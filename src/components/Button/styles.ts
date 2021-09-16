@@ -3,7 +3,7 @@ import { RectButton } from 'react-native-gesture-handler';
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import percentageToDP from '../../utils/percentageToDP';
-import normalize from '../../utils/normalizeFont';
+import normalize from '../../utils/normalizeSize';
 
 export const Container = styled(RectButton)`
   justify-content: center;

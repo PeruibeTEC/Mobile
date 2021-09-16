@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import colors from '../../../../styles/colors';
 import fonts from '../../../../styles/fonts';
-import normalize from '../../../../utils/normalizeFont';
+import normalize from '../../../../utils/normalizeSize';
 import percentageToDP from '../../../../utils/percentageToDP';
 import { sizes } from '../../../../utils/predefinedSizes';
 
