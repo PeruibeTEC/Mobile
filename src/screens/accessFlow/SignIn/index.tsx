@@ -17,9 +17,11 @@ import {
   Label,
   NewAccount,
   KeyboardAvoidingView,
+  Content,
 } from './styles';
 
 import Logo from '../../../assets/logo.svg';
+import { sizes } from '../../../utils/predefinedSizes';
 
 const SignIn: React.FC = () => {
   return (
@@ -31,26 +33,28 @@ const SignIn: React.FC = () => {
           <Logo width={212} />
         </Header>
 
-        <GoogleButton text="Login com Google" />
+        <Content>
+          <GoogleButton text="Login com Google" />
 
-        <Divider>
-          <Line />
-          <DividerText>OU FAÇA LOGIN</DividerText>
-          <Line />
-        </Divider>
+          <Divider>
+            <Line />
+            <DividerText>OU FAÇA LOGIN</DividerText>
+            <Line />
+          </Divider>
 
-        <InputGroup>
-          <Input
-            label="E-mail"
-            keyboardType="email-address"
-            style={{ marginBottom: 20 }}
-          />
-          <Input returnKeyType="done" label="Senha" secureTextEntry />
+          <InputGroup>
+            <Input
+              label="E-mail"
+              keyboardType="email-address"
+              style={{ marginBottom: sizes.height.dp20 }}
+            />
+            <Input returnKeyType="done" label="Senha" secureTextEntry />
 
-          <TouchableOpacity activeOpacity={0.3}>
-            <ForgotPassword>Esqueci minha senha</ForgotPassword>
-          </TouchableOpacity>
-        </InputGroup>
+            <TouchableOpacity activeOpacity={0.3}>
+              <ForgotPassword>Esqueci minha senha</ForgotPassword>
+            </TouchableOpacity>
+          </InputGroup>
+        </Content>
 
         <ButtonGroup>
           <Button title="Entrar" />
