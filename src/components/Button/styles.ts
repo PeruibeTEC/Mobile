@@ -11,7 +11,7 @@ export const Container = styled(RectButton)`
   border-radius: ${normalize(8)}px;
   flex-direction: row;
   width: 100%;
-  height: ${percentageToDP.height('8.3%')}px;
+  height: ${percentageToDP.height('7.7%')}px;
   background-color: ${colors.light.primary700};
 `;
 

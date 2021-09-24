@@ -8,7 +8,7 @@ import { sizes } from '../../../../utils/predefinedSizes';
 
 export const Container = styled.View`
   width: 100%;
-  height: ${percentageToDP.height('8.3%')}px;
+  height: ${percentageToDP.height('7.7%')}px;
 
   background-color: ${colors.light.background};
   border: 1px solid ${colors.light.gray300};

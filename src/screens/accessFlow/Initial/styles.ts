@@ -50,7 +50,7 @@ export const ButtonGroup = styled.View`
 
 export const PrimaryButton = styled(RectButton)`
   width: 100%;
-  height: ${percentageToDP.height('8.3%')}px;
+  height: ${percentageToDP.height('7.7%')}px;
 
   flex-direction: row;
   align-items: center;
@@ -87,7 +87,7 @@ export const SecondaryActions = styled.View`
 
 export const SecondaryButtonContainer = styled.View`
   flex: 1;
-  height: ${percentageToDP.height('8.3%')}px;
+  height: ${percentageToDP.height('7.7%')}px;
 
   border: 1px solid ${colors.light.gray300};
   border-radius: ${normalize(8)}px;

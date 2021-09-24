@@ -1,6 +1,7 @@
 import React from 'react';
 import { Platform, TouchableOpacity } from 'react-native';
 
+import { sizes } from '../../../utils/predefinedSizes';
 import GoogleButton from '../components/GoogleButton';
 import Input from '../components/Input';
 import Button from '../../../components/Button';
@@ -21,7 +22,6 @@ import {
 } from './styles';
 
 import Logo from '../../../assets/logo.svg';
-import { sizes } from '../../../utils/predefinedSizes';
 
 const SignIn: React.FC = () => {
   return (
