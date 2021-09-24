@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { Platform, TouchableOpacity } from 'react-native';
 
 import { sizes } from '../../../utils/predefinedSizes';
@@ -24,6 +25,8 @@ import {
 import Logo from '../../../assets/logo.svg';
 
 const SignIn: React.FC = () => {
+  const navigation = useNavigation();
+
   return (
     <Container>
       <KeyboardAvoidingView
@@ -57,7 +60,7 @@ const SignIn: React.FC = () => {
         </Content>
 
         <ButtonGroup>
-          <Button title="Entrar" />
+          <Button title="Entrar" onPress={() => navigation.navigate('Home')} />
 
           <CreateNewAccount>
             <Label>Ainda não tem cadastro?</Label>
