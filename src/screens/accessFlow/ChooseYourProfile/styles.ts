@@ -30,3 +30,25 @@ export const Description = styled.Text`
   text-align: center;
   color: ${colors.light.gray700};
 `;
+
+export const ButtonGroup = styled.View`
+  margin-top: 40px;
+  margin-bottom: 24px;
+`;
+
+export const HasRegister = styled.View`
+  align-items: center;
+`;
+
+export const Label = styled.Text`
+  color: ${colors.light.gray400};
+  font-size: 16px;
+  margin: 24px 0 0 0;
+`;
+
+export const DoLoggin = styled.Text`
+  color: ${colors.light.gray500};
+  font-size: 16px;
+  text-decoration-line: underline;
+  margin: 4px 0 0 0;
+`;
