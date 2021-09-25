@@ -27,6 +27,10 @@ import Logo from '../../../assets/logo.svg';
 const SignIn: React.FC = () => {
   const navigation = useNavigation();
 
+  const handleChooseYourProfile = () => {
+    navigation.navigate('ChooseYourProfile');
+  };
+
   return (
     <Container>
       <KeyboardAvoidingView
@@ -64,7 +68,7 @@ const SignIn: React.FC = () => {
 
           <CreateNewAccount>
             <Label>Ainda não tem cadastro?</Label>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={handleChooseYourProfile}>
               <NewAccount>Crie uma conta</NewAccount>
             </TouchableOpacity>
           </CreateNewAccount>
