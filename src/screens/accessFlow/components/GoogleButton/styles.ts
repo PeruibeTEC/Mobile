@@ -2,13 +2,13 @@ import styled from 'styled-components/native';
 import { RectButton } from 'react-native-gesture-handler';
 import colors from '../../../../styles/colors';
 import fonts from '../../../../styles/fonts';
-import percentageToDP from '../../../../utils/percentageToDP';
+import pixelToDP from '../../../../utils/pixelToDP';
 import normalize from '../../../../utils/normalizeSize';
 import { sizes } from '../../../../utils/predefinedSizes';
 
 export const Container = styled.View`
   width: 100%;
-  height: ${percentageToDP.height('7.7%')}px;
+  height: ${pixelToDP.height(52)}px;
 
   background-color: ${colors.light.background};
   border: 1px solid ${colors.light.gray300};

@@ -3,7 +3,7 @@ import Constants from 'expo-constants';
 import colors from '../../../styles/colors';
 import fonts from '../../../styles/fonts';
 import { sizes } from '../../../utils/predefinedSizes';
-import percentageToDP from '../../../utils/percentageToDP';
+import pixelToDP from '../../../utils/pixelToDP';
 import normalize from '../../../utils/normalizeSize';
 
 export const Container = styled.SafeAreaView`
@@ -38,7 +38,7 @@ export const Divider = styled.View`
 `;
 
 export const Line = styled.View`
-  width: ${percentageToDP.width('20%')}px;
+  width: ${pixelToDP.width(80)}px;
   height: 1px;
   margin: 0 ${sizes.height.dp8}px 0 ${sizes.height.dp8}px;
   background-color: ${colors.light.gray400};

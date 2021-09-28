@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 import { RectButton } from 'react-native-gesture-handler';
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
-import percentageToDP from '../../utils/percentageToDP';
+import pixelToDP from '../../utils/pixelToDP';
 import normalize from '../../utils/normalizeSize';
 
 export const Container = styled(RectButton)`
@@ -11,7 +11,7 @@ export const Container = styled(RectButton)`
   border-radius: ${normalize(8)}px;
   flex-direction: row;
   width: 100%;
-  height: ${percentageToDP.height('7.7%')}px;
+  height: ${pixelToDP.height(52)}px;
   background-color: ${colors.light.primary700};
 `;
 

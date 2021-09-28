@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 import colors from '../../../../styles/colors';
 import fonts from '../../../../styles/fonts';
 import normalize from '../../../../utils/normalizeSize';
-import percentageToDP from '../../../../utils/percentageToDP';
+import pixelToDP from '../../../../utils/pixelToDP';
 import { sizes } from '../../../../utils/predefinedSizes';
 
 export const Container = styled.View`
@@ -19,7 +19,7 @@ export const Label = styled.Text`
 
 export const InputText = styled.TextInput`
   width: 100%;
-  height: ${percentageToDP.height('7.7%')}px;
+  height: ${pixelToDP.height(52)}px;
   padding-left: ${sizes.width.dp20}px;
 
   font-size: ${normalize(16)}px;
