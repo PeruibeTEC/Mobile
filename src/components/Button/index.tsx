@@ -10,8 +10,8 @@ interface IProps extends RectButtonProps {
 const Button: React.FC<IProps> = ({ title, children, ...props }) => {
   return (
     <Container {...props}>
-      <Text>{title}</Text>
       {children}
+      <Text>{title}</Text>
     </Container>
   );
 };

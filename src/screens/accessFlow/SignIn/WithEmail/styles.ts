@@ -1,10 +1,10 @@
 import styled from 'styled-components/native';
 import Constants from 'expo-constants';
-import colors from '../../../styles/colors';
-import fonts from '../../../styles/fonts';
-import { sizes } from '../../../utils/predefinedSizes';
-import pixelToDP from '../../../utils/pixelToDP';
-import normalize from '../../../utils/normalizeSize';
+import colors from '../../../../styles/colors';
+import fonts from '../../../../styles/fonts';
+import { sizes } from '../../../../utils/predefinedSizes';
+import pixelToDP from '../../../../utils/pixelToDP';
+import normalize from '../../../../utils/normalizeSize';
 
 export const Container = styled.SafeAreaView`
   flex: 1;

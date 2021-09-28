@@ -1,19 +1,14 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { MaterialCommunityIcons as Icon } from '@expo/vector-icons';
+
+import Button from '../../../components/Button';
+import SecondaryButton from '../../../components/SecondaryButton';
 
 import {
   ButtonGroup,
-  ButtonText,
   Container,
-  ContentButton,
   Description,
   MapSvg,
-  PrimaryButton,
-  SecondaryActions,
-  SecondaryButton,
-  SecondaryButtonContainer,
-  SecondaryButtonText,
   TextGroup,
   Title,
 } from './styles';
@@ -35,28 +30,12 @@ const Initial: React.FC = () => {
       </TextGroup>
 
       <ButtonGroup>
-        <PrimaryButton onPress={() => navigation.navigate('SignIn')}>
-          <ContentButton>
-            <Icon name="google" color="#DCF8FA" size={24} />
-            <ButtonText style={{ color: '#DCF8FA' }}>
-              Entrar com Google
-            </ButtonText>
-          </ContentButton>
-        </PrimaryButton>
-
-        <SecondaryActions>
-          <SecondaryButtonContainer style={{ marginRight: sizes.width.dp8 }}>
-            <SecondaryButton>
-              <SecondaryButtonText>Cadastrar</SecondaryButtonText>
-            </SecondaryButton>
-          </SecondaryButtonContainer>
-
-          <SecondaryButtonContainer style={{ marginLeft: sizes.width.dp8 }}>
-            <SecondaryButton>
-              <SecondaryButtonText>Entrar</SecondaryButtonText>
-            </SecondaryButton>
-          </SecondaryButtonContainer>
-        </SecondaryActions>
+        <Button title="Cadastrar-se" />
+        <SecondaryButton
+          title="Entrar"
+          style={{ marginTop: sizes.height.dp16 }}
+          onPress={() => navigation.navigate('ChooseAnOptionSignIn')}
+        />
       </ButtonGroup>
     </Container>
   );

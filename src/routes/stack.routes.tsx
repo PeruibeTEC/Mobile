@@ -2,7 +2,10 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Initial from '../screens/accessFlow/Initial';
-import SignIn from '../screens/accessFlow/SignIn';
+
+import ChooseAnOptionSignIn from '../screens/accessFlow/SignIn/ChooseAnOption';
+import SignIn from '../screens/accessFlow/SignIn/WithEmail';
+
 import { SignUp } from '../screens/accessFlow/SignUp';
 import { ChooseYourType } from '../screens/ChooseYourType';
 import ChooseYourProfile from '../screens/accessFlow/ChooseYourProfile';
@@ -24,7 +27,13 @@ const AppRoutes: React.FC = () => (
     }}
   >
     <StackRoutes.Screen name="initial" component={Initial} />
+
+    <StackRoutes.Screen
+      name="ChooseAnOptionSignIn"
+      component={ChooseAnOptionSignIn}
+    />
     <StackRoutes.Screen name="SignIn" component={SignIn} />
+
     <StackRoutes.Screen
       name="ChooseYourProfile"
       component={ChooseYourProfile}

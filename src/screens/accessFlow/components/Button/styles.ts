@@ -15,7 +15,7 @@ export const Container = styled.View`
   border-radius: ${normalize(8)}px;
 `;
 
-export const Button = styled(RectButton)`
+export const Rb = styled(RectButton)`
   width: 100%;
   height: 100%;
 
