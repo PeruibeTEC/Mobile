@@ -1,9 +1,67 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
+import { Platform, TouchableOpacity } from 'react-native';
+import { sizes } from '../../../../utils/predefinedSizes';
 
-import { Container } from './styles';
+import Header from '../../components/Header';
+import Input from '../../components/Input';
+import Button from '../../../../components/Button';
+
+import {
+  Container,
+  Content,
+  CreateNewAccount,
+  ForgotPassword,
+  Form,
+  KeyboardAvoidingView,
+  Label,
+  NewAccount,
+  Title,
+} from './styles';
 
 const SignIn: React.FC = () => {
-  return <Container />;
+  const navigation = useNavigation();
+
+  return (
+    <Container>
+      <KeyboardAvoidingView
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      >
+        <Header />
+
+        <Content>
+          <Title>Login</Title>
+
+          <Form>
+            <Input
+              label="E-mail"
+              keyboardType="email-address"
+              style={{ marginBottom: sizes.height.dp20 }}
+            />
+
+            <Input returnKeyType="done" label="Senha" secureTextEntry />
+
+            <TouchableOpacity activeOpacity={0.3}>
+              <ForgotPassword>Esqueci minha senha</ForgotPassword>
+            </TouchableOpacity>
+
+            <Button
+              title="Entrar"
+              style={{ marginTop: sizes.height.dp40 }}
+              onPress={() => navigation.navigate('Home')}
+            />
+          </Form>
+        </Content>
+
+        <CreateNewAccount>
+          <Label>Ainda não tem cadastro?</Label>
+          <TouchableOpacity>
+            <NewAccount>Crie uma conta</NewAccount>
+          </TouchableOpacity>
+        </CreateNewAccount>
+      </KeyboardAvoidingView>
+    </Container>
+  );
 };
 
 export default SignIn;

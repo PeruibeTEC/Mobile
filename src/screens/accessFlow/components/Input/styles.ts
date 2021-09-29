@@ -1,4 +1,6 @@
 import styled from 'styled-components/native';
+import { TextInput } from 'react-native';
+
 import colors from '../../../../styles/colors';
 import fonts from '../../../../styles/fonts';
 import normalize from '../../../../utils/normalizeSize';
@@ -17,7 +19,7 @@ export const Label = styled.Text`
   color: ${colors.light.gray400};
 `;
 
-export const InputText = styled.TextInput`
+export const InputText = styled(TextInput)`
   width: 100%;
   height: ${pixelToDP.height(52)}px;
   padding-left: ${sizes.width.dp20}px;
