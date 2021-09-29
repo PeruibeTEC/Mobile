@@ -32,7 +32,7 @@ const Initial: React.FC = () => {
       <ButtonGroup>
         <Button
           title="Cadastrar-se"
-          onPress={() => navigation.navigate('ChooseAnOptionSignUp')}
+          onPress={() => navigation.navigate('ChooseYourProfile')}
         />
         <SecondaryButton
           title="Entrar"

@@ -6,11 +6,11 @@ import Initial from '../screens/accessFlow/Initial';
 import ChooseAnOptionSignIn from '../screens/accessFlow/SignIn/ChooseAnOption';
 import SignIn from '../screens/accessFlow/SignIn/WithEmail';
 
+import ChooseYourProfile from '../screens/accessFlow/SignUp/ChooseYourProfile';
 import ChooseAnOptionSignUp from '../screens/accessFlow/SignUp/ChooseAnOption';
 import SignUp from '../screens/accessFlow/SignUp/WithEmail';
 
 import { ChooseYourType } from '../screens/ChooseYourType';
-import ChooseYourProfile from '../screens/accessFlow/ChooseYourProfile';
 import { FinishSignUp } from '../screens/FinishSignUp';
 import { ChooseYourCity } from '../screens/ChooseYourCity';
 
@@ -37,15 +37,15 @@ const AppRoutes: React.FC = () => (
     <StackRoutes.Screen name="SignIn" component={SignIn} />
 
     <StackRoutes.Screen
+      name="ChooseYourProfile"
+      component={ChooseYourProfile}
+    />
+    <StackRoutes.Screen
       name="ChooseAnOptionSignUp"
       component={ChooseAnOptionSignUp}
     />
     <StackRoutes.Screen name="SignUp" component={SignUp} />
 
-    <StackRoutes.Screen
-      name="ChooseYourProfile"
-      component={ChooseYourProfile}
-    />
     <StackRoutes.Screen name="ChooseYourType" component={ChooseYourType} />
     <StackRoutes.Screen name="ChooseYourCity" component={ChooseYourCity} />
     <StackRoutes.Screen name="FinishSignUp" component={FinishSignUp} />
