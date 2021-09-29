@@ -30,7 +30,10 @@ const Initial: React.FC = () => {
       </TextGroup>
 
       <ButtonGroup>
-        <Button title="Cadastrar-se" />
+        <Button
+          title="Cadastrar-se"
+          onPress={() => navigation.navigate('ChooseAnOptionSignUp')}
+        />
         <SecondaryButton
           title="Entrar"
           style={{ marginTop: sizes.height.dp16 }}

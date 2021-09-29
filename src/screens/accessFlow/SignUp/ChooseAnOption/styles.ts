@@ -34,7 +34,7 @@ export const ButtonGroup = styled.View`
   width: 100%;
 `;
 
-export const CreateNewAccount = styled.View`
+export const Login = styled.View`
   align-items: center;
 `;
 
@@ -44,7 +44,7 @@ export const Label = styled.Text`
   margin: ${sizes.height.dp12}px 0 0 0;
 `;
 
-export const NewAccount = styled.Text`
+export const LoginLink = styled.Text`
   color: ${colors.light.gray500};
   font-size: ${normalize(16)}px;
   text-decoration-line: underline;
