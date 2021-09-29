@@ -1,10 +1,8 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native';
 
-import { sizes } from '../../../../utils/predefinedSizes';
-
 import Header from '../../components/Header';
-import Button from '../../../../components/Button';
 
 import {
   Card,
@@ -19,6 +17,8 @@ import {
 } from './styles';
 
 const ChooseYourProfile: React.FC = () => {
+  const navigation = useNavigation();
+
   return (
     <Container>
       <Header />
@@ -28,21 +28,36 @@ const ChooseYourProfile: React.FC = () => {
           Escolha o tipo de cadastro que melhor se encaixa com você no momento
         </Description>
 
-        <TouchableOpacity activeOpacity={0.7} onPress={() => {}}>
+        <TouchableOpacity
+          activeOpacity={0.7}
+          onPress={() => {
+            navigation.navigate('ChooseAnOptionSignUp');
+          }}
+        >
           <Card>
             <CardIcon name="home-city-outline" />
             <LabelCard>Morador</LabelCard>
           </Card>
         </TouchableOpacity>
 
-        <TouchableOpacity activeOpacity={0.7} onPress={() => {}}>
+        <TouchableOpacity
+          activeOpacity={0.7}
+          onPress={() => {
+            navigation.navigate('ChooseAnOptionSignUp');
+          }}
+        >
           <Card>
             <CardIcon name="map-outline" />
             <LabelCard>Turista</LabelCard>
           </Card>
         </TouchableOpacity>
 
-        <TouchableOpacity activeOpacity={0.7} onPress={() => {}}>
+        <TouchableOpacity
+          activeOpacity={0.7}
+          onPress={() => {
+            navigation.navigate('ChooseAnOptionSignUp');
+          }}
+        >
           <Card>
             <CardIcon name="storefront-outline" />
             <LabelCard>Estabelecimento</LabelCard>
@@ -52,7 +67,9 @@ const ChooseYourProfile: React.FC = () => {
 
       <Login>
         <Label>Já tem um cadastro?</Label>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('ChooseAnOptionSignIn')}
+        >
           <LoginLink>Faça login</LoginLink>
         </TouchableOpacity>
       </Login>

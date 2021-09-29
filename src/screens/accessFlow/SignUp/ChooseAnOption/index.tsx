@@ -62,7 +62,9 @@ const ChooseAnOption: React.FC = () => {
 
         <Login>
           <Label>Já tem um cadastro?</Label>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('ChooseAnOptionSignIn')}
+          >
             <LoginLink>Faça login</LoginLink>
           </TouchableOpacity>
         </Login>

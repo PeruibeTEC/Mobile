@@ -62,7 +62,9 @@ const ChooseAnOption: React.FC = () => {
 
         <CreateNewAccount>
           <Label>Ainda não tem cadastro?</Label>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('ChooseYourProfile')}
+          >
             <NewAccount>Crie uma conta</NewAccount>
           </TouchableOpacity>
         </CreateNewAccount>
