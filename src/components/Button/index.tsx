@@ -5,13 +5,22 @@ import { Container, Text } from './styles';
 interface IProps extends RectButtonProps {
   title: string;
   children?: React.ReactNode;
+  leftIcon?: boolean;
+  rightIcon?: boolean;
 }
 
-const Button: React.FC<IProps> = ({ title, children, ...props }) => {
+const Button: React.FC<IProps> = ({
+  title,
+  children,
+  leftIcon,
+  rightIcon,
+  ...props
+}) => {
   return (
     <Container {...props}>
-      {children}
+      {leftIcon && children}
       <Text>{title}</Text>
+      {rightIcon && children}
     </Container>
   );
 };

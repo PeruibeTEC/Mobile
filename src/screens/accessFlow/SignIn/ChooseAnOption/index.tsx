@@ -36,6 +36,7 @@ const ChooseAnOption: React.FC = () => {
             <Button
               title="Continuar com Google"
               style={{ marginBottom: sizes.height.dp24 }}
+              leftIcon
             >
               <Icon
                 name="google"
@@ -47,6 +48,7 @@ const ChooseAnOption: React.FC = () => {
             <SecondaryButton
               title="Continuar com E-mail"
               onPress={() => navigation.navigate('SignIn')}
+              leftIcon
             >
               <Icon
                 name="email-outline"
