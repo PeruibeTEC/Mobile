@@ -49,7 +49,7 @@ const SignIn: React.FC = () => {
             <Button
               title="Continuar"
               style={{ marginTop: sizes.height.dp40 }}
-              onPress={() => navigation.navigate('Home')}
+              onPress={() => navigation.navigate('FinishRegistration')}
             />
           </Form>
         </Content>
