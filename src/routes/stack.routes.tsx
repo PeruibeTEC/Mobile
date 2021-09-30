@@ -10,11 +10,8 @@ import ChooseYourProfile from '../screens/accessFlow/SignUp/ChooseYourProfile';
 import ChooseAnOptionSignUp from '../screens/accessFlow/SignUp/ChooseAnOption';
 import SignUp from '../screens/accessFlow/SignUp/WithEmail';
 import AdditionalDataTourist from '../screens/accessFlow/SignUp/touristScreens/AdditionalData';
+import AdditionalDataBusiness from '../screens/accessFlow/SignUp/businessScreens/AdditionalData';
 import FinishRegistration from '../screens/accessFlow/SignUp/FinishRegistration';
-
-import { ChooseYourType } from '../screens/ChooseYourType';
-import { FinishSignUp } from '../screens/FinishSignUp';
-import { ChooseYourCity } from '../screens/ChooseYourCity';
 
 import AuthRoutes from './tab.routes';
 import colors from '../styles/colors';
@@ -52,13 +49,14 @@ const AppRoutes: React.FC = () => (
       component={AdditionalDataTourist}
     />
     <StackRoutes.Screen
+      name="AdditionalDataBusiness"
+      component={AdditionalDataBusiness}
+    />
+    <StackRoutes.Screen
       name="FinishRegistration"
       component={FinishRegistration}
     />
 
-    <StackRoutes.Screen name="ChooseYourType" component={ChooseYourType} />
-    <StackRoutes.Screen name="ChooseYourCity" component={ChooseYourCity} />
-    <StackRoutes.Screen name="FinishSignUp" component={FinishSignUp} />
     <StackRoutes.Screen name="Home" component={AuthRoutes} />
   </StackRoutes.Navigator>
 );

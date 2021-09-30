@@ -33,7 +33,7 @@ const SignIn: React.FC = () => {
     if (typeProfile === 'tourist') {
       navigation.navigate('AdditionalDataTourist');
     } else if (typeProfile === 'business') {
-      navigation.navigate('');
+      navigation.navigate('AdditionalDataBusiness');
     } else {
       navigation.navigate('FinishRegistration');
     }
