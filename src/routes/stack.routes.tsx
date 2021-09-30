@@ -11,6 +11,7 @@ import ChooseAnOptionSignUp from '../screens/accessFlow/SignUp/ChooseAnOption';
 import SignUp from '../screens/accessFlow/SignUp/WithEmail';
 import AdditionalDataTourist from '../screens/accessFlow/SignUp/touristScreens/AdditionalData';
 import AdditionalDataBusiness from '../screens/accessFlow/SignUp/businessScreens/AdditionalData';
+import LocationOnMap from '../screens/accessFlow/SignUp/businessScreens/LocationOnMap';
 import FinishRegistration from '../screens/accessFlow/SignUp/FinishRegistration';
 
 import AuthRoutes from './tab.routes';
@@ -52,6 +53,7 @@ const AppRoutes: React.FC = () => (
       name="AdditionalDataBusiness"
       component={AdditionalDataBusiness}
     />
+    <StackRoutes.Screen name="LocationOnMap" component={LocationOnMap} />
     <StackRoutes.Screen
       name="FinishRegistration"
       component={FinishRegistration}

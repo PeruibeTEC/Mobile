@@ -95,7 +95,7 @@ const AdditionalDataBusiness: React.FC = () => {
             title="Continuar"
             style={{ marginTop: sizes.height.dp40 }}
             onPress={() => {
-              navigation.navigate('');
+              navigation.navigate('LocationOnMap');
             }}
           />
         </Content>
