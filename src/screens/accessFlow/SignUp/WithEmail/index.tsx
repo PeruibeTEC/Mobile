@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import { Platform, TouchableOpacity } from 'react-native';
 import { sizes } from '../../../../utils/predefinedSizes';
 
@@ -18,8 +18,26 @@ import {
   Title,
 } from './styles';
 
+interface IParams {
+  typeProfile: string;
+}
+
 const SignIn: React.FC = () => {
+  const route = useRoute();
   const navigation = useNavigation();
+
+  const routeParams = route.params as IParams;
+  const { typeProfile } = routeParams;
+
+  const handleNavigation = () => {
+    if (typeProfile === 'tourist') {
+      navigation.navigate('AdditionalDataTourist');
+    } else if (typeProfile === 'business') {
+      navigation.navigate('');
+    } else {
+      navigation.navigate('FinishRegistration');
+    }
+  };
 
   return (
     <Container>
@@ -49,7 +67,7 @@ const SignIn: React.FC = () => {
             <Button
               title="Continuar"
               style={{ marginTop: sizes.height.dp40 }}
-              onPress={() => navigation.navigate('FinishRegistration')}
+              onPress={handleNavigation}
             />
           </Form>
         </Content>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import { Platform, TouchableOpacity } from 'react-native';
 import { MaterialCommunityIcons as Icon } from '@expo/vector-icons';
 
@@ -20,8 +20,16 @@ import {
 } from './styles';
 import { sizes } from '../../../../utils/predefinedSizes';
 
+interface IParams {
+  typeProfile: string;
+}
+
 const ChooseAnOption: React.FC = () => {
+  const route = useRoute();
   const navigation = useNavigation();
+
+  const routeParams = route.params as IParams;
+  const { typeProfile } = routeParams;
 
   return (
     <Container>
@@ -45,9 +53,10 @@ const ChooseAnOption: React.FC = () => {
                 style={{ marginRight: sizes.width.dp12 }}
               />
             </Button>
+
             <SecondaryButton
               title="Continuar com E-mail"
-              onPress={() => navigation.navigate('SignUp')}
+              onPress={() => navigation.navigate('SignUp', { typeProfile })}
               leftIcon
             >
               <Icon

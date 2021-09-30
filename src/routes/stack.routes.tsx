@@ -9,6 +9,7 @@ import SignIn from '../screens/accessFlow/SignIn/WithEmail';
 import ChooseYourProfile from '../screens/accessFlow/SignUp/ChooseYourProfile';
 import ChooseAnOptionSignUp from '../screens/accessFlow/SignUp/ChooseAnOption';
 import SignUp from '../screens/accessFlow/SignUp/WithEmail';
+import AdditionalDataTourist from '../screens/accessFlow/SignUp/touristScreens/AdditionalData';
 import FinishRegistration from '../screens/accessFlow/SignUp/FinishRegistration';
 
 import { ChooseYourType } from '../screens/ChooseYourType';
@@ -46,6 +47,10 @@ const AppRoutes: React.FC = () => (
       component={ChooseAnOptionSignUp}
     />
     <StackRoutes.Screen name="SignUp" component={SignUp} />
+    <StackRoutes.Screen
+      name="AdditionalDataTourist"
+      component={AdditionalDataTourist}
+    />
     <StackRoutes.Screen
       name="FinishRegistration"
       component={FinishRegistration}

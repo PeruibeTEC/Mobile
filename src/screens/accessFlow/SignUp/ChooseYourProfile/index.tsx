@@ -31,7 +31,9 @@ const ChooseYourProfile: React.FC = () => {
         <TouchableOpacity
           activeOpacity={0.7}
           onPress={() => {
-            navigation.navigate('ChooseAnOptionSignUp');
+            navigation.navigate('ChooseAnOptionSignUp', {
+              typeProfile: 'resident',
+            });
           }}
         >
           <Card>
@@ -43,7 +45,9 @@ const ChooseYourProfile: React.FC = () => {
         <TouchableOpacity
           activeOpacity={0.7}
           onPress={() => {
-            navigation.navigate('ChooseAnOptionSignUp');
+            navigation.navigate('ChooseAnOptionSignUp', {
+              typeProfile: 'tourist',
+            });
           }}
         >
           <Card>
@@ -55,7 +59,9 @@ const ChooseYourProfile: React.FC = () => {
         <TouchableOpacity
           activeOpacity={0.7}
           onPress={() => {
-            navigation.navigate('ChooseAnOptionSignUp');
+            navigation.navigate('ChooseAnOptionSignUp', {
+              typeProfile: 'business',
+            });
           }}
         >
           <Card>
