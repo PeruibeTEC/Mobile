@@ -13,6 +13,7 @@ import AdditionalDataTourist from '../screens/accessFlow/SignUp/touristScreens/A
 import AdditionalDataBusiness from '../screens/accessFlow/SignUp/businessScreens/AdditionalData';
 import LocationOnMap from '../screens/accessFlow/SignUp/businessScreens/LocationOnMap';
 import Contact from '../screens/accessFlow/SignUp/businessScreens/Contact';
+import DaysAndHoursOfOperation from '../screens/accessFlow/SignUp/businessScreens/DaysAndHoursOfOperation';
 import FinishRegistration from '../screens/accessFlow/SignUp/FinishRegistration';
 
 import AuthRoutes from './tab.routes';
@@ -56,6 +57,10 @@ const AppRoutes: React.FC = () => (
     />
     <StackRoutes.Screen name="Contact" component={Contact} />
     <StackRoutes.Screen name="LocationOnMap" component={LocationOnMap} />
+    <StackRoutes.Screen
+      name="DaysAndHoursOfOperation"
+      component={DaysAndHoursOfOperation}
+    />
     <StackRoutes.Screen
       name="FinishRegistration"
       component={FinishRegistration}
