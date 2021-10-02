@@ -1,5 +1,7 @@
 node_modules/
 .expo/
+.vscode/settings.json
+.directory
 npm-debug.*
 *.jks
 *.p8

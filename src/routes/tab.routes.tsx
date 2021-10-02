@@ -13,6 +13,7 @@ import { Home } from '../screens/Home';
 import { TheftItems } from '../screens/TheftItems';
 
 import { DangerPoints } from '../screens/DangerPoints';
+import { ProjectList } from '../screens/ProjectList';
 import { Project } from '../screens/Project';
 import { DetailRestaurant } from '../screens/DetailRestaurant';
 
@@ -76,7 +77,7 @@ function HomeTabs() {
       />
       <Tab.Screen
         name="Construction"
-        component={Project}
+        component={ProjectList}
         options={{
           tabBarLabel: 'Obras',
           tabBarIcon: ({ color }) => (
@@ -101,6 +102,7 @@ const AppRoutes: React.FC = () => {
       >
         <StackRoutes.Screen name="HomeTabs" component={HomeTabs} />
         <StackRoutes.Screen name="Incidents" component={TheftItems} />
+        <StackRoutes.Screen name="Project" component={Project} />
         <StackRoutes.Screen
           name="DetailRestaurant"
           component={DetailRestaurant}
