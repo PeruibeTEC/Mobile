@@ -1,7 +1,7 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useState } from 'react';
 import { View, TouchableOpacity } from 'react-native';
 
-import Feather from '@expo/vector-icons/FontAwesome5';
+import Feather from '@expo/vector-icons/Feather';
 
 import {
   Container,
@@ -12,6 +12,7 @@ import {
   Caption,
   PostPhoto,
   IconsContainer,
+  HeadContainer,
 } from './styles';
 
 interface HeaderProps {
@@ -33,31 +34,71 @@ export function Post({
   comment,
   likes,
 }: HeaderProps): ReactElement {
+  const [isLiked, setIsLiked] = useState(false);
+
   return (
     <>
       <Container>
-        <View style={{ width: '20%' }}>
-          <ProfilePhoto source={{ uri: `${profile_image}` }} />
-        </View>
-        <ContentContainer>
-          <Name>{name} </Name>
-          <TimeToPost>• {hours}h</TimeToPost>
-          {caption && <Caption>{caption}</Caption>}
-          {image && <PostPhoto source={{ uri: `${image}` }} />}
-          <IconsContainer>
+        <HeadContainer>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+            }}
+          >
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'flex-start',
+              }}
+            >
+              <ProfilePhoto source={{ uri: `${profile_image}` }} />
+              <Name>{name} </Name>
+              <TimeToPost>• {hours}h</TimeToPost>
+            </View>
+
             <TouchableOpacity activeOpacity={0.6}>
               <Feather
-                iconStyle={{ padding: 10 }}
-                name="comment"
-                color="#404B5A"
-                size={15}
+                style={{
+                  justifyContent: 'flex-end',
+                  alignItems: 'center',
+                }}
+                name="more-vertical"
+                color="#6D808F"
+                size={24}
+              />
+            </TouchableOpacity>
+          </View>
+          {caption && <Caption>{caption}</Caption>}
+        </HeadContainer>
+
+        {image && <PostPhoto source={{ uri: `${image}` }} />}
+
+        <ContentContainer>
+          <IconsContainer>
+            <TouchableOpacity
+              onPress={() => (isLiked ? setIsLiked(false) : setIsLiked(true))}
+              activeOpacity={0.6}
+            >
+              <Feather
+                name="heart"
+                color={isLiked ? 'red' : '#6D808F'}
+                size={16}
               >
-                ⠀{comment}
+                ⠀{likes}
               </Feather>
             </TouchableOpacity>
-            <TouchableOpacity activeOpacity={0.6}>
-              <Feather name="heart" color="#404B5A" size={15}>
-                ⠀{likes}
+
+            <TouchableOpacity style={{ left: 24 }} activeOpacity={0.6}>
+              <Feather
+                iconStyle={{ padding: 10 }}
+                name="message-circle"
+                color="#6D808F"
+                size={16}
+              >
+                ⠀{comment}
               </Feather>
             </TouchableOpacity>
           </IconsContainer>

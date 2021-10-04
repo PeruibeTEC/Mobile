@@ -11,6 +11,8 @@ import {
 import Routes from './src/routes';
 import { Load } from './src/components/Load';
 
+import colors from './src/styles/colors';
+
 const App: React.FC = () => {
   const [fontsLoaded] = useFonts({
     Roboto_700Bold,
@@ -24,7 +26,12 @@ const App: React.FC = () => {
 
   return (
     <>
-      <StatusBar style="dark" backgroundColor="transparent" translucent />
+      <StatusBar
+        // eslint-disable-next-line react/style-prop-object
+        style="auto"
+        backgroundColor={colors.light.background}
+        translucent
+      />
       <Routes />
     </>
   );
