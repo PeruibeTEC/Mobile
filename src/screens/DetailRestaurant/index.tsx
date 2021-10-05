@@ -15,7 +15,7 @@ import {
   ActionButtonsContainer,
 } from './styles';
 
-import { Header } from '../../components/Header/Header';
+import Header from '../../components/Header';
 import { AvaliationCard } from './components/AvaliationCard';
 import { TimeSession } from './components/TimeSession';
 import { Button } from '../../components/Button';

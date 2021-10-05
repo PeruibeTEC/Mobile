@@ -5,7 +5,7 @@ import { Feather } from '@expo/vector-icons';
 import MapView, { Marker, MapViewProps } from 'react-native-maps';
 
 import { useNavigation } from '@react-navigation/native';
-import { Header } from '../../components/Header/Header';
+import Header from '../../components/Header';
 import { CircleAttuation, MarkerStylized } from './styles';
 
 export function DangerPoints(): ReactElement {

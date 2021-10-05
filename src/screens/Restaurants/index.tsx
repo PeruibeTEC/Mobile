@@ -3,7 +3,7 @@ import { SafeAreaView } from 'react-native';
 import { MaterialIcons as Icon } from '@expo/vector-icons';
 
 import { useNavigation } from '@react-navigation/native';
-import { Header } from '../../components/Header/Header';
+import Header from '../../components/Header';
 import { Session } from './components/Session';
 
 import {

@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import { ScrollView, LogBox } from 'react-native';
 
-import { Header } from '../../components/Header/Header';
+import Header from '../../components/Header';
 import { TitleImage } from '../../components/TitleImage';
 import { Content } from '../../components/Content';
 import { Items } from './components/Items';

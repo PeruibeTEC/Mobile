@@ -3,7 +3,7 @@ import { ScrollView, View, TouchableOpacity } from 'react-native';
 
 import Feather from '@expo/vector-icons/Feather';
 
-import { Header } from '../../components/Header/Header';
+import Header from '../../components/Header';
 import { TitleImage } from '../../components/TitleImage';
 import { Content } from '../../components/Content';
 import { Comment } from '../../components/Comment';

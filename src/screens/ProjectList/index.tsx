@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import { FlatList, ScrollView } from 'react-native';
 
-import { Header } from '../../components/Header/Header';
+import Header from '../../components/Header';
 import { Card } from '../../components/Card';
 import { FilterInput, IFilterProps } from '../../components/FilterInput';
 
