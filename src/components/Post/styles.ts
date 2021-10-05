@@ -1,79 +1,124 @@
 import styled from 'styled-components/native';
+import colors from '../../styles/colors';
+import fonts from '../../styles/fonts';
+import normalize from '../../utils/normalizeSize';
+import pixelToDP from '../../utils/pixelToDP';
+import { sizes } from '../../utils/predefinedSizes';
+
+interface ILikeText {
+  isLiked: boolean;
+}
 
 export const Container = styled.View`
   width: 100%;
-  background: #ffff;
-  margin-top: 16px;
-  font-family: 'Roboto_700Bold';
-  color: #202833;
-  border-color: #e0e5eb;
-  border-bottom-width: 1px;
-  font-size: 16px;
+  padding-top: ${sizes.height.dp16}px;
 
   flex-direction: row;
   flex-wrap: wrap;
-`;
 
-export const ProfilePhoto = styled.Image`
-  height: 50px;
-  width: 50px;
-  border-radius: 25px;
-  margin-right: 5%;
-  border-width: 1px;
-  border-color: #d5dce5;
+  border-color: ${colors.light.gray100};
+  border-top-width: 1px;
+  background-color: ${colors.light.white};
 `;
 
 export const HeadContainer = styled.View`
-  padding-left: 20px;
-  padding-right: 20px;
+  width: 100%;
+  padding: 0 ${sizes.width.dp20}px;
+
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 `;
 
-export const ContentContainer = styled.View`
-  width: 80%;
-  font-family: 'Roboto_700Bold';
-  color: #202833;
-  font-size: 16px;
+export const Infos = styled.View`
   flex-direction: row;
-  flex-wrap: wrap;
+  align-items: center;
+`;
+
+export const ProfilePhoto = styled.Image`
+  height: ${pixelToDP.height(40)}px;
+  width: ${pixelToDP.width(40)}px;
+
+  border-radius: ${normalize(100)}px;
+  border-width: 1px;
+  border-color: ${colors.light.gray200};
 `;
 
 export const Name = styled.Text`
-  font-family: 'Roboto_500Medium';
-  color: #516270;
-  font-size: 14px;
+  margin: 0 ${sizes.width.dp8}px;
+
+  font-family: ${fonts.robotoMedium};
+  font-size: ${normalize(14)}px;
+  color: ${colors.light.gray700};
+`;
+
+export const Dot = styled.View`
+  width: ${sizes.width.dp4}px;
+  height: ${sizes.height.dp4}px;
+  border-radius: ${normalize(100)}px;
+  background-color: ${colors.light.gray200};
 `;
 
 export const TimeToPost = styled.Text`
-  font-family: 'Roboto_400Regular';
-  color: #bccbd6;
-  font-size: 14px;
+  margin-left: ${sizes.width.dp8}px;
+
+  font-size: ${normalize(14)}px;
+  font-family: ${fonts.robotoRegular};
+  color: ${colors.light.gray200};
+`;
+
+export const MenuToggleContainer = styled.TouchableOpacity`
+  padding: ${normalize(4)}px;
+  border-radius: ${normalize(100)}px;
+`;
+
+export const CaptionContainer = styled.View`
+  width: 100%;
+  padding: ${sizes.height.dp8}px ${sizes.width.dp20}px;
 `;
 
 export const Caption = styled.Text`
-  font-family: 'Roboto_400Regular';
-  color: #27333d;
-  font-size: 15px;
-  margin-top: 8px;
-`;
-
-export const Column = styled.View`
-  margin-top: 12px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  font-size: ${normalize(14)}px;
+  font-family: ${fonts.robotoRegular};
+  line-height: ${normalize(20)}px;
+  color: ${colors.light.gray700};
 `;
 
 export const PostPhoto = styled.Image`
-  height: 244px;
   width: 100%;
-  margin-top: 13px;
+  height: ${pixelToDP.height(244)}px;
+  margin-top: ${sizes.height.dp8}px;
 `;
 
-export const IconsContainer = styled.View`
+export const PostActionsContainer = styled.View`
   width: 100%;
-  margin-top: 16px;
+  padding: ${sizes.height.dp16}px ${sizes.width.dp20}px 0 ${sizes.width.dp20}px;
+`;
+
+export const PostActions = styled.View`
   flex-direction: row;
   align-items: center;
-  padding-left: 30px;
-  margin-bottom: 16px;
+  padding-bottom: ${sizes.height.dp16}px;
+`;
+
+export const Action = styled.TouchableOpacity`
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const LikeText = styled.Text<ILikeText>`
+  margin-left: ${sizes.width.dp4}px;
+
+  font-size: ${normalize(14)}px;
+  font-family: ${fonts.robotoRegular};
+  color: ${props =>
+    props.isLiked ? colors.light.red300 : colors.light.gray500};
+`;
+
+export const ActionText = styled.Text`
+  margin-left: ${sizes.width.dp4}px;
+
+  font-size: ${normalize(14)}px;
+  font-family: ${fonts.robotoRegular};
+  color: ${colors.light.gray500};
 `;

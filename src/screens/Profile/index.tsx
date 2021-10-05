@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native';
 import Header from './components/Header';
 import SwitchSelector from './components/SwitchSelector';
 
-import { Post } from '../../components/Post/Post';
+import Post from '../../components/Post';
 
 import { Container, Name, Biography } from './styles';
 
@@ -39,7 +39,7 @@ const Profile: React.FC = () => {
           name="Arwen Undómiel"
           comment="40"
           likes="321"
-          hours="8"
+          hours="8h"
           image="https://roteirosecotrilhas.com.br/wp-content/uploads/2019/10/praias-de-peruibe.png"
         />
 
@@ -49,7 +49,7 @@ const Profile: React.FC = () => {
           name="Arwen Undómiel"
           comment="40"
           likes="321"
-          hours="8"
+          hours="8h"
           image="https://roteirosecotrilhas.com.br/wp-content/uploads/2019/10/praias-de-peruibe.png"
         />
       </SafeAreaView>

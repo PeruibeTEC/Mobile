@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 
 import Header from '../../components/Header';
-import { Post } from '../../components/Post/Post';
+import Post from '../../components/Post';
 
 import { Container, Feed } from './styles';
 
@@ -17,7 +17,7 @@ export function Home(): ReactElement {
           name="Henrique Martins"
           comment="12"
           likes="29"
-          hours="2"
+          hours="2h"
           image="https://cdn4.ecycle.com.br/cache/images/2021-04/50-650-o-que-e-paisagem.jpg"
         />
         <Post
@@ -26,7 +26,7 @@ export function Home(): ReactElement {
           name="Henrique Martins"
           comment="12"
           likes="29"
-          hours="2"
+          hours="2h"
           image="https://cdn4.ecycle.com.br/cache/images/2021-04/50-650-o-que-e-paisagem.jpg"
         />
       </Feed>
