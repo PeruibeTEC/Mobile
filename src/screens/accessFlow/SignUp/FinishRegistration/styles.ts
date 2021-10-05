@@ -1,8 +1,11 @@
 import styled from 'styled-components/native';
 import Constants from 'expo-constants';
+
 import { MaterialCommunityIcons as Icon } from '@expo/vector-icons';
+
 import colors from '../../../../styles/colors';
 import fonts from '../../../../styles/fonts';
+
 import normalize from '../../../../utils/normalizeSize';
 import { sizes } from '../../../../utils/predefinedSizes';
 import pixelToDP from '../../../../utils/pixelToDP';
@@ -42,12 +45,20 @@ export const Upload = styled.TouchableOpacity`
 
   background-color: #e8eded;
   border: 1px solid ${colors.light.gray200};
-  border-radius: ${normalize(100)}px;
+  border-radius: ${normalize(75)}px;
 `;
 
 export const UploadIcon = styled(Icon)`
   font-size: ${normalize(64)}px;
   color: ${colors.light.gray200};
+`;
+
+export const ImageProfile = styled.Image`
+  width: ${pixelToDP.width(150)}px;
+  height: ${pixelToDP.height(150)}px;
+
+  border-radius: ${normalize(75)}px;
+  border: 2px solid ${colors.light.gray200};
 `;
 
 export const TextArea = styled.TextInput`

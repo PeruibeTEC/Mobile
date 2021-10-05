@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { TouchableOpacity } from 'react-native';
+import { Alert, Platform, TouchableOpacity } from 'react-native';
+
+import * as ImagePicker from 'expo-image-picker';
 
 import Header from '../../components/Header';
 import Button from '../../../../components/Button';
@@ -10,6 +12,7 @@ import {
   Container,
   Content,
   Description,
+  ImageProfile,
   Label,
   Login,
   LoginLink,
@@ -21,6 +24,57 @@ import {
 const FinishRegistration: React.FC = () => {
   const navigation = useNavigation();
 
+  const [image, setImage] = useState<string>();
+
+  async function handleNavigateToHome() {
+    if (!image) {
+      Alert.alert(
+        'Atenção !!',
+        'Você não fez o upload de nenhuma foto de perfil, caso queira prosseguir mesmo assim, você terá uma foto de perfil padrão 🧐',
+        [
+          {
+            text: 'Cancelar',
+            style: 'cancel',
+          },
+          {
+            text: 'Prosseguir',
+            onPress: () => navigation.navigate('Home'),
+          },
+        ],
+      );
+    } else {
+      navigation.navigate('Home');
+    }
+  }
+
+  useEffect(() => {
+    (async () => {
+      if (Platform.OS !== 'web') {
+        const { status } =
+          await ImagePicker.requestMediaLibraryPermissionsAsync();
+        if (status !== 'granted') {
+          Alert.alert(
+            'Atenção !!',
+            'Precisamos da sua permissão para poder continuar 😔',
+          );
+        }
+      }
+    })();
+  }, []);
+
+  const handlePickImageFromGallery = async () => {
+    const result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
+
+    if (!result.cancelled) {
+      setImage(result.uri);
+    }
+  };
+
   return (
     <Container>
       <Header />
@@ -28,8 +82,14 @@ const FinishRegistration: React.FC = () => {
       <Content>
         <Description>Escolha uma foto para seu perfil</Description>
 
-        <Upload activeOpacity={0.7}>
-          <UploadIcon name="cloud-upload-outline" />
+        <Upload onPress={handlePickImageFromGallery} activeOpacity={0.7}>
+          {!image ? (
+            <UploadIcon name="cloud-upload-outline" />
+          ) : (
+            <>
+              <ImageProfile source={{ uri: image }} />
+            </>
+          )}
         </Upload>
 
         <TextArea
@@ -41,7 +101,7 @@ const FinishRegistration: React.FC = () => {
         <Button
           title="Finalizar cadastro"
           style={{ marginTop: sizes.height.dp40 }}
-          onPress={() => navigation.navigate('Home')}
+          onPress={() => handleNavigateToHome()}
         />
       </Content>
 
