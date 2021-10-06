@@ -7,7 +7,7 @@ import { MaterialCommunityIcons as Icon } from '@expo/vector-icons';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Restaurants from '../screens/Restaurants';
-import { Home } from '../screens/Home';
+import Home from '../screens/Home';
 
 import { TheftItems } from '../screens/TheftItems';
 
