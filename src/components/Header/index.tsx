@@ -1,4 +1,5 @@
 import React from 'react';
+import { TouchableOpacity } from 'react-native';
 
 import pixelToDP from '../../utils/pixelToDP';
 
@@ -10,7 +11,10 @@ const Header: React.FC = () => {
   return (
     <Container>
       <Logo height={pixelToDP.height(40)} width={pixelToDP.width(35)} />
-      <MenuIcon name="menu" />
+
+      <TouchableOpacity activeOpacity={0.8} onPress={() => {}}>
+        <MenuIcon name="menu" />
+      </TouchableOpacity>
     </Container>
   );
 };

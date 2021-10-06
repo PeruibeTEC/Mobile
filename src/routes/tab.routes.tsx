@@ -11,7 +11,6 @@ import Home from '../screens/Home';
 
 import { TheftItems } from '../screens/TheftItems';
 
-import { DangerPoints } from '../screens/DangerPoints';
 import { ProjectList } from '../screens/ProjectList';
 import { Project } from '../screens/Project';
 import { DetailRestaurant } from '../screens/DetailRestaurant';
@@ -23,7 +22,7 @@ import normalize from '../utils/normalizeSize';
 const Tab = createMaterialBottomTabNavigator();
 const StackRoutes = createStackNavigator();
 
-function HomeTabs() {
+export function HomeTabs() {
   return (
     <Tab.Navigator
       initialRouteName="Home"
