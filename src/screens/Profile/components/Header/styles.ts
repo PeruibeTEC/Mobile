@@ -1,8 +1,11 @@
 import styled from 'styled-components/native';
+import colors from '../../../../styles/colors';
+import pixelToDP from '../../../../utils/pixelToDP';
+import normalize from '../../../../utils/normalizeSize';
 
 export const Container = styled.View`
   width: 100%;
-  height: 220px;
+  height: ${pixelToDP.height(160)}px;
 `;
 
 export const Background = styled.ImageBackground`
@@ -12,13 +15,13 @@ export const Background = styled.ImageBackground`
 `;
 
 export const ProfileImage = styled.Image`
-  width: 180px;
-  height: 180px;
-  border-radius: 100px;
-  margin-top: 10px;
-  border-width: 4px;
-  border-color: #ffffff;
+  width: ${pixelToDP.width(160)}px;
+  height: ${pixelToDP.height(160)}px;
+  border-radius: ${normalize(500)}px;
+  margin-top: ${pixelToDP.height(10)}px;
+  border-width: ${normalize(4)}px;
+  border-color: ${colors.light.gray50};
 
   position: absolute;
-  bottom: -30%;
+  bottom: -24%;
 `;

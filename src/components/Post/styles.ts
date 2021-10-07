@@ -18,7 +18,7 @@ export const Container = styled.View`
 
   border-color: ${colors.light.gray100};
   border-top-width: 1px;
-  background-color: ${colors.light.white};
+  background-color: ${colors.light.background};
 `;
 
 export const HeadContainer = styled.View`

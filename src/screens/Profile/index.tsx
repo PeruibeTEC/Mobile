@@ -1,11 +1,12 @@
 import React from 'react';
-import { SafeAreaView } from 'react-native';
 
 import Header from './components/Header';
 import SwitchSelector from './components/SwitchSelector';
 
 import Post from '../../components/Post';
 import SecondaryHeader from '../../components/SecondaryHeader';
+
+import normalize from '../../utils/normalizeSize';
 
 import { Container, Name, Biography, Content } from './styles';
 
@@ -27,7 +28,7 @@ const Profile: React.FC = () => {
         </Biography>
 
         <SwitchSelector
-          style={{ paddingHorizontal: 50, marginVertical: 32 }}
+          style={{ paddingHorizontal: 50, marginVertical: normalize(32) }}
           options={[
             { label: 'Posts', value: 'posts' },
             { label: 'Fotos', value: 'fotos' },
