@@ -85,7 +85,6 @@ const AppRoutes: React.FC = () => {
         }}
       >
         <StackRoutes.Screen name="HomeTabs" component={HomeTabs} />
-        <StackRoutes.Screen name="Incidents" component={TheftItems} />
         <StackRoutes.Screen name="Project" component={Project} />
         <StackRoutes.Screen
           name="DetailRestaurant"
