@@ -9,8 +9,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Restaurants from '../screens/Restaurants';
 import Home from '../screens/Home';
 
-import { TheftItems } from '../screens/TheftItems';
-
 import { ProjectList } from '../screens/ProjectList';
 import { Project } from '../screens/Project';
 import { DetailRestaurant } from '../screens/DetailRestaurant';
@@ -51,7 +49,7 @@ export function HomeTabs() {
         name="Business"
         component={Restaurants}
         options={{
-          tabBarLabel: 'Estabelecimentos',
+          tabBarLabel: 'Restaurantes',
           tabBarIcon: ({ color }) => (
             <Icon
               name="silverware-fork-knife"

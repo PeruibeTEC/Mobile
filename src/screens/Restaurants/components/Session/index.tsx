@@ -5,6 +5,9 @@ import { Feather as Icon } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { RestaurantCard } from '../RestaurantCard';
 
+import colors from '../../../../styles/colors';
+import normalize from '../../../../utils/normalizeSize';
+
 import { Container, SessionHeader, SessionName, SeeAllItems } from './styles';
 
 interface SessionProps {
@@ -55,7 +58,11 @@ const Session: React.FC<SessionProps> = ({ sessionName }) => {
           }}
         >
           <SeeAllItems>Ver todas Pizzarias</SeeAllItems>
-          <Icon name="chevron-right" size={16} color="#929fb1" />
+          <Icon
+            name="chevron-right"
+            size={normalize(16)}
+            color={colors.light.gray400}
+          />
         </View>
       </SessionHeader>
 
