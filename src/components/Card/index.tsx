@@ -1,10 +1,12 @@
 import React, { ReactElement } from 'react';
-import { View, TouchableOpacity } from 'react-native';
-import Feather from '@expo/vector-icons/Feather';
+import { MaterialCommunityIcons as Icon } from '@expo/vector-icons';
 
 import { useNavigation } from '@react-navigation/native';
 
-import { Container, Photo, Name, Budget, ContentContainer } from './styles';
+import colors from '../../styles/colors';
+import normalize from '../../utils/normalizeSize';
+
+import { Container, Photo, Name, Budget, ContentContainer, Go } from './styles';
 
 interface CardProps {
   name: string;
@@ -21,18 +23,20 @@ export function Card({ name, imageURL, budget }: CardProps): ReactElement {
 
   return (
     <Container>
-      <View style={{ width: '30%' }}>
-        <Photo source={{ uri: `${imageURL}` }} />
-      </View>
+      <Photo source={{ uri: `${imageURL}` }} />
+
       <ContentContainer>
         <Name>{name}</Name>
         <Budget>R$ {budget}</Budget>
       </ContentContainer>
-      <View style={{ marginTop: 40 }}>
-        <TouchableOpacity onPress={handleNavigateToProject} activeOpacity={0.6}>
-          <Feather name="arrow-right" color="#000000" size={28} />
-        </TouchableOpacity>
-      </View>
+
+      <Go onPress={handleNavigateToProject} activeOpacity={0.6}>
+        <Icon
+          name="arrow-right"
+          color={colors.light.gray800}
+          size={normalize(28)}
+        />
+      </Go>
     </Container>
   );
 }
