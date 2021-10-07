@@ -38,7 +38,7 @@ export const Name = styled.Text`
 export const Budget = styled.Text`
   font-size: 14px;
   line-height: 20px;
-  font-family: Inter_600MSemiBold;
+  font-family: Inter_600SemiBold;
   color: #404b5a;
   margin-top: 8px;
 `;
