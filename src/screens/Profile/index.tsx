@@ -1,17 +1,21 @@
 import React from 'react';
-import { SafeAreaView } from 'react-native';
 
 import Header from './components/Header';
 import SwitchSelector from './components/SwitchSelector';
 
-import { Post } from '../../components/Post/Post';
+import Post from '../../components/Post';
+import SecondaryHeader from '../../components/SecondaryHeader';
 
-import { Container, Name, Biography } from './styles';
+import normalize from '../../utils/normalizeSize';
+
+import { Container, Name, Biography, Content } from './styles';
 
 const Profile: React.FC = () => {
   return (
-    <Container>
-      <SafeAreaView style={{ flex: 1 }}>
+    <Container style={{ flex: 1 }}>
+      <SecondaryHeader />
+
+      <Content>
         <Header
           background_photo="https://images.pexels.com/photos/1005417/pexels-photo-1005417.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
           profile_image="https://images.pexels.com/photos/2666467/pexels-photo-2666467.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
@@ -24,7 +28,7 @@ const Profile: React.FC = () => {
         </Biography>
 
         <SwitchSelector
-          style={{ paddingHorizontal: 50, marginVertical: 32 }}
+          style={{ paddingHorizontal: 50, marginVertical: normalize(32) }}
           options={[
             { label: 'Posts', value: 'posts' },
             { label: 'Fotos', value: 'fotos' },
@@ -39,7 +43,7 @@ const Profile: React.FC = () => {
           name="Arwen Undómiel"
           comment="40"
           likes="321"
-          hours="8"
+          hours="8h"
           image="https://roteirosecotrilhas.com.br/wp-content/uploads/2019/10/praias-de-peruibe.png"
         />
 
@@ -49,10 +53,10 @@ const Profile: React.FC = () => {
           name="Arwen Undómiel"
           comment="40"
           likes="321"
-          hours="8"
+          hours="8h"
           image="https://roteirosecotrilhas.com.br/wp-content/uploads/2019/10/praias-de-peruibe.png"
         />
-      </SafeAreaView>
+      </Content>
     </Container>
   );
 };

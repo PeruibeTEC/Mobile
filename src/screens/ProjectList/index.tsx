@@ -1,9 +1,10 @@
 import React, { ReactElement } from 'react';
-import { FlatList, ScrollView } from 'react-native';
 
-import { Header } from '../../components/Header/Header';
-import { Card } from '../../components/Card';
+import Header from '../../components/Header';
+import ConstructionCard from '../../components/ConstructionCard';
 import { FilterInput, IFilterProps } from '../../components/FilterInput';
+
+import { Container, List } from './styles';
 
 export function ProjectList(): ReactElement {
   const constructionTypes: IFilterProps[] = [
@@ -54,7 +55,7 @@ export function ProjectList(): ReactElement {
     },
     {
       key: 6,
-      name: 'Escola Estadual Luiz Abel',
+      name: 'Escola Estadual Luiz Abel slslslslslslsl',
       image:
         'https://cdn.diariodolitoral.com.br/upload/dn_noticia/2019/06/escola-reproducao-maps.jpg',
       budget: '50.000,00',
@@ -62,16 +63,23 @@ export function ProjectList(): ReactElement {
   ];
 
   return (
-    <ScrollView style={{ backgroundColor: 'white' }}>
-      <Header title="Obras da Cidade" />
+    <Container>
+      <Header />
+
       <FilterInput data={constructionTypes} />
-      <FlatList
+
+      <List
+        showsVerticalScrollIndicator={false}
         data={fakeData}
         keyExtractor={item => String(item.key)}
         renderItem={({ item }) => (
-          <Card name={item.name} imageURL={item.image} budget={item.budget} />
+          <ConstructionCard
+            name={item.name}
+            imageURL={item.image}
+            budget={item.budget}
+          />
         )}
       />
-    </ScrollView>
+    </Container>
   );
 }

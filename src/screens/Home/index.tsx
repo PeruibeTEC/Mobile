@@ -1,38 +1,61 @@
-import React, { ReactElement } from 'react';
-import { ScrollView } from 'react-native';
-import { Header } from '../../components/Header/Header';
-import { Post } from '../../components/Post/Post';
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import { MaterialCommunityIcons as Icon } from '@expo/vector-icons';
 
-export function Home(): ReactElement {
+import Header from '../../components/Header';
+import Post from '../../components/Post';
+
+import normalize from '../../utils/normalizeSize';
+import colors from '../../styles/colors';
+
+import { Container, Fab, Feed } from './styles';
+
+const styles = StyleSheet.create({
+  fab: {
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+
+    elevation: 6,
+  },
+});
+
+const Home: React.FC = () => {
   return (
-    <ScrollView style={{ backgroundColor: 'white' }}>
-      <Header title="Home" />
-      <Post
-        caption="“Não devemos nos questionar porque algumas coisas nos acontecem e sim o que podemos fazer com o tempo que nos é dado.” ️"
-        profile_image="https://avatars.githubusercontent.com/u/51277667?v=4"
-        name="Henrique Martins"
-        comment="12"
-        likes="29"
-        hours="2"
-        image="https://cdn4.ecycle.com.br/cache/images/2021-04/50-650-o-que-e-paisagem.jpg"
-      />
-      <Post
-        caption="“Renda-se, como eu me rendi. Mergulhe no que você não conhece como eu mergulhei. Viver ultrapassa qualquer entendimento.”"
-        profile_image="https://i.pinimg.com/736x/e7/a0/18/e7a01869a1581393e8178c7d8ef0407c.jpg"
-        name="Leticia Silveiro"
-        comment="40"
-        likes="321"
-        hours="8"
-        image="https://roteirosecotrilhas.com.br/wp-content/uploads/2019/10/praias-de-peruibe.png"
-      />
-      <Post
-        caption="“Não devemos nos questionar porque algumas coisas nos acontecem e sim o que podemos fazer com o tempo que nos é dado.” ️"
-        profile_image="https://avatars.githubusercontent.com/u/51277667?v=4"
-        name="Henrique Martins"
-        comment="12"
-        likes="12"
-        hours="12"
-      />
-    </ScrollView>
+    <>
+      <Container>
+        <Header />
+
+        <Feed showsVerticalScrollIndicator={false}>
+          <Post
+            caption="“Não devemos nos questionar porque algumas coisas nos acontecem e sim o que podemos fazer com o tempo que nos é dado.” ️"
+            profile_image="https://avatars.githubusercontent.com/u/51277667?v=4"
+            name="Henrique Martins"
+            comment="12"
+            likes="29"
+            hours="2h"
+            image="https://cdn4.ecycle.com.br/cache/images/2021-04/50-650-o-que-e-paisagem.jpg"
+          />
+          <Post
+            caption="“Não devemos nos questionar porque algumas coisas nos acontecem e sim o que podemos fazer com o tempo que nos é dado.” ️"
+            profile_image="https://avatars.githubusercontent.com/u/51277667?v=4"
+            name="Henrique Martins"
+            comment="12"
+            likes="29"
+            hours="2h"
+            image="https://cdn4.ecycle.com.br/cache/images/2021-04/50-650-o-que-e-paisagem.jpg"
+          />
+        </Feed>
+      </Container>
+      <Fab activeOpacity={0.8} style={styles.fab}>
+        <Icon name="plus" size={normalize(28)} color={colors.light.primary50} />
+      </Fab>
+    </>
   );
-}
+};
+
+export default Home;

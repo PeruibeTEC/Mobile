@@ -2,20 +2,20 @@ import React from 'react';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import { Feather } from '@expo/vector-icons';
+import { MaterialCommunityIcons as Icon } from '@expo/vector-icons';
 
 import { createStackNavigator } from '@react-navigation/stack';
 
-import Profile from '../screens/Profile';
 import Restaurants from '../screens/Restaurants';
-import { Home } from '../screens/Home';
+import Home from '../screens/Home';
 
-import { TheftItems } from '../screens/TheftItems';
-
-import { DangerPoints } from '../screens/DangerPoints';
 import { ProjectList } from '../screens/ProjectList';
 import { Project } from '../screens/Project';
-import { DetailRestaurant } from '../screens/DetailRestaurant';
+import DetailRestaurant from '../screens/DetailRestaurant';
+
+import pixelToDP from '../utils/pixelToDP';
+import colors from '../styles/colors';
+import normalize from '../utils/normalizeSize';
 
 const Tab = createMaterialBottomTabNavigator();
 const StackRoutes = createStackNavigator();
@@ -24,15 +24,15 @@ function HomeTabs() {
   return (
     <Tab.Navigator
       initialRouteName="Home"
-      activeColor="#2196F3"
-      inactiveColor="#AAB2AD"
+      activeColor={colors.light.primary700}
+      inactiveColor={colors.light.gray400}
       barStyle={{
-        height: '8%',
-        backgroundColor: '#FFFFFF',
+        height: pixelToDP.height(56),
+        backgroundColor: colors.light.background,
         justifyContent: 'center',
         alignItems: 'center',
-        borderColor: '#CCD2DB',
-        borderTopWidth: 0.5,
+        borderColor: colors.light.gray100,
+        borderTopWidth: pixelToDP.height(1),
       }}
     >
       <Tab.Screen
@@ -41,17 +41,7 @@ function HomeTabs() {
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ color }) => (
-            <Feather name="home" color={color} size={24} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Profile"
-        component={Profile}
-        options={{
-          tabBarLabel: 'Perfil',
-          tabBarIcon: ({ color }) => (
-            <Feather name="user" color={color} size={24} />
+            <Icon name="home-outline" color={color} size={normalize(24)} />
           ),
         }}
       />
@@ -59,19 +49,13 @@ function HomeTabs() {
         name="Business"
         component={Restaurants}
         options={{
-          tabBarLabel: 'Comércios',
+          tabBarLabel: 'Restaurantes',
           tabBarIcon: ({ color }) => (
-            <Feather name="coffee" color={color} size={24} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Points"
-        component={DangerPoints}
-        options={{
-          tabBarLabel: 'Pontos',
-          tabBarIcon: ({ color }) => (
-            <Feather name="map-pin" color={color} size={24} />
+            <Icon
+              name="silverware-fork-knife"
+              color={color}
+              size={normalize(24)}
+            />
           ),
         }}
       />
@@ -81,7 +65,7 @@ function HomeTabs() {
         options={{
           tabBarLabel: 'Obras',
           tabBarIcon: ({ color }) => (
-            <Feather name="map" color={color} size={24} />
+            <Icon name="hammer-wrench" color={color} size={normalize(24)} />
           ),
         }}
       />
@@ -96,12 +80,11 @@ const AppRoutes: React.FC = () => {
         headerMode="none"
         screenOptions={{
           cardStyle: {
-            backgroundColor: '#ffff',
+            backgroundColor: colors.light.background,
           },
         }}
       >
         <StackRoutes.Screen name="HomeTabs" component={HomeTabs} />
-        <StackRoutes.Screen name="Incidents" component={TheftItems} />
         <StackRoutes.Screen name="Project" component={Project} />
         <StackRoutes.Screen
           name="DetailRestaurant"

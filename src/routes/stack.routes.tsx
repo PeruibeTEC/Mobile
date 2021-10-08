@@ -16,7 +16,7 @@ import Contact from '../screens/accessFlow/SignUp/businessScreens/Contact';
 import DaysAndHoursOfOperation from '../screens/accessFlow/SignUp/businessScreens/DaysAndHoursOfOperation';
 import FinishRegistration from '../screens/accessFlow/SignUp/FinishRegistration';
 
-import AuthRoutes from './tab.routes';
+import AuthRoutes from './drawer.routes';
 import colors from '../styles/colors';
 
 const StackRoutes = createStackNavigator();

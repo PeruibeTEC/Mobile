@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import { ScrollView, View, Platform, Linking } from 'react-native';
 
 import Feather from '@expo/vector-icons/Feather';
-import { Header } from '../../components/Header/Header';
+import Header from '../../components/Header';
 import { TitleImage } from '../../components/TitleImage';
 import { Content } from './components/Content';
 import { Button } from '../../components/Button';

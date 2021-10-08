@@ -1,14 +1,17 @@
 import React, { ReactElement } from 'react';
-import { SafeAreaView } from 'react-native';
 import { MaterialIcons as Icon } from '@expo/vector-icons';
-
 import { useNavigation } from '@react-navigation/native';
-import { Header } from '../../components/Header/Header';
+
+import Header from '../../components/Header';
 import { Session } from './components/Session';
+
+import colors from '../../styles/colors';
+import normalize from '../../utils/normalizeSize';
 
 import {
   Container,
   RestaurantCover,
+  Feed,
   FeaturedRestaurant,
   RestaurantName,
   RestaurantAddress,
@@ -26,9 +29,9 @@ export default function Restaurants(): ReactElement {
 
   return (
     <Container>
-      <SafeAreaView style={{ flex: 1 }}>
-        <Header title="Restaurantes" />
+      <Header />
 
+      <Feed showsVerticalScrollIndicator={false}>
         <RestaurantCover
           source={{
             uri: 'https://images.pexels.com/photos/905847/pexels-photo-905847.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
@@ -51,7 +54,11 @@ export default function Restaurants(): ReactElement {
             onPress={handleNavigateToDetailRestaurant}
           >
             <ViewButtonText>Visualizar</ViewButtonText>
-            <Icon name="redo" size={20} color="#ffff" />
+            <Icon
+              name="redo"
+              size={normalize(20)}
+              color={colors.light.primary50}
+            />
           </ViewButtonContainer>
         </RestaurantCover>
 
@@ -59,7 +66,7 @@ export default function Restaurants(): ReactElement {
           <Session sessionName="Pizzarias" />
           <Session sessionName="CoffeShop" />
         </RestaurantSessions>
-      </SafeAreaView>
+      </Feed>
     </Container>
   );
 }

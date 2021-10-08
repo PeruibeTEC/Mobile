@@ -15,13 +15,13 @@ import {
   ActionButtonsContainer,
 } from './styles';
 
-import { Header } from '../../components/Header/Header';
+import Header from '../../components/Header';
 import { AvaliationCard } from './components/AvaliationCard';
 import { TimeSession } from './components/TimeSession';
-import { Button } from '../../components/Button';
+import Button from '../../components/Button';
 import { ActionButton } from './components/ActionButton';
 
-export function DetailRestaurant(): ReactElement {
+const DetailRestaurant: React.FC = () => {
   const fakeData = [
     {
       id: 1,
@@ -58,7 +58,7 @@ export function DetailRestaurant(): ReactElement {
 
   return (
     <ScrollView>
-      <Header title="Primi Piatti" onBackScreen />
+      <Header onBackScreen />
       <ContainerCover>
         <BackgroundPhoto
           imageStyle={{ opacity: 0.5 }}
@@ -127,4 +127,6 @@ export function DetailRestaurant(): ReactElement {
       </Content>
     </ScrollView>
   );
-}
+};
+
+export default DetailRestaurant;
