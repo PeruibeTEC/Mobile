@@ -22,7 +22,7 @@ const SwitchSelector: React.FC<IProps> = props => {
       textColor={colors.light.primary500}
       selectedColor={colors.light.primary50}
       buttonColor={colors.light.primary500}
-      borderColor={colors.light.primary700}
+      borderColor={colors.light.primary400}
       backgroundColor={colors.light.background}
       textStyle={textStyle}
       selectedTextStyle={textStyle}
