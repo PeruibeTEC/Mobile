@@ -11,7 +11,7 @@ import Home from '../screens/Home';
 
 import { ProjectList } from '../screens/ProjectList';
 import { Project } from '../screens/Project';
-import { DetailRestaurant } from '../screens/DetailRestaurant';
+import DetailRestaurant from '../screens/DetailRestaurant';
 
 import pixelToDP from '../utils/pixelToDP';
 import colors from '../styles/colors';
@@ -20,7 +20,7 @@ import normalize from '../utils/normalizeSize';
 const Tab = createMaterialBottomTabNavigator();
 const StackRoutes = createStackNavigator();
 
-export function HomeTabs() {
+function HomeTabs() {
   return (
     <Tab.Navigator
       initialRouteName="Home"

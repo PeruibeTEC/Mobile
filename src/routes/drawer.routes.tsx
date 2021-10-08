@@ -12,7 +12,7 @@ import { sizes } from '../utils/predefinedSizes';
 import fonts from '../styles/fonts';
 
 import Profile from '../screens/Profile';
-import { HomeTabs } from './tab.routes';
+import HomeTabs from './tab.routes';
 import { TouristSpot } from '../screens/TouristSpot';
 
 const Drawer = createDrawerNavigator();
