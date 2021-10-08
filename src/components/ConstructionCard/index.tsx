@@ -14,7 +14,7 @@ interface CardProps {
   budget: string;
 }
 
-export function Card({ name, imageURL, budget }: CardProps): ReactElement {
+const ConstructionCard: React.FC<CardProps> = ({ name, imageURL, budget }) => {
   const navigation = useNavigation();
 
   function handleNavigateToProject() {
@@ -39,4 +39,6 @@ export function Card({ name, imageURL, budget }: CardProps): ReactElement {
       </Go>
     </Container>
   );
-}
+};
+
+export default ConstructionCard;

@@ -10,6 +10,20 @@ import colors from '../../styles/colors';
 
 import { Container, Fab, Feed } from './styles';
 
+const styles = StyleSheet.create({
+  fab: {
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+
+    elevation: 6,
+  },
+});
+
 const Home: React.FC = () => {
   return (
     <>
@@ -45,17 +59,3 @@ const Home: React.FC = () => {
 };
 
 export default Home;
-
-const styles = StyleSheet.create({
-  fab: {
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 3,
-    },
-    shadowOpacity: 0.27,
-    shadowRadius: 4.65,
-
-    elevation: 6,
-  },
-});

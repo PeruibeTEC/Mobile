@@ -1,8 +1,7 @@
 import React, { ReactElement } from 'react';
-import { FlatList } from 'react-native';
 
 import Header from '../../components/Header';
-import { Card } from '../../components/Card';
+import ConstructionCard from '../../components/ConstructionCard';
 import { FilterInput, IFilterProps } from '../../components/FilterInput';
 
 import { Container, List } from './styles';
@@ -74,7 +73,11 @@ export function ProjectList(): ReactElement {
         data={fakeData}
         keyExtractor={item => String(item.key)}
         renderItem={({ item }) => (
-          <Card name={item.name} imageURL={item.image} budget={item.budget} />
+          <ConstructionCard
+            name={item.name}
+            imageURL={item.image}
+            budget={item.budget}
+          />
         )}
       />
     </Container>
