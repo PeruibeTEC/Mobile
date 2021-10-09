@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native';
 import axios from 'axios';
 
@@ -31,14 +31,27 @@ interface IStateProps {
   id: number;
 }
 
+interface IParams {
+  typeProfile: string;
+  name: string;
+  email: string;
+  password: string;
+}
+
 const AdditionalDataTourist: React.FC = () => {
+  const route = useRoute();
   const navigation = useNavigation();
 
+  const routeParams = route.params as IParams;
+  const { typeProfile, name, email, password } = routeParams;
+
   const [isTourist, setIsTourist] = useState(false);
+
   const [stateIndexSelected, setStateIndexSelected] = useState<ItemValue>(12);
+  const [citySelected, setCitySelected] = useState<ItemValue>();
+
   const [states, setStates] = useState<IStateProps[]>();
   const [cities, setCities] = useState<IStateProps[]>();
-  const [citySelected, setCitySelected] = useState<ItemValue>();
 
   useEffect(() => {
     async function getStatesFromBrazil() {
@@ -63,6 +76,18 @@ const AdditionalDataTourist: React.FC = () => {
 
     getCitiesFromStates();
   }, [stateIndexSelected]);
+
+  const getTheNameOfTheStateAndCity = async () => {
+    const state = await axios.get(
+      `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${stateIndexSelected}`,
+    );
+
+    const city = await axios.get(
+      `https://servicodados.ibge.gov.br/api/v1/localidades/municipios/${citySelected}`,
+    );
+
+    return { state: state.data.nome, city: city.data.nome };
+  };
 
   return (
     <Container>
@@ -137,8 +162,18 @@ const AdditionalDataTourist: React.FC = () => {
         <Button
           title="Continuar"
           style={{ marginTop: sizes.height.dp40 }}
-          onPress={() => {
-            navigation.navigate('FinishRegistration');
+          onPress={async () => {
+            const { state, city } = await getTheNameOfTheStateAndCity();
+
+            navigation.navigate('FinishRegistration', {
+              typeProfile,
+              name,
+              email,
+              password,
+              state,
+              city,
+              isTourist: true,
+            });
           }}
         />
       </Content>

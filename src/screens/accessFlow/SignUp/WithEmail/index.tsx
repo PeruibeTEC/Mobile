@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { Platform, TouchableOpacity } from 'react-native';
 import { sizes } from '../../../../utils/predefinedSizes';
@@ -22,21 +22,67 @@ interface IParams {
   typeProfile: string;
 }
 
-const SignIn: React.FC = () => {
+const SignUp: React.FC = () => {
   const route = useRoute();
   const navigation = useNavigation();
 
   const routeParams = route.params as IParams;
   const { typeProfile } = routeParams;
 
+  const [name, setName] = useState<string>();
+  const [email, setEmail] = useState<string>();
+  const [password, setPassword] = useState<string>();
+
+  const [nameError, setNameError] = useState({ show: false, message: '' });
+  const [emailError, setEmailError] = useState({ show: false, message: '' });
+  const [passwordError, setPasswordError] = useState({
+    show: false,
+    message: '',
+  });
+
   const handleNavigation = () => {
     if (typeProfile === 'tourist') {
-      navigation.navigate('AdditionalDataTourist');
+      navigation.navigate('AdditionalDataTourist', {
+        typeProfile,
+        name,
+        email,
+        password,
+        isTourist: true,
+      });
     } else if (typeProfile === 'business') {
-      navigation.navigate('AdditionalDataBusiness');
-    } else {
-      navigation.navigate('FinishRegistration');
+      navigation.navigate('AdditionalDataBusiness', {
+        typeProfile,
+      });
+    } else if (typeProfile === 'resident') {
+      navigation.navigate('FinishRegistration', {
+        typeProfile,
+        name,
+        email,
+        password,
+        isTourist: false,
+      });
     }
+  };
+
+  const checkInputs = () => {
+    if (!name) {
+      setNameError({ show: true, message: 'Preencha este campo' });
+      return;
+    }
+    if (!email) {
+      setEmailError({ show: true, message: 'Preencha este campo' });
+      return;
+    }
+    if (!password) {
+      setPasswordError({ show: true, message: 'Preencha este campo' });
+      return;
+    }
+    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)) {
+      setEmailError({ show: true, message: 'Insira um Email válido' });
+      return;
+    }
+
+    handleNavigation();
   };
 
   return (
@@ -51,23 +97,46 @@ const SignIn: React.FC = () => {
 
           <Form>
             <Input
+              value={name}
+              onChangeText={text => {
+                setName(text);
+                setNameError({ show: false, message: '' });
+              }}
               label="Nome"
               keyboardType="default"
               style={{ marginBottom: sizes.height.dp20 }}
+              error={nameError}
             />
 
             <Input
+              value={email}
+              onChangeText={text => {
+                setEmail(text);
+                setEmailError({ show: false, message: '' });
+              }}
               label="E-mail"
               keyboardType="email-address"
               style={{ marginBottom: sizes.height.dp20 }}
+              error={emailError}
             />
 
-            <Input returnKeyType="done" label="Senha" secureTextEntry />
+            <Input
+              value={password}
+              onChangeText={text => {
+                setPassword(text);
+                setPasswordError({ show: false, message: '' });
+              }}
+              returnKeyType="done"
+              label="Senha"
+              autoCapitalize="none"
+              secureTextEntry
+              error={passwordError}
+            />
 
             <Button
               title="Continuar"
               style={{ marginTop: sizes.height.dp40 }}
-              onPress={handleNavigation}
+              onPress={checkInputs}
             />
           </Form>
         </Content>
@@ -85,4 +154,4 @@ const SignIn: React.FC = () => {
   );
 };
 
-export default SignIn;
+export default SignUp;
