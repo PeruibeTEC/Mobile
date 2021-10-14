@@ -65,20 +65,27 @@ const SignUp: React.FC = () => {
   };
 
   const checkInputs = () => {
-    if (!name) {
-      setNameError({ show: true, message: 'Preencha este campo' });
-      return;
-    }
-    if (!email) {
-      setEmailError({ show: true, message: 'Preencha este campo' });
-      return;
-    }
-    if (!password) {
-      setPasswordError({ show: true, message: 'Preencha este campo' });
-      return;
-    }
-    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)) {
-      setEmailError({ show: true, message: 'Insira um Email válido' });
+    const check = () => {
+      if (!name) {
+        setNameError({ show: true, message: 'Preencha este campo' });
+      }
+      if (!email) {
+        setEmailError({ show: true, message: 'Preencha este campo' });
+      } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)) {
+        setEmailError({ show: true, message: 'Insira um Email válido' });
+      }
+      if (!password) {
+        setPasswordError({ show: true, message: 'Preencha este campo' });
+      }
+    };
+
+    if (
+      !name ||
+      !email ||
+      !password ||
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)
+    ) {
+      check();
       return;
     }
 
