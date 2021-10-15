@@ -13,7 +13,7 @@ import { Container, Name, Biography, Content } from './styles';
 const Profile: React.FC = () => {
   return (
     <Container style={{ flex: 1 }}>
-      <SecondaryHeader />
+      <SecondaryHeader title="Perfil" />
 
       <Content>
         <Header

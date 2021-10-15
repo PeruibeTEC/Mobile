@@ -1,45 +1,102 @@
 import styled from 'styled-components/native';
+import Constants from 'expo-constants';
+import { Dimensions } from 'react-native';
+import colors from '../../styles/colors';
+import { sizes } from '../../utils/predefinedSizes';
+import fonts from '../../styles/fonts';
+import normalize from '../../utils/normalizeSize';
 
-export const Border = styled.View`
-  border-color: #ebeff3;
-  border-bottom-width: 7px;
+export const Container = styled.SafeAreaView`
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  padding: ${Constants.statusBarHeight}px 0 0 0;
+`;
+
+export const Content = styled.ScrollView`
+  background-color: ${colors.light.background};
+`;
+
+export const Photo = styled.Image`
+  width: 100%;
+  height: ${Dimensions.get('window').height * 0.32}px;
+`;
+
+export const Infos = styled.View`
+  padding: ${sizes.height.dp20}px ${sizes.width.dp20}px;
+  border-color: #efefef;
+  border-bottom-width: ${sizes.height.dp4}px;
+`;
+
+export const WorkName = styled.Text`
+  color: ${colors.light.gray900};
+
+  font-family: ${fonts.robotoMedium};
+  font-size: ${normalize(24)}px;
+`;
+
+export const SimpleInformation = styled.Text`
+  margin-top: ${sizes.height.dp4}px;
+  color: ${colors.light.gray500};
+
+  font-family: ${fonts.robotoRegular};
+  font-size: ${normalize(16)}px;
+`;
+
+export const Description = styled.Text`
+  margin-top: ${sizes.height.dp12}px;
+  color: ${colors.light.gray700};
+
+  font-family: ${fonts.robotoRegular};
+  font-size: ${normalize(16)}px;
+  line-height: ${normalize(22)}px;
 `;
 
 export const TitleToComments = styled.Text`
-  font-size: 16px;
-  font-family: 'Inter_600SemiBold';
-  color: #000000;
-  padding-left: 28px;
-  margin-top: 12px;
-  padding-bottom: 12px;
-  border-color: #e0e5eb;
-  border-bottom-width: 1px;
+  padding: ${sizes.height.dp8}px ${sizes.width.dp20}px;
+  color: ${colors.light.gray600};
+
+  font-family: ${fonts.robotoMedium};
+  font-size: ${normalize(16)}px;
+
+  border-color: #efefef;
+  border-bottom-width: ${sizes.height.dp4}px;
 `;
 
 export const InputContainer = styled.View`
-  justify-content: center;
-  flex-direction: column;
-  border-color: #e0e5eb;
-  border-bottom-width: 1px;
-  width: 100%;
-  margin-bottom: 12px;
+  padding: ${sizes.height.dp16}px ${sizes.width.dp20}px;
+  border-color: #efefef;
+  border-bottom-width: ${sizes.height.dp4}px;
 `;
 
 export const InputText = styled.Text`
-  font-size: 14px;
-  font-family: 'Inter_600SemiBold';
-  color: #000000;
-  padding-left: 28px;
-  margin-top: 15px;
+  color: ${colors.light.gray600};
+
+  font-family: ${fonts.robotoRegular};
+  font-size: ${normalize(14)}px;
+`;
+
+export const Box = styled.View`
+  margin-top: ${sizes.height.dp8}px;
+
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export const Input = styled.TextInput`
-  margin-top: 28px;
-  height: 40px;
+  padding: ${sizes.height.dp8}px ${sizes.width.dp8}px;
+  height: ${sizes.height.dp40}px;
+  flex: 1;
 
-  background-color: #f6f6f6;
-  width: 75%;
-  border-color: #e8e8e8;
-  border-width: 1.3px;
-  border-radius: 15px;
+  border: 1px solid ${colors.light.gray300};
+  border-radius: ${normalize(8)}px;
+
+  color: ${colors.light.gray400};
+  font-family: ${fonts.robotoRegular};
+  font-size: ${normalize(16)}px;
+`;
+
+export const Send = styled.TouchableOpacity`
+  margin-left: ${sizes.width.dp8}px;
 `;

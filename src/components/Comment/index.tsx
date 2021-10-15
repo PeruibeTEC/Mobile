@@ -6,11 +6,12 @@ import Feather from '@expo/vector-icons/Feather';
 import {
   Container,
   ProfilePhoto,
-  ContentContainer,
   Name,
   Caption,
   IconsContainer,
   TimeToComment,
+  Head,
+  Infos,
 } from './styles';
 
 interface CommentProps {
@@ -30,15 +31,17 @@ export function Comment({
 }: CommentProps): ReactElement {
   return (
     <Container>
-      <View style={{ width: '10%' }}>
+      <Head>
         <ProfilePhoto source={{ uri: `${profile_image}` }} />
-      </View>
-      <ContentContainer>
-        <Name>{name}</Name>
-        <Caption>{comment}</Caption>
-      </ContentContainer>
+        <Infos>
+          <Name>{name}</Name>
+          <TimeToComment>Há {hours}</TimeToComment>
+        </Infos>
+      </Head>
+
+      <Caption>{comment}</Caption>
+
       <IconsContainer>
-        <TimeToComment>{hours}</TimeToComment>
         <TouchableOpacity activeOpacity={0.6}>
           <Feather name="heart" color="#E82656" size={14}>
             ⠀{likes}

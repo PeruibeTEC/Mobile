@@ -4,7 +4,11 @@ import { TouchableOpacity } from 'react-native';
 
 import { Container, MenuIcon, Title } from './styles';
 
-const SecondaryHeader: React.FC = () => {
+interface IProps {
+  title: string;
+}
+
+const SecondaryHeader: React.FC<IProps> = ({ title }) => {
   const navigation = useNavigation();
 
   return (
@@ -18,7 +22,7 @@ const SecondaryHeader: React.FC = () => {
         <MenuIcon name="menu" />
       </TouchableOpacity>
 
-      <Title>Perfil</Title>
+      <Title>{title}</Title>
     </Container>
   );
 };
