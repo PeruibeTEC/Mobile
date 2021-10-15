@@ -87,7 +87,10 @@ const DayAndTimeCard: React.FC = () => {
                 {getHours(openingTime).toString().length === 1
                   ? `0${getHours(openingTime)}`
                   : getHours(openingTime)}
-                :{getMinutes(openingTime)}
+                :
+                {getMinutes(openingTime).toString().length === 1
+                  ? `0${getMinutes(openingTime)}`
+                  : getMinutes(openingTime)}
               </InputTimeText>
               <Icon
                 name="clock-time-four-outline"
@@ -108,7 +111,10 @@ const DayAndTimeCard: React.FC = () => {
                 {getHours(closingTime).toString().length === 1
                   ? `0${getHours(closingTime)}`
                   : getHours(closingTime)}
-                :{getMinutes(closingTime)}
+                :
+                {getMinutes(closingTime).toString().length === 1
+                  ? `0${getMinutes(closingTime)}`
+                  : getMinutes(closingTime)}
               </InputTimeText>
               <Icon
                 name="clock-time-four-outline"
