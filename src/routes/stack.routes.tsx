@@ -5,6 +5,9 @@ import Initial from '../screens/accessFlow/Initial';
 
 import ChooseAnOptionSignIn from '../screens/accessFlow/SignIn/ChooseAnOption';
 import SignIn from '../screens/accessFlow/SignIn/WithEmail';
+import ResetPassword from '../screens/accessFlow/SignIn/ResetPassword';
+import CheckYourEmail from '../screens/accessFlow/SignIn/ResetPassword/screens/CheckYourEmail';
+import NewPassword from '../screens/accessFlow/SignIn/ResetPassword/screens/NewPassword';
 
 import ChooseYourProfile from '../screens/accessFlow/SignUp/ChooseYourProfile';
 import ChooseAnOptionSignUp from '../screens/accessFlow/SignUp/ChooseAnOption';
@@ -37,6 +40,9 @@ const AppRoutes: React.FC = () => (
       component={ChooseAnOptionSignIn}
     />
     <StackRoutes.Screen name="SignIn" component={SignIn} />
+    <StackRoutes.Screen name="ResetPassword" component={ResetPassword} />
+    <StackRoutes.Screen name="CheckYourEmail" component={CheckYourEmail} />
+    <StackRoutes.Screen name="NewPassword" component={NewPassword} />
 
     <StackRoutes.Screen
       name="ChooseYourProfile"

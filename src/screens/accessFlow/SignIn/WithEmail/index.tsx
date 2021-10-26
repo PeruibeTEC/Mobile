@@ -41,7 +41,10 @@ const SignIn: React.FC = () => {
 
             <Input returnKeyType="done" label="Senha" secureTextEntry />
 
-            <TouchableOpacity activeOpacity={0.3}>
+            <TouchableOpacity
+              activeOpacity={0.7}
+              onPress={() => navigation.navigate('ResetPassword')}
+            >
               <ForgotPassword>Esqueci minha senha</ForgotPassword>
             </TouchableOpacity>
 
