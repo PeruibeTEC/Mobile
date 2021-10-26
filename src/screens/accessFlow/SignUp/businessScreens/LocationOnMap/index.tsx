@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native';
-import MapView from 'react-native-maps';
+
+import MapView, { Marker, MapViewProps } from 'react-native-maps';
 
 import Header from '../../../components/Header';
 import Button from '../../../../../components/Button';
@@ -20,6 +21,9 @@ import {
 const LocationOnMap: React.FC = () => {
   const navigation = useNavigation();
 
+  const [lat, setLat] = useState<number>(-24.31213);
+  const [lon, setLon] = useState<number>(-46.988206);
+
   return (
     <Container>
       <Header />
@@ -35,11 +39,22 @@ const LocationOnMap: React.FC = () => {
               latitudeDelta: 0.05,
               longitudeDelta: 0.05,
             }}
+            onPress={event => {
+              setLat(event.nativeEvent.coordinate.latitude);
+              setLon(event.nativeEvent.coordinate.longitude);
+            }}
             style={{
               width: '100%',
               height: '100%',
             }}
-          />
+          >
+            <Marker
+              coordinate={{
+                latitude: lat,
+                longitude: lon,
+              }}
+            />
+          </MapView>
         </MapContainer>
 
         <Button
