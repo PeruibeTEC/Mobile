@@ -7,7 +7,11 @@ import { Container } from './styles';
 import Logo from '../../../../assets/logo.svg';
 import pixelToDP from '../../../../utils/pixelToDP';
 
-const Header: React.FC = () => {
+interface IProps {
+  goBack?: boolean;
+}
+
+const Header: React.FC<IProps> = ({ goBack = true }) => {
   const navigation = useNavigation();
 
   return (
@@ -16,6 +20,7 @@ const Header: React.FC = () => {
         name="arrow-left"
         size={28}
         color="#0D9BA3"
+        style={!goBack && { opacity: 0 }}
         onPress={() => navigation.goBack()}
       />
       <Logo width={pixelToDP.width(56)} height={pixelToDP.height(64)} />
