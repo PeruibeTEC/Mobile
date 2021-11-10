@@ -24,6 +24,12 @@ const DaysAndHoursOfOperation: React.FC = () => {
     { id: 0, component: DayAndTimeCard },
   ]);
 
+  const deleteCard = (indexInArray: number) => {
+    dayAndTimeCard.splice(indexInArray, 1);
+
+    setDayAndTimeCard(rest => [...rest]);
+  };
+
   return (
     <Container>
       <Header />
@@ -36,7 +42,9 @@ const DaysAndHoursOfOperation: React.FC = () => {
 
           {dayAndTimeCard.map(value => {
             const Card = value.component;
-            return <Card key={value.id} />;
+            return (
+              <Card functionTeste={() => deleteCard(value.id)} key={value.id} />
+            );
           })}
 
           <SecondaryButton

@@ -36,7 +36,11 @@ const optionsFake = [
   },
 ];
 
-const DayAndTimeCard: React.FC = () => {
+interface IProps {
+  functionTeste: () => void;
+}
+
+const DayAndTimeCard: React.FC<IProps> = ({functionTeste}) => {
   const [optionSelected, setOptionSelected] = useState<ItemValue>();
   const [show, setShow] = useState({ show: false, change: 'opening' });
   const [openingTime, setOpeningTime] = useState(new Date());
@@ -71,7 +75,7 @@ const DayAndTimeCard: React.FC = () => {
         />
       )}
       <Container>
-        <Delete activeOpacity={0.5}>
+        <Delete activeOpacity={0.5} onPress={functionTeste}>
           <Icon name="delete-outline" size={24} color="#FAC8D6" />
         </Delete>
 
