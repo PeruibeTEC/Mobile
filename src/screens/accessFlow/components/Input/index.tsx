@@ -1,10 +1,11 @@
 import React from 'react';
-import { TextInputProps } from 'react-native';
+import { TextInputProps, View } from 'react-native';
 
 import { Container, InputText, Label } from './styles';
 
 interface IProps extends TextInputProps {
   label: string;
+  error?: { show: boolean; message: string };
 }
 
 interface InputRef {
@@ -12,13 +13,21 @@ interface InputRef {
 }
 
 const Input: React.ForwardRefRenderFunction<InputRef, IProps> = (
-  { label, ...props },
+  { label, error, ...props },
   ref,
 ) => {
   return (
     <Container>
-      <Label>{label}</Label>
-      <InputText returnKeyType="next" autoCorrect={false} {...props} />
+      <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+        <Label error={error?.show}>{label}</Label>
+        <Label error={error?.show}>{error?.message}</Label>
+      </View>
+      <InputText
+        error={error?.show}
+        returnKeyType="next"
+        autoCorrect={false}
+        {...props}
+      />
     </Container>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import { Alert, Platform, TouchableOpacity } from 'react-native';
 
 import * as ImagePicker from 'expo-image-picker';
@@ -21,8 +21,22 @@ import {
   UploadIcon,
 } from './styles';
 
+interface IParams {
+  typeProfile: string;
+  name: string;
+  email: string;
+  password: string;
+  isTourist: boolean;
+  state?: string;
+  city?: string;
+}
+
 const FinishRegistration: React.FC = () => {
+  const route = useRoute();
   const navigation = useNavigation();
+
+  const routeParams = route.params as IParams;
+  const { typeProfile, name, email, password, state, city } = routeParams;
 
   const [image, setImage] = useState<string>();
 

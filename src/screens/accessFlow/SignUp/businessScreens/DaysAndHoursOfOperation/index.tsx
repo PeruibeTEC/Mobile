@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { ScrollView, TouchableOpacity, View } from 'react-native';
+import { ScrollView, TouchableOpacity } from 'react-native';
 
 import Header from '../../../components/Header';
 import DayAndTimeCard from './components/DayAndTimeCard';
@@ -19,6 +19,16 @@ import {
 
 const DaysAndHoursOfOperation: React.FC = () => {
   const navigation = useNavigation();
+  const [id, setId] = useState(1);
+  const [dayAndTimeCard, setDayAndTimeCard] = useState([
+    { id: 0, component: DayAndTimeCard },
+  ]);
+
+  const deleteCard = (indexInArray: number) => {
+    dayAndTimeCard.splice(indexInArray, 1);
+
+    setDayAndTimeCard(rest => [...rest]);
+  };
 
   return (
     <Container>
@@ -30,11 +40,24 @@ const DaysAndHoursOfOperation: React.FC = () => {
         <Content>
           <Description>Insira os dias e horários de funcionamento</Description>
 
-          <DayAndTimeCard />
+          {dayAndTimeCard.map(value => {
+            const Card = value.component;
+            return (
+              <Card functionTeste={() => deleteCard(value.id)} key={value.id} />
+            );
+          })}
 
           <SecondaryButton
             title="Adicionar mais horário"
             style={{ marginTop: sizes.height.dp16 }}
+            onPress={() => {
+              setId(id + 1);
+
+              setDayAndTimeCard(rest => [
+                ...rest,
+                { id, component: DayAndTimeCard },
+              ]);
+            }}
           />
 
           <Button
