@@ -38,8 +38,6 @@ const FinishRegistration: React.FC = () => {
   const routeParams = route.params as IParams;
   const { typeProfile, name, email, password, state, city } = routeParams;
 
-  console.log(typeProfile, name, email, password, state, city);
-
   const [image, setImage] = useState<string>();
 
   async function handleNavigateToHome() {
