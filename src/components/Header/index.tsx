@@ -16,7 +16,7 @@ const Header: React.FC = () => {
       <TouchableOpacity
         activeOpacity={0.8}
         onPress={() => {
-          navigation.dispatch(DrawerActions.openDrawer);
+          navigation.dispatch(DrawerActions.openDrawer());
         }}
       >
         <MenuIcon name="menu" />

@@ -75,23 +75,21 @@ function HomeTabs() {
 
 const AppRoutes: React.FC = () => {
   return (
-    <NavigationContainer independent>
-      <StackRoutes.Navigator
-        headerMode="none"
-        screenOptions={{
-          cardStyle: {
-            backgroundColor: colors.light.background,
-          },
-        }}
-      >
-        <StackRoutes.Screen name="HomeTabs" component={HomeTabs} />
-        <StackRoutes.Screen name="Project" component={Project} />
-        <StackRoutes.Screen
-          name="DetailRestaurant"
-          component={DetailRestaurant}
-        />
-      </StackRoutes.Navigator>
-    </NavigationContainer>
+    <StackRoutes.Navigator
+      headerMode="none"
+      screenOptions={{
+        cardStyle: {
+          backgroundColor: colors.light.background,
+        },
+      }}
+    >
+      <StackRoutes.Screen name="HomeTabs" component={HomeTabs} />
+      <StackRoutes.Screen name="Project" component={Project} />
+      <StackRoutes.Screen
+        name="DetailRestaurant"
+        component={DetailRestaurant}
+      />
+    </StackRoutes.Navigator>
   );
 };
 
