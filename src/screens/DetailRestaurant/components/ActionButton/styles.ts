@@ -1,4 +1,7 @@
 import styled, { css } from 'styled-components/native';
+import fonts from '../../../../styles/fonts';
+import normalize from '../../../../utils/normalizeSize';
+import pixelToDP from '../../../../utils/pixelToDP';
 
 interface ContainerProps {
   bgc: string;
@@ -14,15 +17,17 @@ export const ContainerBox = styled.View<ContainerProps>`
       border-color: ${props.borderColor};
     `}
 
+  width: ${pixelToDP.width(80)}px;
+  height: ${pixelToDP.height(80)}px;
+
   align-items: center;
   justify-content: center;
-  width: 80px;
-  height: 70px;
-  border-radius: 16px;
+
+  border-radius: ${normalize(16)}px;
 `;
 
 export const Text = styled.Text`
-  font-size: 12px;
-  font-family: 'Roboto_500Medium';
+  font-size: ${normalize(12)}px;
+  font-family: ${fonts.robotoMedium};
   color: #fff;
 `;

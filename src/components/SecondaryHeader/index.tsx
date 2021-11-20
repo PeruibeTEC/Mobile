@@ -16,10 +16,10 @@ const SecondaryHeader: React.FC<IProps> = ({ title }) => {
       <TouchableOpacity
         activeOpacity={0.8}
         onPress={() => {
-          navigation.dispatch(DrawerActions.openDrawer);
+          navigation.goBack();
         }}
       >
-        <MenuIcon name="menu" />
+        <MenuIcon name="chevron-left" />
       </TouchableOpacity>
 
       <Title>{title}</Title>
