@@ -1,5 +1,5 @@
 import React, { ReactElement, useEffect, useState } from 'react';
-import { SafeAreaView, TouchableOpacity } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 
 import {
   ContainerSession,
@@ -9,6 +9,7 @@ import {
   Divider,
   Events,
   ClockIcon,
+  Infos,
 } from './styles';
 
 interface IProps {
@@ -31,9 +32,10 @@ export function TimeSession({ openTime, closeTime }: IProps): ReactElement {
   }, [hours, openTime, closeTime]);
 
   return (
-    <SafeAreaView>
-      <ContainerSession>
+    <ContainerSession>
+      <Infos>
         <ClockIcon isOpen={isOpen} name="clock" />
+
         <TimeInfo>
           <IsOpenNow isOpen={isOpen}>
             {isOpen ? 'Aberto Agora!' : 'Fechado Agora!'}
@@ -44,11 +46,13 @@ export function TimeSession({ openTime, closeTime }: IProps): ReactElement {
               : 'Ver horários'}
           </OpenHours>
         </TimeInfo>
-        <Divider />
-        <TouchableOpacity activeOpacity={0.6}>
-          <Events>Eventos</Events>
-        </TouchableOpacity>
-      </ContainerSession>
-    </SafeAreaView>
+      </Infos>
+
+      <Divider />
+
+      <TouchableOpacity activeOpacity={0.6}>
+        <Events>Eventos</Events>
+      </TouchableOpacity>
+    </ContainerSession>
   );
 }
