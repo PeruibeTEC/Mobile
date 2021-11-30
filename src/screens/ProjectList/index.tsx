@@ -23,7 +23,7 @@ export function ProjectList(): ReactElement {
       key: 1,
       name: 'Hospital de Peruíbe',
       image:
-        'https://lh3.googleusercontent.com/proxy/vXe0ZeGYZRGfkelOQvJJzvBBWImpiiyPAmbnO9dgFxvMe-vYBaePfS__6CikWRGFkVu41LrXbemhREMoQ-TbjGMxVHI_vgF4t7UbaouclZA8Br569Mch5tqDKjJas2u_Tlmb5TF2FdKe',
+        'https://s2.glbimg.com/cMu6k4hSgIodMjh4TMl1UYbA-uw=/0x0:1280x801/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2020/Y/L/KjLss8R3mFkeAEeVS2fg/4-foto1.2-obras-de-fundacao-do-hospital-municipal-iniciaram-em-outubro-de-2015.jpg',
       budget: '22.000.000,00',
     },
     {
