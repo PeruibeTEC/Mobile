@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { DrawerContentComponentProps } from '@react-navigation/drawer';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import {
   City,
@@ -16,6 +17,17 @@ import {
 } from './styles';
 
 const SideBar: React.FC<DrawerContentComponentProps> = props => {
+  const [username, setUsername] = useState<string>();
+
+  useEffect(() => {
+    async function loadStoragedData(): Promise<void> {
+      const usernames = await AsyncStorage.getItem('@PeruibeTec:name');
+      setUsername(usernames || 'default');
+    }
+
+    loadStoragedData();
+  }, []);
+
   return (
     <Container>
       <Cover
@@ -30,7 +42,7 @@ const SideBar: React.FC<DrawerContentComponentProps> = props => {
           }}
         />
 
-        <Name>Arwen Undómiel</Name>
+        <Name>{username}</Name>
 
         <Details>
           <TypeUser>Turista</TypeUser>

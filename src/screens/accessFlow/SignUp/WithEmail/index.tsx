@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { Platform, TouchableOpacity } from 'react-native';
-import { sizes } from '../../../../utils/predefinedSizes';
 
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+import { sizes } from '../../../../utils/predefinedSizes';
 import Header from '../../components/Header';
 import Input from '../../components/Input';
 import Button from '../../../../components/Button';
@@ -64,7 +66,7 @@ const SignUp: React.FC = () => {
     }
   };
 
-  const checkInputs = () => {
+  const checkInputs = async () => {
     const check = () => {
       if (!name) {
         setNameError({ show: true, message: 'Preencha este campo' });
@@ -89,6 +91,8 @@ const SignUp: React.FC = () => {
       return;
     }
 
+    await AsyncStorage.setItem('@PeruibeTec:name', name);
+
     handleNavigation();
   };
 
@@ -110,9 +114,9 @@ const SignUp: React.FC = () => {
                 setNameError({ show: false, message: '' });
               }}
               label="Nome"
-              keyboardType="default"
               style={{ marginBottom: sizes.height.dp20 }}
               error={nameError}
+              autoCapitalize="words"
             />
 
             <Input
@@ -125,6 +129,7 @@ const SignUp: React.FC = () => {
               keyboardType="email-address"
               style={{ marginBottom: sizes.height.dp20 }}
               error={emailError}
+              autoCompleteType="email"
             />
 
             <Input

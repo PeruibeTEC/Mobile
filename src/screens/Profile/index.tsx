@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import Header from './components/Header';
 import SwitchSelector from './components/SwitchSelector';
@@ -11,6 +12,17 @@ import normalize from '../../utils/normalizeSize';
 import { Container, Name, Biography, Content } from './styles';
 
 const Profile: React.FC = () => {
+  const [username, setUsername] = useState<string>();
+
+  useEffect(() => {
+    async function loadStoragedData(): Promise<void> {
+      const usernames = await AsyncStorage.getItem('@PeruibeTec:name');
+      setUsername(usernames || 'default');
+    }
+
+    loadStoragedData();
+  }, []);
+
   return (
     <Container style={{ flex: 1 }}>
       <SecondaryHeader title="Perfil" />
@@ -21,7 +33,7 @@ const Profile: React.FC = () => {
           profile_image="https://images.pexels.com/photos/2666467/pexels-photo-2666467.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
         />
 
-        <Name>Arwen Undómiel</Name>
+        <Name>{username}</Name>
         <Biography>
           “Não devemos nos questionar porque algumas coisas nos acontecem e sim
           o que podemos fazer com o tempo que nos é dado.”
@@ -40,7 +52,7 @@ const Profile: React.FC = () => {
         <Post
           caption="“Não devemos nos questionar porque algumas coisas nos acontecem e sim o que podemos fazer com o tempo que nos é dado.”"
           profile_image="https://images.pexels.com/photos/2666467/pexels-photo-2666467.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-          name="Arwen Undómiel"
+          name={username}
           comment="40"
           likes="321"
           hours="8h"
@@ -50,7 +62,7 @@ const Profile: React.FC = () => {
         <Post
           caption="“Não devemos nos questionar porque algumas coisas nos acontecem e sim o que podemos fazer com o tempo que nos é dado.”"
           profile_image="https://images.pexels.com/photos/2666467/pexels-photo-2666467.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-          name="Arwen Undómiel"
+          name={username}
           comment="40"
           likes="321"
           hours="8h"
