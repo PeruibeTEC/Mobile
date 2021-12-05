@@ -63,8 +63,10 @@ export default function Restaurants(): ReactElement {
         </RestaurantCover>
 
         <RestaurantSessions>
+          <Session sessionName="Restaurantes" />
           <Session sessionName="Pizzarias" />
-          <Session sessionName="CoffeShop" />
+          <Session sessionName="Lanches" />
+          <Session sessionName="Cafeterias" />
         </RestaurantSessions>
       </Feed>
     </Container>
