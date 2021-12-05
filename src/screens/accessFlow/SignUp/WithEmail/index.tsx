@@ -127,6 +127,7 @@ const SignUp: React.FC = () => {
               }}
               label="E-mail"
               keyboardType="email-address"
+              autoCapitalize="none"
               style={{ marginBottom: sizes.height.dp20 }}
               error={emailError}
               autoCompleteType="email"

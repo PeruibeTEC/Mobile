@@ -1,20 +1,28 @@
 import styled from 'styled-components/native';
+import Constants from 'expo-constants';
+import colors from '../../styles/colors';
+import { sizes } from '../../utils/predefinedSizes';
+import pixelToDP from '../../utils/pixelToDP';
+import fonts from '../../styles/fonts';
+import normalize from '../../utils/normalizeSize';
 
-export const Border = styled.View`
-  border-color: #ebeff3;
-  border-bottom-width: 7px;
-`;
-
-export const ViewContainer = styled.View`
-  flex-direction: column;
-  justify-content: center;
+export const Container = styled.SafeAreaView`
+  flex: 1;
   align-items: center;
-  margin-top: 20px;
+  justify-content: space-between;
+  padding: ${Constants.statusBarHeight}px 0 0 0;
 `;
 
-export const Text = styled.Text`
-  font-family: Roboto_700Bold;
-  font-size: 19px;
-  line-height: 23px;
-  text-align: center;
+export const Footer = styled.View`
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: ${pixelToDP.height(80)}px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #12121220;
 `;

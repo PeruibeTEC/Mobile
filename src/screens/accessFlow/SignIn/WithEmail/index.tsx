@@ -74,6 +74,7 @@ const SignIn: React.FC = () => {
                 setEmailError({ show: false, message: '' });
               }}
               keyboardType="email-address"
+              autoCapitalize="none"
               style={{ marginBottom: sizes.height.dp20 }}
               error={emailError}
             />
@@ -86,6 +87,7 @@ const SignIn: React.FC = () => {
               }}
               returnKeyType="done"
               label="Senha"
+              autoCapitalize="none"
               secureTextEntry
               error={passwordError}
             />
