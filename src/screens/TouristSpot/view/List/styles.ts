@@ -41,3 +41,32 @@ export const PointName = styled.Text`
 export const RatingInfos = styled.View`
   margin-top: ${sizes.height.dp8}px;
 `;
+
+export const Rating = styled.View`
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const Dot = styled.View`
+  width: ${sizes.width.dp4}px;
+  height: ${sizes.height.dp4}px;
+  border-radius: ${normalize(100)}px;
+  background-color: ${colors.light.yellow100};
+
+  margin: 0 ${sizes.width.dp4}px;
+`;
+
+export const RatingText = styled.Text`
+  font-family: ${fonts.robotoMedium};
+  font-size: ${normalize(20)}px;
+  color: ${colors.light.yellow300};
+`;
+
+export const LinkToEvaluations = styled.Text`
+  margin-top: ${sizes.height.dp8}px;
+
+  font-family: ${fonts.robotoRegular};
+  font-size: ${normalize(14)}px;
+  color: ${colors.light.gray400};
+  text-decoration: underline;
+`;

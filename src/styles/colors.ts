@@ -26,5 +26,8 @@ export default {
     gray900: '#262929',
 
     red300: '#E83C6E',
+
+    yellow100: '#F5DD9F',
+    yellow300: '#EBC154',
   },
 };

@@ -1,13 +1,21 @@
 import React from 'react';
+import { MaterialCommunityIcons as Icon } from '@expo/vector-icons';
 import { Text } from 'react-native';
+
+import normalize from '../../../../utils/normalizeSize';
+import colors from '../../../../styles/colors';
 
 import {
   CardContainer,
   Container,
+  Dot,
   Infos,
+  LinkToEvaluations,
   PointImage,
   PointName,
+  Rating,
   RatingInfos,
+  RatingText,
 } from './styles';
 
 const points = [
@@ -36,7 +44,19 @@ const List: React.FC = () => {
             <PointName>{point.name}</PointName>
 
             <RatingInfos>
-              <Text>sça</Text>
+              <Rating>
+                <Icon
+                  name="star"
+                  size={normalize(24)}
+                  color={colors.light.yellow300}
+                />
+
+                <Dot />
+
+                <RatingText>4.8</RatingText>
+              </Rating>
+
+              <LinkToEvaluations>207 Avaliações</LinkToEvaluations>
             </RatingInfos>
           </Infos>
         </CardContainer>
